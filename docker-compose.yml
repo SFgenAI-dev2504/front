@@ -6,7 +6,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - DATABASE_URL=mysql+pymysql://root:pass1234@db:3306/sfgenai_db
+      - DATABASE_URL=mysql+pymysql://root:password@db:3306/test_db
     depends_on:
       - db
 
@@ -14,9 +14,10 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: pass1234
-      MYSQL_DATABASE: sfgenai_db
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: test_db
     volumes:
       - ./mysql/data:/var/lib/mysql
+    command: mysqld --innodb_use_native_aio=0
     ports:
       - "3306:3306"
