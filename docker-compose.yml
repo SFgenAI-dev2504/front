@@ -2,22 +2,38 @@ version: '3.9'
 
 services:
   web:
-    build: .
+    build: ./web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mock
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+
+  mock:
+    build: ./mock
     ports:
       - "5000:5000"
-    environment:
-      - DATABASE_URL=mysql+pymysql://root:password@db:3306/test_db
+    volumes:
+      - ./mock:/app
     depends_on:
       - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_NAME=SFgenAI_db
 
   db:
     image: mysql:8.0
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: test_db
+      MYSQL_DATABASE: SFgenAI_db
     volumes:
       - ./mysql/data:/var/lib/mysql
-    command: mysqld --innodb_use_native_aio=0
     ports:
       - "3306:3306"
