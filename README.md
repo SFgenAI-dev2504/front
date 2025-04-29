@@ -68,8 +68,16 @@ Docker Compose version v2.10.2
 ### 3. ソースコードのClone
 
 Forkの左のメニューにある「Repository」右クリックして、「Clone...」を選択する。
+
+![スクリーンショット 2025-04-29 16 09 29](https://github.com/user-attachments/assets/aa9c9043-39ad-4c34-8f88-40b2f0587c0c)
+
 「URL」に「`git@github.com:SFgenAI-dev2504/front.git`」を記載し、適宜「Location」にクローン場所を記載する。
+
+![スクリーンショット 2025-04-29 16 10 07](https://github.com/user-attachments/assets/d9334137-e477-4d69-80e1-d3f8ead4f06b)
+
 「Clone」ボタンをクリックする。
+
+![スクリーンショット 2025-04-29 16 10 32](https://github.com/user-attachments/assets/8b99ce0a-69df-4458-8a66-4c86cd9b4b0f)
 
 「Location」に指定した場所のソースコードがコピーされる。
 
