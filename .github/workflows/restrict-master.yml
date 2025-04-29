@@ -7,13 +7,15 @@ jobs:
   check-branch:
     runs-on: ubuntu-latest
     steps:
+      - name: Check PR base branch is main
+        if: github.base_ref != 'main'
+        run: |
+          echo "This workflow should not run unless base branch is main"
+          exit 1
       - name: Check PR source branch
         run: |
           echo "Source branch: ${{ github.head_ref }}"
-          echo "Base branch: ${{ github.base_ref }}"
-          if [ "${{ github.base_ref }}" == "main" ]; then
-            if [ "${{ github.head_ref }}" != "develop" ]; then
-              echo "Only develop branch can be merged into main!"
-              exit 1
-            fi
+          if [ "${{ github.head_ref }}" != "develop" ]; then
+            echo "Only develop branch can be merged into main!"
+            exit 1
           fi
