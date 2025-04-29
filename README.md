@@ -4,9 +4,10 @@
 
 ## 改訂履歴
 
-| 日付         | 改訂者 | 改訂内容 |
-|------------|-----|------|
-| 2025/04/28 | 今村  | 新規作成 |
+| 日付         | 改訂者 | 改訂内容         |
+|------------|-----|--------------|
+| 2025/04/28 | 今村  | 新規作成         |
+| 2025/04/29 | 今村  | 環境構築手順を修正した。 |
 
 ## 開発環境
 
@@ -18,8 +19,6 @@
   * 3.11.12
 * Docker
   * Docker version 20.10.17, build 100c701
-* IntelliJ IDEA (エディタ)
-  * Build #IC-251.23774.435, built on April 15, 2025
 * Google Chrome (Webブラウザ)
   * 135.0.7049.115（Official Build） （arm64）
 
@@ -65,23 +64,47 @@ Docker Compose version v2.10.2
 ※Gitクライアントについて、Forkを指定しているがSourceTreeなどでも可。  
 (自分の使いやすいものでOK)
 
-### 3. ソースコードのClone
+### 3. Pythonのインストール
+
+以下のURLから3.11.9をインストールする。(mock用)
+
+* https://www.python.org/downloads/release/python-3119/
+
+本来は、3.11.12をインストールしたいが、以下を見る限り3.11.10 ~ 12のインストーラーはなさそう。
+
+* https://www.python.org/downloads/release/python-31112/
+
+### 4. ソースコードのClone
 
 Forkの左のメニューにある「Repository」右クリックして、「Clone...」を選択する。
+
+![スクリーンショット 2025-04-29 16 09 29](https://github.com/user-attachments/assets/aa9c9043-39ad-4c34-8f88-40b2f0587c0c)
+
 「URL」に「`git@github.com:SFgenAI-dev2504/front.git`」を記載し、適宜「Location」にクローン場所を記載する。
+
+![スクリーンショット 2025-04-29 16 10 07](https://github.com/user-attachments/assets/d9334137-e477-4d69-80e1-d3f8ead4f06b)
+
 「Clone」ボタンをクリックする。
+
+![スクリーンショット 2025-04-29 16 10 32](https://github.com/user-attachments/assets/8b99ce0a-69df-4458-8a66-4c86cd9b4b0f)
 
 「Location」に指定した場所のソースコードがコピーされる。
 
 ### 4. Webアプリの起動
 
-以下のコマンドを実行する。
+以下のコマンドを実行して、イメージをビルドしてコンテナを起動する。(※基本初回のみ)
 
 ```docker
 $ docker-compose up --build
 ```
 
-http://127.0.0.1:5000 にWebブラウザでアクセスするとWebアプリの画面が表示される。
+http://127.0.0.1:3000 にWebブラウザでアクセスするとWebアプリの画面が表示される。
+
+ソースを修正した後のコンテナに反映する場合は、以下のコマンドを実行する。
+
+```docker
+$ docker-compose restart web
+```
 
 ### その他
 
