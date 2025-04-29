@@ -9,8 +9,11 @@ jobs:
     steps:
       - name: Check PR source branch
         run: |
-          echo "Source branch: ${{ github.head_ref }}"
-          if [ "${{ github.head_ref }}" != "develop" ]; then
-            echo "Only develop branch can be merged into main!"
-            exit 1
+          echo "Source base branch: ${{ github.base_ref }}"
+          echo "Source head branch: ${{ github.head_ref }}"
+          if [ "${{ github.base_ref }}" == "main" ]; then
+            if [ "${{ github.head_ref }}" != "develop" ]; then
+              echo "Only develop branch can be merged into main!"
+              exit 1
+            fi
           fi
