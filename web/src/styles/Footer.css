@@ -1,0 +1,15 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 4px 2px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.footer__copy {
+    padding: 4px 0;
+    color: black;
+    font-size: 0.8rem;
+}
