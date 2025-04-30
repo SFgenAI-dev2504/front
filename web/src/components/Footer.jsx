@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/Footer.css"
+import React from 'react';
+import '../styles/Footer.css';
 
 const Footer = () => {
     return (
@@ -8,7 +8,7 @@ const Footer = () => {
                 <small>&copy; 2025 SFgenAI</small>
             </p>
         </footer>
-    )
+    );
 };
 
 export default Footer;
