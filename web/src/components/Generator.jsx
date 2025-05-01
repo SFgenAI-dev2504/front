@@ -1,26 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/index';
-import '../styles/Home.css';
+import { Button, Parameters } from '../components/index';
+import '../styles/Generator.css';
 import * as Strings from '../constant/strings';
 
-const Home = () => {
+const Generator = () => {
     const navigate = useNavigate();
 
     const toGenerate = () => {
-        navigate(Strings.PARAM_SETTING_URL);
+        alert('Hello world!');
+        // history.push(Strings.GENERATOR_URL)
     };
 
     return (
-        <section className="home">
-            <p className="text">画像生成</p>
+        <section className="generator">
             <Button
                 className={'button--primary'}
-                name={Strings.PARAM_SETTING_BUTTON}
+                name={Strings.GENERATE_START_BUTTON}
                 onClick={() => toGenerate()}
             />
         </section>
     );
 };
 
-export default Home;
+export default Generator;

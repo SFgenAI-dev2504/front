@@ -1,15 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home } from '../components';
-import * as Strings from '../strings';
+import { Route, Routes } from 'react-router-dom';
+import { Parameters, Home, Generator } from '../components';
+import * as Strings from '../constant/strings';
 
 const Router = () => {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path={Strings.HOME_URL} element={<Home />} />
-            </Routes>
-        </BrowserRouter>
+        <Routes>
+            <Route path={Strings.HOME_URL} element={<Home />} />
+            <Route path={Strings.PARAM_SETTING_URL} element={<Parameters />} />
+            <Route path={Strings.GENERATOR_URL} element={<Generator />} />
+        </Routes>
     );
 };
 

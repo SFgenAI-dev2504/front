@@ -1,0 +1,54 @@
+.parameter {
+    margin: 24px 16px 48px;
+}
+
+.label__container {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+}
+
+.value {
+    margin-left: 16px;
+}
+
+.unit {
+    margin-top: 2px;
+    font-size: 0.65rem;
+}
+
+.subtitle {
+    position: relative;
+    width: 20%;
+}
+
+.subtitle__label {
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.slidebar__container {
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.slidebar {
+    padding-right: 48px;
+    width: 80%;
+}
+
+.subtitle__value {
+    text-align: center;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
