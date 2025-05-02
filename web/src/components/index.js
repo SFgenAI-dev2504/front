@@ -5,3 +5,4 @@ export { default as Home } from './Home';
 export { default as Generator } from './Generator';
 export { default as Parameter } from './Parameter';
 export { default as Parameters } from './Parameters';
+export { default as RadarChart } from './RadarChart';
