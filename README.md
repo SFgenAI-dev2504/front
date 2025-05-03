@@ -4,10 +4,11 @@
 
 ## 改訂履歴
 
-| 日付         | 改訂者 | 改訂内容         |
-|------------|-----|--------------|
-| 2025/04/28 | 今村  | 新規作成         |
-| 2025/04/29 | 今村  | 環境構築手順を修正した。 |
+| 日付         | 改訂者 | 改訂内容                      |
+|------------|-----|---------------------------|
+| 2025/04/28 | 今村  | 新規作成                      |
+| 2025/04/29 | 今村  | 環境構築手順を修正した。              |
+| 2025/05/03 | 今村  | 開発環境と環境構築手順とNodeの内容を追記した。 |
 
 ## 開発環境
 
@@ -15,6 +16,8 @@
 
 * Mac
   * Sonoma 4.6.1 (M1)
+* Node
+    * v22.15.0
 * Python
   * 3.11.12
 * Docker
@@ -64,9 +67,15 @@ Docker Compose version v2.10.2
 ※Gitクライアントについて、Forkを指定しているがSourceTreeなどでも可。  
 (自分の使いやすいものでOK)
 
+### 3. Node.jsのインストール
+
+以下のURLからNode.jsのv22.15.0をインストールする。
+
+* https://nodejs.org/ja/download
+
 ### 3. Pythonのインストール
 
-以下のURLから3.11.9をインストールする。(mock用)
+以下のURLからPythonの3.11.9をインストールする。(mock用)
 
 * https://www.python.org/downloads/release/python-3119/
 
@@ -111,16 +120,25 @@ $ docker-compose restart web
 Dockerコンテナの中でコマンドを実行したい場合は、以下のコマンドを実行する。
 
 ```
-$ docker-compose exec web bash
+// webのコンテナ(フロントエンド)に入る場合
+& docker-compose exec mock bash
+
+// mockのコンテナ(バックエンドのmock用)に入る場合
+$ docker-compose exec mock bash
 ```
 
 以下のようにコンテナ内に入ることができる。
 
 ```
-root@23d7d825aafb:/app#
+root@<コンテナID>:/app#
 ```
 
-例えば、Pythonやライブラリの一覧を見たい時などはコンテナ内で以下を実行する。
+例えば、Node.jsやPythonのバージョン、ライブラリの一覧を見たい時などはコンテナ内で以下を実行する。
+
+```
+$ node --version
+v22.15.0
+```
 
 ```
 $ python --version
