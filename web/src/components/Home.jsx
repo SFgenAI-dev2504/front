@@ -12,11 +12,13 @@ const Home = () => {
     };
 
     return (
-        <section className="home">
-            <p className="text">画像生成</p>
+        <section className={'home'}>
+            <p className={'text'}>{Strings.HOME_LABEL}</p>
             <Button
                 className={'button--primary'}
                 name={Strings.PARAM_SETTING_BUTTON}
+                disabled={false}
+                disabledName={Strings.PARAM_SETTING_BUTTON}
                 onClick={() => toGenerate()}
             />
         </section>

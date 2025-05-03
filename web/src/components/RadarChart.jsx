@@ -8,6 +8,14 @@ import {
     Legend,
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
+import * as Strings from '../constant/strings';
+import * as Config from '../constant/config';
+import {
+    CHART_BACKDROP_COLOR,
+    CHART_MAX,
+    CHART_STEP_SIZE,
+    POINT_LABELS_FONT_SIZE,
+} from '../constant/config';
 
 ChartJS.register(
     RadialLinearScale,
@@ -21,7 +29,13 @@ ChartJS.register(
 const RadarChart = (props) => {
     const results = props.results.data;
     const data = {
-        labels: ['結果1', '結果2', '結果3', '結果4', '結果5'],
+        labels: [
+            Strings.CHART_LABEL1,
+            Strings.CHART_LABEL2,
+            Strings.CHART_LABEL3,
+            Strings.CHART_LABEL4,
+            Strings.CHART_LABEL5,
+        ],
         datasets: [
             {
                 label: 'ラベルA',
@@ -59,41 +73,41 @@ const RadarChart = (props) => {
         scales: {
             r: {
                 beginAtZero: true,
-                suggestedMin: 0,
-                suggestedMax: 100,
+                suggestedMin: Config.CHART_MIN,
+                suggestedMax: Config.CHART_MAX,
                 ticks: {
-                    stepSize: 20,
-                    backdropColor: 'transparent',
-                    color: '#000',
+                    stepSize: Config.CHART_STEP_SIZE,
+                    backdropColor: Config.CHART_BACKDROP_COLOR,
+                    color: Config.BASE_COLOR,
                 },
                 label: {
-                    color: '#000',
+                    color: Config.BASE_COLOR,
                 },
                 pointLabels: {
                     font: {
-                        size: 12,
+                        size: Config.POINT_LABELS_FONT_SIZE,
                     },
-                    color: '#000',
+                    color: Config.BASE_COLOR,
                 },
                 grid: {
-                    color: '#000',
+                    color: Config.BASE_COLOR,
                 },
                 angleLines: {
-                    color: '#000',
+                    color: Config.BASE_COLOR,
                 },
             },
         },
         plugins: {
             legend: {
                 labels: {
-                    color: '#000',
+                    color: Config.BASE_COLOR,
                 },
             },
         },
     };
 
     return (
-        <div className="chart">
+        <div className={'chart'}>
             <Radar data={data} options={options} />
         </div>
     );

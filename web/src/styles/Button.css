@@ -12,4 +12,10 @@
         transform: translateY(4px);
         -webkit-transform: translateY(4px);
     }
+
+    &:disabled {
+        box-shadow: none;
+        transform: none;
+        -webkit-transform: none;
+    }
 }

@@ -5,10 +5,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 function App() {
     return (
-        <div className="App">
+        <div className={'App'}>
             <BrowserRouter>
                 <Header />
-                <main className="wrapper">
+                <main className={'wrapper'}>
                     <Router />
                 </main>
                 <Footer />

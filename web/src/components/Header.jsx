@@ -6,10 +6,10 @@ import * as Strings from '../constant/strings';
 
 const Header = () => {
     return (
-        <header className="header">
-            <h1 className="header__logo">
+        <header className={'header'}>
+            <h1 className={'header__logo'}>
                 <Link to={Strings.HOME_URL}>
-                    <img className="logo" src={Logo} alt="Space Fight" />
+                    <img className={'logo'} src={Logo} alt={''} />
                 </Link>
             </h1>
         </header>
