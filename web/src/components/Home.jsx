@@ -8,7 +8,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     const toGenerate = () => {
-        navigate(Strings.PARAM_SETTING_URL);
+        navigate(Strings.GENERATOR_URL);
     };
 
     return (

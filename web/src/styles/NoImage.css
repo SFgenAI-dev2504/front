@@ -1,0 +1,11 @@
+.no-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-height: 760px;
+    max-width: 80%;
+    border-radius: 16px;
+    border: 1px solid black;
+}

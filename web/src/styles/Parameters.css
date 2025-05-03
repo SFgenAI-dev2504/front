@@ -1,25 +1,14 @@
 .parameters {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-.left {
-    width: 50%;
-    padding: 24px 16px;
-    align-content: center;
-}
-
-.right {
-    width: 50%;
-    text-align: center;
-    align-content: center;
-}
-
-.parameters__container {
-    padding: 24px 16px;
+.container {
+    padding: 16px 0 32px;
+    margin-bottom: 32px;
     border-radius: 16px;
     background-color: #fce9ea;
-}
-
-.title {
-    margin-bottom: 8px;
+    width: 100%;
 }
