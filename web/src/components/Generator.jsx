@@ -1,74 +1,93 @@
-import React, { useState, useTransition } from 'react';
-import { Button, NoImage, RadarChart } from '../components/index';
+import React, { useState } from 'react';
+import { Button, NoImage, RadarChart, Parameters } from '../components/index';
 import '../styles/Generator.css';
 import * as Strings from '../constant/strings';
-import { MoonLoader } from 'react-spinners';
-import cardImg from '../assets/images/test_image.png';
-import Parameters from './Parameters';
+import * as Config from '../constant/config';
+import * as Dimens from '../constant/dimens';
+import { FadeLoader, MoonLoader } from 'react-spinners';
+import axios from 'axios';
+import { useSliderStore } from '../stores/store';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Generator = () => {
     const [results, setResults] = useState(null);
-    const [isPending, startTransition] = useTransition();
+    const [isLoading, setIsLoading] = useState(false);
+    const sliderValue = useSliderStore((state) => state.sliders);
 
-    const handleClick = () => {
-        startTransition(async () => {
-            const res = await fetchFakeData();
-            setResults(res);
-        });
+    const handleClick = async () => {
+        setIsLoading(true);
+        await generate();
     };
 
-    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    const fetchFakeData = async () => {
-        await sleep(1000);
-        return {
-            data: [
+    const generate = async () => {
+        axios
+            .post(
+                `${Config.GENERATE_API_URL}`,
                 {
-                    id: 1,
-                    element1: Math.floor(Math.random() * 101),
-                    element2: Math.floor(Math.random() * 101),
-                    element3: Math.floor(Math.random() * 101),
-                    element4: Math.floor(Math.random() * 101),
-                    element5: Math.floor(Math.random() * 101),
+                    diameter: sliderValue[0],
+                    mass: sliderValue[1],
+                    averageDistanceFromTheSun: sliderValue[2],
+                    revolutionPeriod: sliderValue[3],
+                    rotationPeriod: sliderValue[4],
                 },
                 {
-                    id: 2,
-                    element1: Math.floor(Math.random() * 101),
-                    element2: Math.floor(Math.random() * 101),
-                    element3: Math.floor(Math.random() * 101),
-                    element4: Math.floor(Math.random() * 101),
-                    element5: Math.floor(Math.random() * 101),
-                },
-            ],
-        };
+                    headers: Config.COMMON_HEADER,
+                }
+            )
+            .then((response) => {
+                setResults(response.data);
+                setIsLoading(false);
+                notify(true);
+                return response.data;
+            })
+            .catch((error) => {
+                console.log(error);
+                setResults(null);
+                setIsLoading(false);
+                notify(false);
+                return null;
+            });
+    };
+
+    const notify = (isSuccess) => {
+        const option = Dimens.TOAST_OPTION;
+        if (isSuccess) {
+            toast.info(Strings.SUCCESS_MESSAGE, option);
+        } else {
+            toast.error(Strings.FAILED_MESSAGE, option);
+        }
     };
 
     return (
-        <section className="generator">
+        <section className={'generator'}>
             <div className={'left'}>
-                <Parameters />
+                <Parameters disabled={isLoading} />
                 <Button
                     className={'button--primary'}
                     name={Strings.GENERATE_START_BUTTON}
+                    disabled={isLoading}
+                    disabledName={Strings.LOADING_BUTTON}
                     onClick={() => handleClick()}
                 />
             </div>
             <div className={'right'}>
-                {!results && !isPending && <NoImage />}
-                {isPending && (
-                    <div className="loading">
-                        <MoonLoader color="#00aac9" loading size={40} />
+                {!results && !isLoading && <NoImage />}
+                {isLoading && (
+                    <div className={'loading'}>
+                        <MoonLoader color={Dimens.LOADER_COLOR} />
                     </div>
                 )}
-                {results && !isPending && (
-                    <div className="image-container">
-                        <img src={cardImg} alt={''} />
-                        <div className="chart-wrapper">
-                            <p className="label">- DATA -</p>
+                {results && !isLoading && (
+                    <div className={'image-container'}>
+                        <img src={results.imageUrl} alt={''} />
+                        <div className={'chart-wrapper'}>
+                            <p className={'label'}>{Strings.DATA_LABEL}</p>
                             <RadarChart results={results} />
                         </div>
                     </div>
                 )}
             </div>
+            <ToastContainer />
         </section>
     );
 };

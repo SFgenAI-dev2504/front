@@ -4,15 +4,15 @@ import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
 import { Parameter } from './index';
 
-const Parameters = () => {
+const Parameters = (props) => {
     const calc = (value) => {
         return value * 100;
     };
 
     return (
-        <section className="parameters">
-            <div className="container">
-                <p className="title">{Strings.INPUT_INFO_LABEL}</p>
+        <section className={'parameters'}>
+            <div className={'container'}>
+                <p className={'title'}>{Strings.PARAMETER_INPUT_LABEL}</p>
                 <Parameter
                     name={Strings.DIAMETER}
                     unit={Strings.DIAMETER_UNIT}
@@ -23,10 +23,11 @@ const Parameters = () => {
                     onChange={calc}
                     index={0}
                     visible={true}
+                    disabled={props.disabled}
                 />
                 <Parameter
                     name={Strings.MASS}
-                    unit={Strings.MASS_UNIT}
+                    unit={Strings.MASS_START_UNIT}
                     min={Config.MASS_MIN}
                     max={Config.MASS_MAX}
                     step={Config.MASS_STEP}
@@ -34,6 +35,7 @@ const Parameters = () => {
                     onChange={calc}
                     index={1}
                     visible={false}
+                    disabled={props.disabled}
                 />
                 <Parameter
                     name={Strings.AVERAGE_DISTANCE_FROM_THE_SUN}
@@ -45,6 +47,7 @@ const Parameters = () => {
                     onChange={calc}
                     index={2}
                     visible={false}
+                    disabled={props.disabled}
                 />
                 <Parameter
                     name={Strings.REVOLUTION_PERIOD}
@@ -56,6 +59,7 @@ const Parameters = () => {
                     onChange={calc}
                     index={3}
                     visible={false}
+                    disabled={props.disabled}
                 />
                 <Parameter
                     name={Strings.ROTATION_PERIOD}
@@ -67,6 +71,7 @@ const Parameters = () => {
                     onChange={calc}
                     index={4}
                     visible={false}
+                    disabled={props.disabled}
                 />
             </div>
         </section>
