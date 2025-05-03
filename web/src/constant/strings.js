@@ -6,6 +6,7 @@ export const GENERATOR_URL = '/generator';
 // ボタン
 export const PARAM_SETTING_BUTTON = '開始する';
 export const GENERATE_START_BUTTON = '画像を生成する';
+export const BACK_BUTTON = '戻る';
 
 // ラベル
 export const INPUT_INFO_LABEL = 'ー入力情報ー';

@@ -4,14 +4,12 @@ import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
 import { Button, Parameter } from './index';
 import { useNavigate } from 'react-router-dom';
-import { useSliderStore } from '../stores/store';
 
 const Parameters = () => {
     const navigate = useNavigate();
 
     const toGenerate = () => {
-        alert('Hello world!');
-        // history.push(Strings.GENERATOR_URL)
+        navigate(Strings.GENERATOR_URL);
     };
 
     const calc = (value) => {
