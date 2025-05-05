@@ -10,12 +10,6 @@ import {
 import { Radar } from 'react-chartjs-2';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
-import {
-    CHART_BACKDROP_COLOR,
-    CHART_MAX,
-    CHART_STEP_SIZE,
-    POINT_LABELS_FONT_SIZE,
-} from '../constant/config';
 
 ChartJS.register(
     RadialLinearScale,

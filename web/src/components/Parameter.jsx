@@ -3,7 +3,6 @@ import '../styles/Parameter.css';
 import Slider from '@mui/material/Slider';
 import { useSliderStore } from '../stores/store';
 import * as Strings from '../constant/strings';
-import { PARAMETER_DETAIL_LABEL } from '../constant/strings';
 
 const Parameter = (props) => {
     const value = useSliderStore((state) => state.sliders[props.index]);

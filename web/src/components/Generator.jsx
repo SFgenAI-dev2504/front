@@ -4,7 +4,7 @@ import '../styles/Generator.css';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
 import * as Dimens from '../constant/dimens';
-import { FadeLoader, MoonLoader } from 'react-spinners';
+import { MoonLoader } from 'react-spinners';
 import axios from 'axios';
 import { useSliderStore } from '../stores/store';
 import { ToastContainer, toast } from 'react-toastify';
@@ -79,7 +79,11 @@ const Generator = () => {
                 )}
                 {results && !isLoading && (
                     <div className={'image-container'}>
-                        <img src={results.imageUrl} alt={''} />
+                        <img
+                            className={'image'}
+                            src={results.imageUrl}
+                            alt={''}
+                        />
                         <div className={'chart-wrapper'}>
                             <p className={'label'}>{Strings.DATA_LABEL}</p>
                             <RadarChart results={results} />
