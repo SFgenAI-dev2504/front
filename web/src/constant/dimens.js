@@ -6,7 +6,7 @@ export const LOADER_COLOR = '#00aac9';
 // Toast
 export const TOAST_OPTION = {
     position: 'top-right',
-    autoClose: 3000,
+    autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: false,
     pauseOnHover: true,

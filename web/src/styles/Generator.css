@@ -62,6 +62,6 @@
     font-size: 0.8rem;
 }
 
-img {
-    max-height: 760px;
+.image {
+    height: 760px;
 }
