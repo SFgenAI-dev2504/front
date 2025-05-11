@@ -6,13 +6,14 @@ import * as Config from '../constant/config';
 import * as Dimens from '../constant/dimens';
 import { MoonLoader } from 'react-spinners';
 import axios from 'axios';
-import { useSliderStore } from '../stores/store';
+import { usePlanetNameStore, useSliderStore } from '../stores/store';
 import { ToastContainer, toast } from 'react-toastify';
 
 const Generator = () => {
     const [results, setResults] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const sliderValue = useSliderStore((state) => state.sliders);
+    const planetName = usePlanetNameStore((state) => state.planetName);
 
     const handleClick = async () => {
         setIsLoading(true);
@@ -29,6 +30,7 @@ const Generator = () => {
                     averageDistanceFromTheSun: sliderValue[2],
                     revolutionPeriod: sliderValue[3],
                     rotationPeriod: sliderValue[4],
+                    planetName: planetName,
                 },
                 {
                     headers: Config.COMMON_HEADER,
