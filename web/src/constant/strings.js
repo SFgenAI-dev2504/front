@@ -28,11 +28,12 @@ export const MASS = '質量：';
 export const AVERAGE_DISTANCE_FROM_THE_SUN = '太陽からの平均距離：';
 export const REVOLUTION_PERIOD = '公転周期：';
 export const ROTATION_PERIOD = '自転周期：';
+export const PLANET_NAME = '惑星の名前：';
 
 // パラメータ(単位)
 export const DIAMETER_UNIT = '(km)';
 export const MASS_START_UNIT = '(kg×10';
-export const MASS_END_UNIT = '24)';
+export const MASS_END_UNIT = '24';
 export const AVERAGE_DISTANCE_FROM_THE_SUN_UNIT = '(百万km)';
 export const REVOLUTION_PERIOD_UNIT = '(日)';
 export const ROTATION_PERIOD_UNIT = '(時間)';

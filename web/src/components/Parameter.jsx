@@ -17,6 +17,7 @@ const Parameter = (props) => {
                     <p className={'unit'}>
                         {props.unit}
                         <sup>{Strings.MASS_END_UNIT}</sup>
+                        <span>)</span>
                     </p>
                 ) : (
                     <p className={'unit'}>{props.unit}</p>

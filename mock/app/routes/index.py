@@ -16,13 +16,16 @@ def generate():
     rotation_period = req.get("rotationPeriod")
 
     image_urls = [
-        "test_image1.png",
-        "test_image2.jpeg",
-        "test_image3.jpeg",
-        "test_image4.jpeg",
-        "test_image5.jpeg",
-        "test_image6.jpeg",
-        "test_image7.jpeg",
+        "Andromeda_Galaxy.png",
+        "Betelgeuse.png",
+        "Cat_s_Eye_Nebula.png",
+        "Crab_Nebula.png",
+        "Horsehead_Nebula.png",
+        "Mercury.png",
+        "Pillars_of_Creation.png",
+        "Sun.png",
+        "Venus.png",
+        "Whirlpool_Galaxy.png",
     ]
 
     random.shuffle(image_urls)
