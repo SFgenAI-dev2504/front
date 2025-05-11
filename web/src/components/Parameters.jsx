@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Parameters.css';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
-import { Parameter } from './index';
+import { Parameter, ParameterText } from './index';
 
 const Parameters = (props) => {
     const calc = (value) => {
@@ -71,6 +71,10 @@ const Parameters = (props) => {
                     onChange={calc}
                     index={4}
                     visible={false}
+                    disabled={props.disabled}
+                />
+                <ParameterText
+                    name={Strings.PLANET_NAME}
                     disabled={props.disabled}
                 />
             </div>

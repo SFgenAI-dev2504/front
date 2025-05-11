@@ -16,3 +16,11 @@ export const useSliderStore = create((set) => ({
             return { sliders: newSliders };
         }),
 }));
+
+export const usePlanetNameStore = create((set) => ({
+    planetName: '',
+    setPlanetName: (value) =>
+        set(() => {
+            return { planetName: value };
+        }),
+}));
