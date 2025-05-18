@@ -5,6 +5,7 @@ services:
     build: ./web
     ports:
       - "3000:3000"
+    restart: always
     depends_on:
       - mock
     environment:
@@ -17,6 +18,7 @@ services:
     build: ./mock
     ports:
       - "5000:5000"
+    restart: always
     volumes:
       - ./mock:/app
     depends_on:

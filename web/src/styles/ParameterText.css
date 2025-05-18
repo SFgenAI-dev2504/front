@@ -1,0 +1,11 @@
+.parameter__text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    width: 90%;
+}
+
+.planet__name {
+    width: 180px;
+}

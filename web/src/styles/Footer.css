@@ -1,0 +1,11 @@
+.footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: lightgray;
+}
+
+.footer__copy {
+    color: black;
+    font-size: 0.75rem;
+    padding: 8px 0;
+}
