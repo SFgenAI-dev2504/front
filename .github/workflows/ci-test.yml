@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: 22.15.0
           cache: 'yarn'
-          cache-dependency-path: front/web/yarn.lock
+          cache-dependency-path: web/yarn.lock
       - name: Install dependencies
         run: yarn install
-        working-directory: front/web
+        working-directory: web
       - name: Run tests
         run: yarn test
-        working-directory: front/web
+        working-directory: web
