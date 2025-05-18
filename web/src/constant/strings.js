@@ -43,4 +43,4 @@ export const SUCCESS_MESSAGE = '画像の生成に成功しました。';
 export const FAILED_MESSAGE = '画像の生成に失敗しました。';
 
 // コピーライト
-export const COPY_RIGHT = '2025 SPACE FIGHT';
+export const COPY_RIGHT = '2025 SPACE AI MAKER';
