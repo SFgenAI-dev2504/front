@@ -1,6 +1,6 @@
-# SFgenAI-Front
+# SPACE AI MAKER - Front
 
-本リポジトリはSFgenAIのフロントエンドのリポジトリである。
+本リポジトリはSPACE AI MAKERのフロントエンドのリポジトリである。
 
 ## 改訂履歴
 
@@ -9,6 +9,7 @@
 | 2025/04/28 | 今村  | 新規作成                      |
 | 2025/04/29 | 今村  | 環境構築手順を修正した。              |
 | 2025/05/03 | 今村  | 開発環境と環境構築手順とNodeの内容を追記した。 |
+| 2025/05/20 | 今村  | タイトルの更新と開発手順の誤記を修正した。     |
 
 ## 開発環境
 
@@ -73,7 +74,7 @@ Docker Compose version v2.10.2
 
 * https://nodejs.org/ja/download
 
-### 3. Pythonのインストール
+### 4. Pythonのインストール
 
 以下のURLからPythonの3.11.9をインストールする。(mock用)
 
@@ -83,7 +84,7 @@ Docker Compose version v2.10.2
 
 * https://www.python.org/downloads/release/python-31112/
 
-### 4. ソースコードのClone
+### 5. ソースコードのClone
 
 Forkの左のメニューにある「Repository」右クリックして、「Clone...」を選択する。
 
@@ -99,7 +100,7 @@ Forkの左のメニューにある「Repository」右クリックして、「Clo
 
 「Location」に指定した場所のソースコードがコピーされる。
 
-### 4. Webアプリの起動
+### 6. Webアプリの起動
 
 以下のコマンドを実行して、イメージをビルドしてコンテナを起動する。(※基本初回のみ)
 
@@ -121,7 +122,7 @@ Dockerコンテナの中でコマンドを実行したい場合は、以下の�
 
 ```
 // webのコンテナ(フロントエンド)に入る場合
-& docker-compose exec mock bash
+$ docker-compose exec mock bash
 
 // mockのコンテナ(バックエンドのmock用)に入る場合
 $ docker-compose exec mock bash
