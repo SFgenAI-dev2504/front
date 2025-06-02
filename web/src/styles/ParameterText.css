@@ -9,3 +9,8 @@
 .planet__name {
     width: 180px;
 }
+
+.suffix {
+    margin-left: 4px;
+    font-weight: bold;
+}

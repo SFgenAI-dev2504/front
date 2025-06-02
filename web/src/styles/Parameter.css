@@ -12,7 +12,6 @@
 }
 
 .value {
-    margin-left: 16px;
 }
 
 .unit {
@@ -36,12 +35,12 @@
 
 .slidebar__container {
     display: flex;
-    margin-top: 16px;
+    margin-top: 8px;
     align-items: center;
 }
 
 .slidebar {
-    padding-right: 48px;
+    padding-right: 4px;
     width: 80%;
 }
 

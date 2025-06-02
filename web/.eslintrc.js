@@ -20,6 +20,17 @@ module.exports = {
     "no-unused-vars": "warn",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
+    "max-len": [
+      "warn",
+      {
+        code: 80,
+        tabWidth: 4,
+        ignoreComments: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreUrls: true,
+      },
+    ],
   },
   settings: {
     react: {

@@ -2,75 +2,138 @@ import React from 'react';
 import '../styles/Parameters.css';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
-import { Parameter, ParameterText } from './index';
+import { Parameter, ParameterText, PlanetTypeSelection } from './index';
+import {
+    calcAverageSurfaceTemperature,
+    calcDiameter,
+    calcDistanceFromSun,
+    calcGravity,
+} from '../core/util/earthRelativeCalculator';
+import PromptType from '../models/PromptType';
 
 const Parameters = (props) => {
-    const calc = (value) => {
-        return value * 100;
-    };
-
     return (
         <section className={'parameters'}>
             <div className={'container'}>
-                <p className={'title'}>{Strings.PARAMETER_INPUT_LABEL}</p>
+                <div className={'first_row'}>
+                    <p className={'title'}>{Strings.PARAMETER_INPUT_LABEL}</p>
+                    <PlanetTypeSelection disabled={props.disabled} />
+                </div>
                 <Parameter
+                    type={PromptType.DIAMETER}
                     name={Strings.DIAMETER}
                     unit={Strings.DIAMETER_UNIT}
                     min={Config.DIAMETER_MIN}
                     max={Config.DIAMETER_MAX}
                     step={Config.DIAMETER_STEP}
-                    defaultValue={Config.DIAMETER_DEFAULT}
-                    onChange={calc}
+                    defaultValue={props.defaultValue}
+                    onChange={calcDiameter}
                     index={0}
-                    visible={true}
+                    subtileLabelVisible={true}
                     disabled={props.disabled}
                 />
                 <Parameter
-                    name={Strings.MASS}
-                    unit={Strings.MASS_START_UNIT}
-                    min={Config.MASS_MIN}
-                    max={Config.MASS_MAX}
-                    step={Config.MASS_STEP}
-                    defaultValue={Config.MASS_DEFAULT}
-                    onChange={calc}
+                    type={PromptType.GRAVITY}
+                    name={Strings.GRAVITY}
+                    unit={Strings.GRAVITY_UNIT}
+                    min={Config.GRAVITY_MIN}
+                    max={Config.GRAVITY_MAX}
+                    step={Config.GRAVITY_STEP}
+                    defaultValue={props.defaultValue}
+                    onChange={calcGravity}
                     index={1}
-                    visible={false}
+                    subtileLabelVisible={false}
                     disabled={props.disabled}
                 />
                 <Parameter
-                    name={Strings.AVERAGE_DISTANCE_FROM_THE_SUN}
-                    unit={Strings.AVERAGE_DISTANCE_FROM_THE_SUN_UNIT}
-                    min={Config.AVERAGE_DISTANCE_FROM_THE_SUN_MIN}
-                    max={Config.AVERAGE_DISTANCE_FROM_THE_SUN_MAX}
-                    step={Config.AVERAGE_DISTANCE_FROM_THE_SUN_STEP}
-                    defaultValue={Config.AVERAGE_DISTANCE_FROM_THE_SUN_DEFAULT}
-                    onChange={calc}
+                    type={PromptType.DISTANCE_FROM_SUN}
+                    name={Strings.DISTANCE_FROM_THE_SUN}
+                    unit={Strings.DISTANCE_FROM_THE_SUN_UNIT}
+                    min={Config.DISTANCE_FROM_SUN_MIN}
+                    max={Config.DISTANCE_FROM_SUN_MAX}
+                    step={Config.DISTANCE_FROM_SUN_STEP}
+                    defaultValue={props.defaultValue}
+                    onChange={calcDistanceFromSun}
                     index={2}
-                    visible={false}
+                    subtileLabelVisible={false}
                     disabled={props.disabled}
                 />
                 <Parameter
-                    name={Strings.REVOLUTION_PERIOD}
-                    unit={Strings.REVOLUTION_PERIOD_UNIT}
-                    min={Config.REVOLUTION_PERIOD_MIN}
-                    max={Config.REVOLUTION_PERIOD_MAX}
-                    step={Config.REVOLUTION_PERIOD_STEP}
-                    defaultValue={Config.REVOLUTION_PERIOD_DEFAULT}
-                    onChange={calc}
+                    type={PromptType.AVERAGE_SURFACE_TEMPERATURE}
+                    name={Strings.AVERAGE_SURFACE_TEMPERATURE}
+                    unit={Strings.AVERAGE_SURFACE_TEMPERATURE_UNIT}
+                    min={Config.AVERAGE_SURFACE_TEMPERATURE_MIN}
+                    max={Config.AVERAGE_SURFACE_TEMPERATURE_MAX}
+                    step={Config.AVERAGE_SURFACE_TEMPERATURE_STEP}
+                    defaultValue={props.defaultValue}
+                    onChange={calcAverageSurfaceTemperature}
                     index={3}
-                    visible={false}
+                    subtileLabelVisible={false}
                     disabled={props.disabled}
                 />
                 <Parameter
-                    name={Strings.ROTATION_PERIOD}
-                    unit={Strings.ROTATION_PERIOD_UNIT}
-                    min={Config.ROTATION_PERIOD_MIN}
-                    max={Config.ROTATION_PERIOD_MAX}
-                    step={Config.ROTATION_PERIOD_STEP}
-                    defaultValue={Config.ROTATION_PERIOD_DEFAULT}
-                    onChange={calc}
+                    type={PromptType.ATMOSPHERIC_DENSITY}
+                    name={Strings.ATMOSPHERIC_DENSITY}
+                    unit={Strings.ATMOSPHERIC_DENSITY_UNIT}
+                    min={Config.ATMOSPHERIC_DENSITY_MIN}
+                    max={Config.ATMOSPHERIC_DENSITY_MAX}
+                    step={Config.ATMOSPHERIC_DENSITY_STEP}
+                    defaultValue={props.defaultValue}
+                    onChange={null}
                     index={4}
-                    visible={false}
+                    subtileLabelVisible={false}
+                    disabled={props.disabled}
+                />
+                <Parameter
+                    type={PromptType.WATER_AMOUNT}
+                    name={Strings.WATER_AMOUNT}
+                    unit={Strings.WATER_AMOUNT_UNIT}
+                    min={Config.WATER_AMOUNT_MIN}
+                    max={Config.WATER_AMOUNT_MAX}
+                    step={Config.WATER_AMOUNT_STEP}
+                    defaultValue={props.defaultValue}
+                    onChange={null}
+                    index={5}
+                    subtileLabelVisible={false}
+                    disabled={props.disabled}
+                />
+                <Parameter
+                    type={PromptType.SURFACE_UNEVENNESS}
+                    name={Strings.SURFACE_UNEVENNESS}
+                    unit={Strings.SURFACE_UNEVENNESS_UNIT}
+                    min={Config.SURFACE_UNEVENNESS_MIN}
+                    max={Config.SURFACE_UNEVENNESS_MAX}
+                    step={Config.SURFACE_UNEVENNESS_STEP}
+                    defaultValue={props.defaultValue}
+                    onChange={null}
+                    index={6}
+                    subtileLabelVisible={false}
+                    disabled={props.disabled}
+                />
+                <Parameter
+                    type={PromptType.VOLCANIC_ACTIVITY}
+                    name={Strings.VOLCANIC_ACTIVITY}
+                    unit={Strings.VOLCANIC_ACTIVITY_UNIT}
+                    min={Config.VOLCANIC_ACTIVITY_MIN}
+                    max={Config.VOLCANIC_ACTIVITY_MAX}
+                    step={Config.VOLCANIC_ACTIVITY_STEP}
+                    defaultValue={props.defaultValue}
+                    onChange={null}
+                    index={7}
+                    subtileLabelVisible={false}
+                    disabled={props.disabled}
+                />
+                <Parameter
+                    type={PromptType.AURORA}
+                    name={Strings.AURORA}
+                    unit={Strings.AURORA_UNIT}
+                    min={Config.AURORA_MIN}
+                    max={Config.AURORA_MAX}
+                    step={Config.AURORA_STEP}
+                    defaultValue={props.defaultValue}
+                    onChange={null}
+                    index={8}
+                    subtileLabelVisible={false}
                     disabled={props.disabled}
                 />
                 <ParameterText
