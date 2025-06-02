@@ -126,7 +126,7 @@ export const useSliderStore = create((set) => ({
                     newSliders[PromptType.GRAVITY] =
                         Config.URANUS_GRAVITY_VALUE;
                     newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.URANUS_DISTANCE_FROM_THE_SUN_VALUE;
+                        Config.URANUS_DISTANCE_FROM_SUN_VALUE;
                     newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
                         Config.URANUS_AVERAGE_SURFACE_TEMPERATURE_VALUE;
                     newSliders[PromptType.ATMOSPHERIC_DENSITY] =

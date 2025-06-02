@@ -1,4 +1,4 @@
-import * as EmptyValidator from './EmptyValidator';
+import * as EmptyValidator from './emptyValidator';
 
 export const validateMin = (input, min) => {
     if (!EmptyValidator.validate(input)) {

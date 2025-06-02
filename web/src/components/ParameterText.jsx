@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/ParameterText.css';
 import { usePlanetNameStore } from '../stores/store';
 import * as Strings from '../constant/strings';
-import { validateMinAndMax } from '../core/validator/LengthValidator';
+import { validateMinAndMax } from '../core/validator/lengthValidator';
 
 const ParameterText = (props) => {
     const planetName = usePlanetNameStore((state) => state.planetName);

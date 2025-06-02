@@ -9,7 +9,7 @@ import axios from 'axios';
 import { usePlanetNameStore, useSliderStore } from '../stores/store';
 import { ToastContainer } from 'react-toastify';
 import { error, success, warn } from '../core/notify/notify';
-import { validateMinAndMax } from '../core/validator/LengthValidator';
+import { validateMinAndMax } from '../core/validator/lengthValidator';
 
 const Generator = () => {
     const [results, setResults] = useState(null);

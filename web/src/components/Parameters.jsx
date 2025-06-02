@@ -8,7 +8,7 @@ import {
     calcDiameter,
     calcDistanceFromSun,
     calcGravity,
-} from '../core/EarthRelativeCalculator';
+} from '../core/util/earthRelativeCalculator';
 import PromptType from '../models/PromptType';
 
 const Parameters = (props) => {
@@ -17,9 +17,7 @@ const Parameters = (props) => {
             <div className={'container'}>
                 <div className={'first_row'}>
                     <p className={'title'}>{Strings.PARAMETER_INPUT_LABEL}</p>
-                    <PlanetTypeSelection
-                        disabled={props.disabled}
-                    />
+                    <PlanetTypeSelection disabled={props.disabled} />
                 </div>
                 <Parameter
                     type={PromptType.DIAMETER}

@@ -1,22 +1,21 @@
 import React from 'react';
 import '../styles/Parameter.css';
 import Slider from '@mui/material/Slider';
-import { usePlanetTypeStore, useSliderStore } from '../stores/store';
+import { useSliderStore } from '../stores/store';
 import * as Strings from '../constant/strings';
-import { formatString, to2DecimalString } from '../core/DisplayUtil';
+import { toLocaleString } from '../core/util/stringFormat';
 
 const Parameter = (props) => {
     const value = useSliderStore((state) => state.sliders[props.type]);
     const setSliderValueByPromptType = useSliderStore(
         (state) => state.setSliderValueByPromptType
     );
-    const planetType = usePlanetTypeStore((state) => state.planetType);
 
     return (
         <section className={'parameter'}>
             <div className={'label__container'}>
                 <p className={'name'}>{props.name}</p>
-                <p className={'value'}>{formatString(value)}</p>
+                <p className={'value'}>{toLocaleString(props.type, value)}</p>
                 <p className={'unit'}>{props.unit}</p>
             </div>
             <div className={'slidebar__container'}>
@@ -29,7 +28,7 @@ const Parameter = (props) => {
                         }
                         color={'primary'}
                         defaultValue={props.defaultValue}
-                        valueLabelDisplay={'auto'}
+                        valueLabelDisplay={'off'}
                         shiftStep={props.step}
                         step={props.step}
                         min={props.min}
@@ -45,9 +44,7 @@ const Parameter = (props) => {
                     )}
                     {props.onChange !== null && (
                         <p className={'subtitle__value'}>
-                            {to2DecimalString(
-                                props.onChange(planetType, value)
-                            ) + ' 倍'}
+                            {props.onChange(value) + ' 倍'}
                         </p>
                     )}
                 </div>
