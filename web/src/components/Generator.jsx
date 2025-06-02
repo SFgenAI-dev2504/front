@@ -7,7 +7,9 @@ import * as Dimens from '../constant/dimens';
 import { MoonLoader } from 'react-spinners';
 import axios from 'axios';
 import { usePlanetNameStore, useSliderStore } from '../stores/store';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import { error, success, warn } from '../core/notify/notify';
+import { validateMinAndMax } from '../core/validator/LengthValidator';
 
 const Generator = () => {
     const [results, setResults] = useState(null);
@@ -16,48 +18,37 @@ const Generator = () => {
     const planetName = usePlanetNameStore((state) => state.planetName);
 
     const handleClick = async () => {
+        if (!validateMinAndMax(planetName, 1, 6)) {
+            warn(Strings.PLANET_NAME_VALIDATE_WARN_MESSAGE);
+            return;
+        }
+
         setIsLoading(true);
         await generate();
     };
 
     const generate = async () => {
+        const payload = {
+            ...sliderValue,
+            planetName: `${planetName}${Strings.PLANET_NAME_SUFFIX}`,
+        };
         axios
-            .post(
-                `${Config.GENERATE_API_URL}`,
-                {
-                    diameter: sliderValue[0],
-                    mass: sliderValue[1],
-                    averageDistanceFromTheSun: sliderValue[2],
-                    revolutionPeriod: sliderValue[3],
-                    rotationPeriod: sliderValue[4],
-                    planetName: planetName,
-                },
-                {
-                    headers: Config.COMMON_HEADER,
-                }
-            )
+            .post(`${Config.GENERATE_API_URL}`, payload, {
+                headers: Config.COMMON_HEADER,
+            })
             .then((response) => {
                 setResults(response.data);
                 setIsLoading(false);
-                notify(true);
+                success(Strings.SUCCESS_GENERATOR_MESSAGE);
                 return response.data;
             })
-            .catch((error) => {
-                console.log(error);
+            .catch((e) => {
+                console.log(e);
                 setResults(null);
                 setIsLoading(false);
-                notify(false);
+                error(Strings.FAILED_GENERATOR_MESSAGE);
                 return null;
             });
-    };
-
-    const notify = (isSuccess) => {
-        const option = Dimens.TOAST_OPTION;
-        if (isSuccess) {
-            toast.info(Strings.SUCCESS_MESSAGE, option);
-        } else {
-            toast.error(Strings.FAILED_MESSAGE, option);
-        }
     };
 
     return (

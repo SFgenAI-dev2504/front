@@ -12,3 +12,11 @@
     background-color: #fce9ea;
     width: 100%;
 }
+
+.first_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}

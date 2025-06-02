@@ -1,10 +1,16 @@
 import React from 'react';
 import '../styles/ParameterText.css';
 import { usePlanetNameStore } from '../stores/store';
+import * as Strings from '../constant/strings';
+import { validateMinAndMax } from '../core/validator/LengthValidator';
 
 const ParameterText = (props) => {
     const planetName = usePlanetNameStore((state) => state.planetName);
     const setPlanetName = usePlanetNameStore((state) => state.setPlanetName);
+
+    const validator = (value) => {
+        return validateMinAndMax(value, 1, 6);
+    };
 
     return (
         <section className={'parameter__text'}>
@@ -15,9 +21,12 @@ const ParameterText = (props) => {
                 type={'text'}
                 autoComplete={'off'}
                 value={planetName}
-                onChange={(e) => setPlanetName(e.target.value)}
                 disabled={props.disabled}
+                onChange={(e) => {
+                    setPlanetName(e.target.value);
+                }}
             />
+            <p className={'suffix'}>{Strings.PLANET_NAME_SUFFIX}</p>
         </section>
     );
 };
