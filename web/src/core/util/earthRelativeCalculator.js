@@ -12,16 +12,14 @@ export const calcGravity = (input) => {
     ).toFixed(2);
 };
 
-export const calcDistanceFromSun = (input) => {
+export const calcDistance = (input) => {
     return (
-        Math.round((input / Config.EARTH_DISTANCE_FROM_SUN_VALUE) * 100) / 100
+        Math.round((input / Config.EARTH_DISTANCE_VALUE) * 100) / 100
     ).toFixed(2);
 };
 
-export const calcAverageSurfaceTemperature = (input) => {
+export const calcTemperature = (input) => {
     return (
-        Math.round(
-            (input / Config.EARTH_AVERAGE_SURFACE_TEMPERATURE_VALUE) * 100
-        ) / 100
+        Math.round((input / Config.EARTH_TEMPERATURE_VALUE) * 100) / 100
     ).toFixed(2);
 };

@@ -4,9 +4,9 @@ import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
 import { Parameter, ParameterText, PlanetTypeSelection } from './index';
 import {
-    calcAverageSurfaceTemperature,
+    calcTemperature,
     calcDiameter,
-    calcDistanceFromSun,
+    calcDistance,
     calcGravity,
 } from '../core/util/earthRelativeCalculator';
 import PromptType from '../models/PromptType';
@@ -46,38 +46,38 @@ const Parameters = (props) => {
                     disabled={props.disabled}
                 />
                 <Parameter
-                    type={PromptType.DISTANCE_FROM_SUN}
-                    name={Strings.DISTANCE_FROM_THE_SUN}
-                    unit={Strings.DISTANCE_FROM_THE_SUN_UNIT}
-                    min={Config.DISTANCE_FROM_SUN_MIN}
-                    max={Config.DISTANCE_FROM_SUN_MAX}
-                    step={Config.DISTANCE_FROM_SUN_STEP}
+                    type={PromptType.DISTANCE}
+                    name={Strings.DISTANCE}
+                    unit={Strings.DISTANCE_UNIT}
+                    min={Config.DISTANCE_MIN}
+                    max={Config.DISTANCE_MAX}
+                    step={Config.DISTANCE_STEP}
                     defaultValue={props.defaultValue}
-                    onChange={calcDistanceFromSun}
+                    onChange={calcDistance}
                     index={2}
                     subtileLabelVisible={false}
                     disabled={props.disabled}
                 />
                 <Parameter
-                    type={PromptType.AVERAGE_SURFACE_TEMPERATURE}
-                    name={Strings.AVERAGE_SURFACE_TEMPERATURE}
-                    unit={Strings.AVERAGE_SURFACE_TEMPERATURE_UNIT}
-                    min={Config.AVERAGE_SURFACE_TEMPERATURE_MIN}
-                    max={Config.AVERAGE_SURFACE_TEMPERATURE_MAX}
-                    step={Config.AVERAGE_SURFACE_TEMPERATURE_STEP}
+                    type={PromptType.TEMPERATURE}
+                    name={Strings.TEMPERATURE}
+                    unit={Strings.TEMPERATURE_UNIT}
+                    min={Config.TEMPERATURE_MIN}
+                    max={Config.TEMPERATURE_MAX}
+                    step={Config.TEMPERATURE_STEP}
                     defaultValue={props.defaultValue}
-                    onChange={calcAverageSurfaceTemperature}
+                    onChange={calcTemperature}
                     index={3}
                     subtileLabelVisible={false}
                     disabled={props.disabled}
                 />
                 <Parameter
-                    type={PromptType.ATMOSPHERIC_DENSITY}
-                    name={Strings.ATMOSPHERIC_DENSITY}
-                    unit={Strings.ATMOSPHERIC_DENSITY_UNIT}
-                    min={Config.ATMOSPHERIC_DENSITY_MIN}
-                    max={Config.ATMOSPHERIC_DENSITY_MAX}
-                    step={Config.ATMOSPHERIC_DENSITY_STEP}
+                    type={PromptType.ATMOSPHERE}
+                    name={Strings.ATMOSPHERE}
+                    unit={Strings.ATMOSPHERE_UNIT}
+                    min={Config.ATMOSPHERE_MIN}
+                    max={Config.ATMOSPHERE_MAX}
+                    step={Config.ATMOSPHERE_STEP}
                     defaultValue={props.defaultValue}
                     onChange={null}
                     index={4}
@@ -85,12 +85,12 @@ const Parameters = (props) => {
                     disabled={props.disabled}
                 />
                 <Parameter
-                    type={PromptType.WATER_AMOUNT}
-                    name={Strings.WATER_AMOUNT}
-                    unit={Strings.WATER_AMOUNT_UNIT}
-                    min={Config.WATER_AMOUNT_MIN}
-                    max={Config.WATER_AMOUNT_MAX}
-                    step={Config.WATER_AMOUNT_STEP}
+                    type={PromptType.WATER}
+                    name={Strings.WATER}
+                    unit={Strings.WATER_UNIT}
+                    min={Config.WATER_MIN}
+                    max={Config.WATER_MAX}
+                    step={Config.WATER_STEP}
                     defaultValue={props.defaultValue}
                     onChange={null}
                     index={5}
@@ -98,12 +98,12 @@ const Parameters = (props) => {
                     disabled={props.disabled}
                 />
                 <Parameter
-                    type={PromptType.SURFACE_UNEVENNESS}
-                    name={Strings.SURFACE_UNEVENNESS}
-                    unit={Strings.SURFACE_UNEVENNESS_UNIT}
-                    min={Config.SURFACE_UNEVENNESS_MIN}
-                    max={Config.SURFACE_UNEVENNESS_MAX}
-                    step={Config.SURFACE_UNEVENNESS_STEP}
+                    type={PromptType.TERRAIN}
+                    name={Strings.TERRAIN}
+                    unit={Strings.TERRAIN_UNIT}
+                    min={Config.TERRAIN_MIN}
+                    max={Config.TERRAIN_MAX}
+                    step={Config.TERRAIN_STEP}
                     defaultValue={props.defaultValue}
                     onChange={null}
                     index={6}
@@ -111,12 +111,12 @@ const Parameters = (props) => {
                     disabled={props.disabled}
                 />
                 <Parameter
-                    type={PromptType.VOLCANIC_ACTIVITY}
-                    name={Strings.VOLCANIC_ACTIVITY}
-                    unit={Strings.VOLCANIC_ACTIVITY_UNIT}
-                    min={Config.VOLCANIC_ACTIVITY_MIN}
-                    max={Config.VOLCANIC_ACTIVITY_MAX}
-                    step={Config.VOLCANIC_ACTIVITY_STEP}
+                    type={PromptType.VOLCANO}
+                    name={Strings.VOLCANO}
+                    unit={Strings.VOLCANO_UNIT}
+                    min={Config.VOLCANO_MIN}
+                    max={Config.VOLCANO_MAX}
+                    step={Config.VOLCANO_STEP}
                     defaultValue={props.defaultValue}
                     onChange={null}
                     index={7}

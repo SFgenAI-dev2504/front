@@ -1,8 +1,8 @@
 import {
   calcDiameter,
-  calcDistanceFromSun,
+  calcDistance,
   calcGravity,
-  calcAverageSurfaceTemperature,
+  calcTemperature,
 } from "../../../src/core/util/earthRelativeCalculator";
 
 describe("earthRelativeCalculator.js tests", () => {
@@ -92,84 +92,84 @@ describe("earthRelativeCalculator.js tests", () => {
 
   describe("test_calcDistanceFromSun", () => {
     it("test_calcDistanceFromSun_PlanetType.MERCURY_input_58_is_0.39", () => {
-      const result = calcDistanceFromSun(58);
+      const result = calcDistance(58);
       expect(result).toBe("0.39");
     });
 
     it("test_calcDistanceFromSun_PlanetType.VENUS_input_108_is_0.72", () => {
-      const result = calcDistanceFromSun(108);
+      const result = calcDistance(108);
       expect(result).toBe("0.72");
     });
 
     it("test_calcDistanceFromSun_PlanetType.EARTH_input_150_is_1.00", () => {
-      const result = calcDistanceFromSun(150);
+      const result = calcDistance(150);
       expect(result).toBe("1.00");
     });
 
     it("test_calcDistanceFromSun_PlanetType.MARS_input_228_is_1.52", () => {
-      const result = calcDistanceFromSun(228);
+      const result = calcDistance(228);
       expect(result).toBe("1.52");
     });
 
     it("test_calcDistanceFromSun_PlanetType.JUPITER_input_778_is_5.19", () => {
-      const result = calcDistanceFromSun(778);
+      const result = calcDistance(778);
       expect(result).toBe("5.19");
     });
 
     it("test_calcDistanceFromSun_PlanetType.SATURN_input_1427_is_9.51", () => {
-      const result = calcDistanceFromSun(1427);
+      const result = calcDistance(1427);
       expect(result).toBe("9.51");
     });
 
     it("test_calcDistanceFromSun_PlanetType.URANUS_input_2871_is_19.14", () => {
-      const result = calcDistanceFromSun(2871);
+      const result = calcDistance(2871);
       expect(result).toBe("19.14");
     });
 
     it("test_calcDistanceFromSun_PlanetType.NEPTUNE_input_4495_is_29.97", () => {
-      const result = calcDistanceFromSun(4495);
+      const result = calcDistance(4495);
       expect(result).toBe("29.97");
     });
   });
 
   describe("test_calcAverageSurfaceTemperature", () => {
     it("test_calcAverageSurfaceTemperature_PlanetType.MERCURY_input_167_is_11.13", () => {
-      const result = calcAverageSurfaceTemperature(167);
+      const result = calcTemperature(167);
       expect(result).toBe("11.13");
     });
 
     it("test_calcAverageSurfaceTemperature_PlanetType.VENUS_input_464_is_30.93", () => {
-      const result = calcAverageSurfaceTemperature(464);
+      const result = calcTemperature(464);
       expect(result).toBe("30.93");
     });
 
     it("test_calcAverageSurfaceTemperature_PlanetType.EARTH_input_15_is_1.00", () => {
-      const result = calcAverageSurfaceTemperature(15);
+      const result = calcTemperature(15);
       expect(result).toBe("1.00");
     });
 
     it("test_calcAverageSurfaceTemperature_PlanetType.MARS_input_-65_is_-4.33", () => {
-      const result = calcAverageSurfaceTemperature(-65);
+      const result = calcTemperature(-65);
       expect(result).toBe("-4.33");
     });
 
     it("test_calcAverageSurfaceTemperature_PlanetType.JUPITER_input_-110_is_-7.33", () => {
-      const result = calcAverageSurfaceTemperature(-110);
+      const result = calcTemperature(-110);
       expect(result).toBe("-7.33");
     });
 
     it("test_calcAverageSurfaceTemperature_PlanetType.SATURN_input_-140_is_-9.33", () => {
-      const result = calcAverageSurfaceTemperature(-140);
+      const result = calcTemperature(-140);
       expect(result).toBe("-9.33");
     });
 
     it("test_calcAverageSurfaceTemperature_PlanetType.URANUS_input_-195_is_-13.00", () => {
-      const result = calcAverageSurfaceTemperature(-195);
+      const result = calcTemperature(-195);
       expect(result).toBe("-13.00");
     });
 
     it("test_calcAverageSurfaceTemperature_PlanetType.NEPTUNE_input_-200_is_-13.33", () => {
-      const result = calcAverageSurfaceTemperature(-200);
+      const result = calcTemperature(-200);
       expect(result).toBe("-13.33");
     });
   });
