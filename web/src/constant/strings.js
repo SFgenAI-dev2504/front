@@ -1,6 +1,4 @@
 // URL
-import { NEPTUNE_DIAMETER_VALUE, VENUS_DIAMETER_VALUE } from './config';
-
 export const HOME_URL = '/';
 export const GENERATOR_URL = '/generator';
 
@@ -36,23 +34,23 @@ export const NO_IMAGE = 'No Image...';
 export const PLANET_NAME = '惑星の名前：';
 export const DIAMETER = '直径：';
 export const GRAVITY = '重力：';
-export const DISTANCE_FROM_THE_SUN = '太陽との距離：';
-export const AVERAGE_SURFACE_TEMPERATURE = '平均表面温度：';
-export const ATMOSPHERIC_DENSITY = '大気の濃さ度：';
-export const WATER_AMOUNT = '水の量：';
-export const SURFACE_UNEVENNESS = '地表のでこぼこ度：';
-export const VOLCANIC_ACTIVITY = '火山活動度：';
+export const DISTANCE = '太陽との距離：';
+export const TEMPERATURE = '平均表面温度：';
+export const ATMOSPHERE = '大気の濃さ度：';
+export const WATER = '水の量：';
+export const TERRAIN = '地表のでこぼこ度：';
+export const VOLCANO = '火山活動度：';
 export const AURORA = 'オーロラ度：';
 
 // パラメータ(単位)
 export const DIAMETER_UNIT = '(km)';
 export const GRAVITY_UNIT = '(G)';
-export const DISTANCE_FROM_THE_SUN_UNIT = '(百万km)';
-export const AVERAGE_SURFACE_TEMPERATURE_UNIT = '(℃)';
-export const ATMOSPHERIC_DENSITY_UNIT = '(％)';
-export const WATER_AMOUNT_UNIT = '(％)';
-export const SURFACE_UNEVENNESS_UNIT = '(％)';
-export const VOLCANIC_ACTIVITY_UNIT = '(％)';
+export const DISTANCE_UNIT = '(百万km)';
+export const TEMPERATURE_UNIT = '(℃)';
+export const ATMOSPHERE_UNIT = '(％)';
+export const WATER_UNIT = '(％)';
+export const TERRAIN_UNIT = '(％)';
+export const VOLCANO_UNIT = '(％)';
 export const AURORA_UNIT = '(％)';
 
 // メッセージ

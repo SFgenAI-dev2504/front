@@ -7,14 +7,12 @@ export const useSliderStore = create((set) => ({
     sliders: {
         [PromptType.DIAMETER]: Config.EARTH_DIAMETER_VALUE,
         [PromptType.GRAVITY]: Config.EARTH_GRAVITY_VALUE,
-        [PromptType.DISTANCE_FROM_SUN]: Config.EARTH_DISTANCE_FROM_SUN_VALUE,
-        [PromptType.AVERAGE_SURFACE_TEMPERATURE]:
-            Config.EARTH_AVERAGE_SURFACE_TEMPERATURE_VALUE,
-        [PromptType.ATMOSPHERIC_DENSITY]:
-            Config.EARTH_ATMOSPHERIC_DENSITY_VALUE,
-        [PromptType.WATER_AMOUNT]: Config.EARTH_WATER_AMOUNT_VALUE,
-        [PromptType.SURFACE_UNEVENNESS]: Config.EARTH_SURFACE_UNEVENNESS_VALUE,
-        [PromptType.VOLCANIC_ACTIVITY]: Config.EARTH_VOLCANIC_ACTIVITY_VALUE,
+        [PromptType.DISTANCE]: Config.EARTH_DISTANCE_VALUE,
+        [PromptType.TEMPERATURE]: Config.EARTH_TEMPERATURE_VALUE,
+        [PromptType.ATMOSPHERE]: Config.EARTH_ATMOSPHERE_VALUE,
+        [PromptType.WATER]: Config.EARTH_WATER_VALUE,
+        [PromptType.TERRAIN]: Config.EARTH_TERRAIN_VALUE,
+        [PromptType.VOLCANO]: Config.EARTH_VOLCANO_VALUE,
         [PromptType.AURORA]: Config.EARTH_AURORA_VALUE,
     },
     setSliderValueByPromptType: (promptType, value) =>
@@ -32,54 +30,47 @@ export const useSliderStore = create((set) => ({
                         Config.MERCURY_DIAMETER_VALUE;
                     newSliders[PromptType.GRAVITY] =
                         Config.MERCURY_GRAVITY_VALUE;
-                    newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.MERCURY_DISTANCE_FROM_SUN_VALUE;
-                    newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
-                        Config.MERCURY_AVERAGE_SURFACE_TEMPERATURE_VALUE;
-                    newSliders[PromptType.ATMOSPHERIC_DENSITY] =
-                        Config.MERCURY_ATMOSPHERIC_DENSITY_VALUE;
-                    newSliders[PromptType.WATER_AMOUNT] =
-                        Config.MERCURY_WATER_AMOUNT_VALUE;
-                    newSliders[PromptType.SURFACE_UNEVENNESS] =
-                        Config.MERCURY_SURFACE_UNEVENNESS_VALUE;
-                    newSliders[PromptType.VOLCANIC_ACTIVITY] =
-                        Config.MERCURY_VOLCANIC_ACTIVITY_VALUE;
+                    newSliders[PromptType.DISTANCE] =
+                        Config.MERCURY_DISTANCE_VALUE;
+                    newSliders[PromptType.TEMPERATURE] =
+                        Config.MERCURY_TEMPERATURE_VALUE;
+                    newSliders[PromptType.ATMOSPHERE] =
+                        Config.MERCURY_ATMOSPHERE_VALUE;
+                    newSliders[PromptType.WATER] = Config.MERCURY_WATER_VALUE;
+                    newSliders[PromptType.TERRAIN] =
+                        Config.MERCURY_TERRAIN_VALUE;
+                    newSliders[PromptType.VOLCANO] =
+                        Config.MERCURY_VOLCANO_VALUE;
                     newSliders[PromptType.AURORA] = Config.MERCURY_AURORA_VALUE;
                     break;
                 case PlanetType.VENUS:
                     newSliders[PromptType.DIAMETER] =
                         Config.VENUS_DIAMETER_VALUE;
                     newSliders[PromptType.GRAVITY] = Config.VENUS_GRAVITY_VALUE;
-                    newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.VENUS_DISTANCE_FROM_SUN_VALUE;
-                    newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
-                        Config.VENUS_AVERAGE_SURFACE_TEMPERATURE_VALUE;
-                    newSliders[PromptType.ATMOSPHERIC_DENSITY] =
-                        Config.VENUS_ATMOSPHERIC_DENSITY_VALUE;
-                    newSliders[PromptType.WATER_AMOUNT] =
-                        Config.VENUS_WATER_AMOUNT_VALUE;
-                    newSliders[PromptType.SURFACE_UNEVENNESS] =
-                        Config.VENUS_SURFACE_UNEVENNESS_VALUE;
-                    newSliders[PromptType.VOLCANIC_ACTIVITY] =
-                        Config.VENUS_VOLCANIC_ACTIVITY_VALUE;
+                    newSliders[PromptType.DISTANCE] =
+                        Config.VENUS_DISTANCE_VALUE;
+                    newSliders[PromptType.TEMPERATURE] =
+                        Config.VENUS_TEMPERATURE_VALUE;
+                    newSliders[PromptType.ATMOSPHERE] =
+                        Config.VENUS_ATMOSPHERE_VALUE;
+                    newSliders[PromptType.WATER] = Config.VENUS_WATER_VALUE;
+                    newSliders[PromptType.TERRAIN] = Config.VENUS_TERRAIN_VALUE;
+                    newSliders[PromptType.VOLCANO] = Config.VENUS_VOLCANO_VALUE;
                     newSliders[PromptType.AURORA] = Config.VENUS_AURORA_VALUE;
                     break;
                 case PlanetType.MARS:
                     newSliders[PromptType.DIAMETER] =
                         Config.MARS_DIAMETER_VALUE;
                     newSliders[PromptType.GRAVITY] = Config.MARS_GRAVITY_VALUE;
-                    newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.MARS_DISTANCE_FROM_SUN_VALUE;
-                    newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
-                        Config.MARS_AVERAGE_SURFACE_TEMPERATURE_VALUE;
-                    newSliders[PromptType.ATMOSPHERIC_DENSITY] =
-                        Config.MARS_ATMOSPHERIC_DENSITY_VALUE;
-                    newSliders[PromptType.WATER_AMOUNT] =
-                        Config.MARS_WATER_AMOUNT_VALUE;
-                    newSliders[PromptType.SURFACE_UNEVENNESS] =
-                        Config.MARS_SURFACE_UNEVENNESS_VALUE;
-                    newSliders[PromptType.VOLCANIC_ACTIVITY] =
-                        Config.MARS_VOLCANIC_ACTIVITY_VALUE;
+                    newSliders[PromptType.DISTANCE] =
+                        Config.MARS_DISTANCE_VALUE;
+                    newSliders[PromptType.TEMPERATURE] =
+                        Config.MARS_TEMPERATURE_VALUE;
+                    newSliders[PromptType.ATMOSPHERE] =
+                        Config.MARS_ATMOSPHERE_VALUE;
+                    newSliders[PromptType.WATER] = Config.MARS_WATER_VALUE;
+                    newSliders[PromptType.TERRAIN] = Config.MARS_TERRAIN_VALUE;
+                    newSliders[PromptType.VOLCANO] = Config.MARS_VOLCANO_VALUE;
                     newSliders[PromptType.AURORA] = Config.MARS_AURORA_VALUE;
                     break;
                 case PlanetType.JUPITER:
@@ -87,18 +78,17 @@ export const useSliderStore = create((set) => ({
                         Config.JUPITER_DIAMETER_VALUE;
                     newSliders[PromptType.GRAVITY] =
                         Config.JUPITER_GRAVITY_VALUE;
-                    newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.JUPITER_DISTANCE_FROM_SUN_VALUE;
-                    newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
-                        Config.JUPITER_AVERAGE_SURFACE_TEMPERATURE_VALUE;
-                    newSliders[PromptType.ATMOSPHERIC_DENSITY] =
-                        Config.JUPITER_ATMOSPHERIC_DENSITY_VALUE;
-                    newSliders[PromptType.WATER_AMOUNT] =
-                        Config.JUPITER_WATER_AMOUNT_VALUE;
-                    newSliders[PromptType.SURFACE_UNEVENNESS] =
-                        Config.JUPITER_SURFACE_UNEVENNESS_VALUE;
-                    newSliders[PromptType.VOLCANIC_ACTIVITY] =
-                        Config.JUPITER_VOLCANIC_ACTIVITY_VALUE;
+                    newSliders[PromptType.DISTANCE] =
+                        Config.JUPITER_DISTANCE_VALUE;
+                    newSliders[PromptType.TEMPERATURE] =
+                        Config.JUPITER_TEMPERATURE_VALUE;
+                    newSliders[PromptType.ATMOSPHERE] =
+                        Config.JUPITER_ATMOSPHERE_VALUE;
+                    newSliders[PromptType.WATER] = Config.JUPITER_WATER_VALUE;
+                    newSliders[PromptType.TERRAIN] =
+                        Config.JUPITER_TERRAIN_VALUE;
+                    newSliders[PromptType.VOLCANO] =
+                        Config.JUPITER_VOLCANO_VALUE;
                     newSliders[PromptType.AURORA] = Config.JUPITER_AURORA_VALUE;
                     break;
                 case PlanetType.SATURN:
@@ -106,18 +96,17 @@ export const useSliderStore = create((set) => ({
                         Config.SATURN_DIAMETER_VALUE;
                     newSliders[PromptType.GRAVITY] =
                         Config.SATURN_GRAVITY_VALUE;
-                    newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.SATURN_DISTANCE_FROM_SUN_VALUE;
-                    newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
-                        Config.SATURN_AVERAGE_SURFACE_TEMPERATURE_VALUE;
-                    newSliders[PromptType.ATMOSPHERIC_DENSITY] =
-                        Config.SATURN_ATMOSPHERIC_DENSITY_VALUE;
-                    newSliders[PromptType.WATER_AMOUNT] =
-                        Config.SATURN_WATER_AMOUNT_VALUE;
-                    newSliders[PromptType.SURFACE_UNEVENNESS] =
-                        Config.SATURN_SURFACE_UNEVENNESS_VALUE;
-                    newSliders[PromptType.VOLCANIC_ACTIVITY] =
-                        Config.SATURN_VOLCANIC_ACTIVITY_VALUE;
+                    newSliders[PromptType.DISTANCE] =
+                        Config.SATURN_DISTANCE_VALUE;
+                    newSliders[PromptType.TEMPERATURE] =
+                        Config.SATURN_TEMPERATURE_VALUE;
+                    newSliders[PromptType.ATMOSPHERE] =
+                        Config.SATURN_ATMOSPHERE_VALUE;
+                    newSliders[PromptType.WATER] = Config.SATURN_WATER_VALUE;
+                    newSliders[PromptType.TERRAIN] =
+                        Config.SATURN_TERRAIN_VALUE;
+                    newSliders[PromptType.VOLCANO] =
+                        Config.SATURN_VOLCANO_VALUE;
                     newSliders[PromptType.AURORA] = Config.SATURN_AURORA_VALUE;
                     break;
                 case PlanetType.URANUS:
@@ -125,18 +114,17 @@ export const useSliderStore = create((set) => ({
                         Config.URANUS_DIAMETER_VALUE;
                     newSliders[PromptType.GRAVITY] =
                         Config.URANUS_GRAVITY_VALUE;
-                    newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.URANUS_DISTANCE_FROM_SUN_VALUE;
-                    newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
-                        Config.URANUS_AVERAGE_SURFACE_TEMPERATURE_VALUE;
-                    newSliders[PromptType.ATMOSPHERIC_DENSITY] =
-                        Config.URANUS_ATMOSPHERIC_DENSITY_VALUE;
-                    newSliders[PromptType.WATER_AMOUNT] =
-                        Config.URANUS_WATER_AMOUNT_VALUE;
-                    newSliders[PromptType.SURFACE_UNEVENNESS] =
-                        Config.URANUS_SURFACE_UNEVENNESS_VALUE;
-                    newSliders[PromptType.VOLCANIC_ACTIVITY] =
-                        Config.URANUS_VOLCANIC_ACTIVITY_VALUE;
+                    newSliders[PromptType.DISTANCE] =
+                        Config.URANUS_DISTANCE_VALUE;
+                    newSliders[PromptType.TEMPERATURE] =
+                        Config.URANUS_TEMPERATURE_VALUE;
+                    newSliders[PromptType.ATMOSPHERE] =
+                        Config.URANUS_ATMOSPHERE_VALUE;
+                    newSliders[PromptType.WATER] = Config.URANUS_WATER_VALUE;
+                    newSliders[PromptType.TERRAIN] =
+                        Config.URANUS_TERRAIN_VALUE;
+                    newSliders[PromptType.VOLCANO] =
+                        Config.URANUS_VOLCANO_VALUE;
                     newSliders[PromptType.AURORA] = Config.URANUS_AURORA_VALUE;
                     break;
                 case PlanetType.NEPTUNE:
@@ -144,18 +132,17 @@ export const useSliderStore = create((set) => ({
                         Config.NEPTUNE_DIAMETER_VALUE;
                     newSliders[PromptType.GRAVITY] =
                         Config.NEPTUNE_GRAVITY_VALUE;
-                    newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.NEPTUNE_DISTANCE_FROM_SUN_VALUE;
-                    newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
-                        Config.NEPTUNE_AVERAGE_SURFACE_TEMPERATURE_VALUE;
-                    newSliders[PromptType.ATMOSPHERIC_DENSITY] =
-                        Config.NEPTUNE_ATMOSPHERIC_DENSITY_VALUE;
-                    newSliders[PromptType.WATER_AMOUNT] =
-                        Config.NEPTUNE_WATER_AMOUNT_VALUE;
-                    newSliders[PromptType.SURFACE_UNEVENNESS] =
-                        Config.NEPTUNE_SURFACE_UNEVENNESS_VALUE;
-                    newSliders[PromptType.VOLCANIC_ACTIVITY] =
-                        Config.NEPTUNE_VOLCANIC_ACTIVITY_VALUE;
+                    newSliders[PromptType.DISTANCE] =
+                        Config.NEPTUNE_DISTANCE_VALUE;
+                    newSliders[PromptType.TEMPERATURE] =
+                        Config.NEPTUNE_TEMPERATURE_VALUE;
+                    newSliders[PromptType.ATMOSPHERE] =
+                        Config.NEPTUNE_ATMOSPHERE_VALUE;
+                    newSliders[PromptType.WATER] = Config.NEPTUNE_WATER_VALUE;
+                    newSliders[PromptType.TERRAIN] =
+                        Config.NEPTUNE_TERRAIN_VALUE;
+                    newSliders[PromptType.VOLCANO] =
+                        Config.NEPTUNE_VOLCANO_VALUE;
                     newSliders[PromptType.AURORA] = Config.NEPTUNE_AURORA_VALUE;
                     break;
                 // 上記以外は「PlanetType.EARTH」とする。
@@ -163,18 +150,15 @@ export const useSliderStore = create((set) => ({
                     newSliders[PromptType.DIAMETER] =
                         Config.EARTH_DIAMETER_VALUE;
                     newSliders[PromptType.GRAVITY] = Config.EARTH_GRAVITY_VALUE;
-                    newSliders[PromptType.DISTANCE_FROM_SUN] =
-                        Config.EARTH_DISTANCE_FROM_SUN_VALUE;
-                    newSliders[PromptType.AVERAGE_SURFACE_TEMPERATURE] =
-                        Config.EARTH_AVERAGE_SURFACE_TEMPERATURE_VALUE;
-                    newSliders[PromptType.ATMOSPHERIC_DENSITY] =
-                        Config.EARTH_ATMOSPHERIC_DENSITY_VALUE;
-                    newSliders[PromptType.WATER_AMOUNT] =
-                        Config.EARTH_WATER_AMOUNT_VALUE;
-                    newSliders[PromptType.SURFACE_UNEVENNESS] =
-                        Config.EARTH_SURFACE_UNEVENNESS_VALUE;
-                    newSliders[PromptType.VOLCANIC_ACTIVITY] =
-                        Config.EARTH_VOLCANIC_ACTIVITY_VALUE;
+                    newSliders[PromptType.DISTANCE] =
+                        Config.EARTH_DISTANCE_VALUE;
+                    newSliders[PromptType.TEMPERATURE] =
+                        Config.EARTH_TEMPERATURE_VALUE;
+                    newSliders[PromptType.ATMOSPHERE] =
+                        Config.EARTH_ATMOSPHERE_VALUE;
+                    newSliders[PromptType.WATER] = Config.EARTH_WATER_VALUE;
+                    newSliders[PromptType.TERRAIN] = Config.EARTH_TERRAIN_VALUE;
+                    newSliders[PromptType.VOLCANO] = Config.EARTH_VOLCANO_VALUE;
                     newSliders[PromptType.AURORA] = Config.EARTH_AURORA_VALUE;
                     break;
             }
