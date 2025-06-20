@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, NoImage, RadarChart, Parameters } from '../components/index';
+import { Button, NoImage, Parameters } from '../components/index';
 import '../styles/Generator.css';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
@@ -77,10 +77,6 @@ const Generator = () => {
                             src={results.imageUrl}
                             alt={''}
                         />
-                        <div className={'chart-wrapper'}>
-                            <p className={'label'}>{Strings.DATA_LABEL}</p>
-                            <RadarChart results={results} />
-                        </div>
                     </div>
                 )}
             </div>
