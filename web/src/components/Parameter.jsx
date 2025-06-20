@@ -27,7 +27,6 @@ const Parameter = (props) => {
                             setSliderValueByPromptType(props.type, newValue)
                         }
                         color={'primary'}
-                        defaultValue={props.defaultValue}
                         valueLabelDisplay={'off'}
                         shiftStep={props.step}
                         step={props.step}

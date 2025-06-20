@@ -26,7 +26,6 @@ const Parameters = (props) => {
                     min={Config.DIAMETER_MIN}
                     max={Config.DIAMETER_MAX}
                     step={Config.DIAMETER_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={calcDiameter}
                     index={0}
                     subtileLabelVisible={true}
@@ -39,7 +38,6 @@ const Parameters = (props) => {
                     min={Config.GRAVITY_MIN}
                     max={Config.GRAVITY_MAX}
                     step={Config.GRAVITY_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={calcGravity}
                     index={1}
                     subtileLabelVisible={false}
@@ -52,7 +50,6 @@ const Parameters = (props) => {
                     min={Config.DISTANCE_MIN}
                     max={Config.DISTANCE_MAX}
                     step={Config.DISTANCE_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={calcDistance}
                     index={2}
                     subtileLabelVisible={false}
@@ -65,7 +62,6 @@ const Parameters = (props) => {
                     min={Config.TEMPERATURE_MIN}
                     max={Config.TEMPERATURE_MAX}
                     step={Config.TEMPERATURE_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={calcTemperature}
                     index={3}
                     subtileLabelVisible={false}
@@ -78,7 +74,6 @@ const Parameters = (props) => {
                     min={Config.ATMOSPHERE_MIN}
                     max={Config.ATMOSPHERE_MAX}
                     step={Config.ATMOSPHERE_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={null}
                     index={4}
                     subtileLabelVisible={false}
@@ -91,7 +86,6 @@ const Parameters = (props) => {
                     min={Config.WATER_MIN}
                     max={Config.WATER_MAX}
                     step={Config.WATER_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={null}
                     index={5}
                     subtileLabelVisible={false}
@@ -104,7 +98,6 @@ const Parameters = (props) => {
                     min={Config.TERRAIN_MIN}
                     max={Config.TERRAIN_MAX}
                     step={Config.TERRAIN_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={null}
                     index={6}
                     subtileLabelVisible={false}
@@ -117,7 +110,6 @@ const Parameters = (props) => {
                     min={Config.VOLCANO_MIN}
                     max={Config.VOLCANO_MAX}
                     step={Config.VOLCANO_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={null}
                     index={7}
                     subtileLabelVisible={false}
@@ -130,7 +122,6 @@ const Parameters = (props) => {
                     min={Config.AURORA_MIN}
                     max={Config.AURORA_MAX}
                     step={Config.AURORA_STEP}
-                    defaultValue={props.defaultValue}
                     onChange={null}
                     index={8}
                     subtileLabelVisible={false}
