@@ -8,7 +8,7 @@ export const COMMON_HEADER = {
 };
 
 // Slider min value
-export const DIAMETER_MIN = 9999;
+export const DIAMETER_MIN = 1000;
 export const GRAVITY_MIN = 0;
 export const DISTANCE_MIN = 50;
 export const TEMPERATURE_MIN = -200;
