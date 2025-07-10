@@ -20,6 +20,7 @@ module.exports = {
     "no-unused-vars": "warn",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
+    "no-control-regex": "off",
     "max-len": [
       "warn",
       {

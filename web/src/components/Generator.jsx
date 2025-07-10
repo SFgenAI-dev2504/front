@@ -27,10 +27,28 @@ const Generator = () => {
         await generate();
     };
 
+    const replacePlanetName = (filename) => {
+        return (
+            filename
+                // Unicode正規化
+                .normalize('NFKD')
+                // 禁止・危険文字を全て「_」に変換
+                .replace(/[\\/:*?"<>|'\s#%&;=~^$@`]/g, '_')
+                // 先頭のドットを削除
+                .replace(/^\.+/, '')
+                // 末尾のドットを削除
+                .replace(/\.+$/, '')
+                // 連続した_を1つに
+                .replace(/_+/g, '_')
+        );
+    };
+
     const generate = async () => {
         const payload = {
             ...sliderValue,
-            planetName: `${planetName}${Strings.PLANET_NAME_SUFFIX}`,
+            planetName: replacePlanetName(
+                `${planetName}${Strings.PLANET_NAME_SUFFIX}`
+            ),
         };
         axios
             .post(`${Config.GENERATE_API_URL}`, payload, {

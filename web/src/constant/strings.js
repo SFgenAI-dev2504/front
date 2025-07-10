@@ -12,7 +12,6 @@ export const HOME_LABEL = '画像生成';
 export const PARAMETER_DETAIL_LABEL = '地球のおよそ何倍？';
 export const PARAMETER_INPUT_LABEL = 'ー入力情報ー';
 export const PLANET_NAME_SUFFIX = '星';
-export const DATA_LABEL = 'ーDATAー';
 export const CHART_LABEL1 = '結果1';
 export const CHART_LABEL2 = '結果2';
 export const CHART_LABEL3 = '結果3';
