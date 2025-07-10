@@ -7,7 +7,11 @@ function App() {
     return (
         <div className={'App'}>
             <BrowserRouter>
-                <Router />
+                <Header />
+                <main className={'wrapper'}>
+                    <Router />
+                </main>
+                <Footer />
             </BrowserRouter>
         </div>
     );
