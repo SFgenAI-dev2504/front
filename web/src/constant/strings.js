@@ -3,12 +3,16 @@ export const HOME_URL = '/';
 export const GENERATOR_URL = '/generator';
 
 // ボタン
-export const PARAM_SETTING_BUTTON = '開始する';
+export const TO_GENERATOR_BUTTON = '惑星をつくる';
+export const TO_GALLERY_BUTTON = 'ギャラリーを見る';
 export const GENERATE_START_BUTTON = '画像を生成する';
 export const LOADING_BUTTON = '生成中...';
 
 // ラベル
-export const HOME_LABEL = '画像生成';
+export const HOME_SUB_LABEL = '自分だけの惑星メーカー';
+export const HOME_LABEL_SPACE = 'SPACE';
+export const HOME_LABEL_AI = 'AI';
+export const HOME_LABEL_MAKER = 'MAKER';
 export const PARAMETER_DETAIL_LABEL = '地球のおよそ何倍？';
 export const PARAMETER_INPUT_LABEL = 'ー入力情報ー';
 export const PLANET_NAME_SUFFIX = '星';
@@ -28,6 +32,7 @@ export const NEPTUNE = '海王星';
 
 // 文言
 export const NO_IMAGE = 'No Image...';
+export const COMING_SOON = 'Coming Soon...';
 
 // パラメータ
 export const PLANET_NAME = '惑星の名前：';
