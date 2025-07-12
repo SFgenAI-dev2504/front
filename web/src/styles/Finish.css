@@ -1,0 +1,11 @@
+.finish {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.finish_label {
+    font-size: 36px;
+}

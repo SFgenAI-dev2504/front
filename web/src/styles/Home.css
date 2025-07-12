@@ -29,52 +29,52 @@
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
-    line-height: 31px;
-    text-align: center;
-    color: #ffffff;
-    text-shadow:
-        0 0 9px #00c4ff,
-        0 0 8px rgba(0, 255, 229, 0.5);
-    backdrop-filter: blur(6px);
+    /*line-height: 31px;*/
+    /*text-align: center;*/
+    /*color: #ffffff;*/
+    /*text-shadow:*/
+    /*    0 0 9px #00c4ff,*/
+    /*    0 0 8px rgba(0, 255, 229, 0.5);*/
+    /*backdrop-filter: blur(6px);*/
 }
 
 .space_label {
     font-style: normal;
     font-weight: 400;
     font-size: 96px;
-    line-height: 94px;
-    color: #00ffff;
-    text-shadow:
-        0 0 9px #00c4ff,
-        0 0 8px rgba(0, 255, 229, 0.5);
-    backdrop-filter: blur(6px);
+    /*line-height: 94px;*/
+    /*color: #00ffff;*/
+    /*text-shadow:*/
+    /*    0 0 9px #00c4ff,*/
+    /*    0 0 8px rgba(0, 255, 229, 0.5);*/
+    /*backdrop-filter: blur(6px);*/
 }
 
 .ai_label {
     font-style: normal;
     font-weight: 400;
     font-size: 96px;
-    line-height: 94px;
-    color: #f7ff00;
-    text-shadow:
-        0 0 17px #ffa200,
-        0 0 25px #ffa200;
+    /*line-height: 94px;*/
+    /*color: #f7ff00;*/
+    /*text-shadow:*/
+    /*    0 0 17px #ffa200,*/
+    /*    0 0 25px #ffa200;*/
 }
 
 .maker_label {
     font-style: normal;
     font-weight: 400;
     font-size: 96px;
-    line-height: 94px;
-    color: #00ffff;
-    text-shadow:
-        0 0 9px #00c4ff,
-        0 0 8px rgba(0, 255, 229, 0.5);
-    backdrop-filter: blur(6px);
+    /*line-height: 94px;*/
+    /*color: #00ffff;*/
+    /*text-shadow:*/
+    /*    0 0 9px #00c4ff,*/
+    /*    0 0 8px rgba(0, 255, 229, 0.5);*/
+    /*backdrop-filter: blur(6px);*/
 }
 
 .home__logo {
     position: absolute;
-    right: 29px;
-    bottom: 17px;
+    right: 30px;
+    bottom: 16px;
 }

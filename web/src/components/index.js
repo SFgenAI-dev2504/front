@@ -1,4 +1,6 @@
 export { default as Button } from './Button';
+export { default as Explanation } from './Explanation';
+export { default as Finish } from './Finish';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as Home } from './Home';
@@ -9,4 +11,5 @@ export { default as ParameterText } from './ParameterText';
 export { default as Parameters } from './Parameters';
 export { default as PlanetTypeSelection } from './PlanetTypeSelection';
 export { default as RadarChart } from './RadarChart';
+export { default as Result } from './Result';
 export { default as Spacer } from './Spacer';

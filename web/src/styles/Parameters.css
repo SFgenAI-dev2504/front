@@ -2,15 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
 .container {
-    padding: 16px 0 32px;
-    margin-bottom: 32px;
+    padding-left: 36px;
     border-radius: 16px;
-    background-color: #fce9ea;
-    width: 100%;
+    border: 1px solid black;
+    min-height: 760px;
+    min-width: 712px;
 }
 
 .first_row {
@@ -18,5 +17,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    margin-right: 40px;
+}
+
+.title {
+    font-size: 18px;
 }
