@@ -1,12 +1,17 @@
 // URL
 export const HOME_URL = '/';
 export const GENERATOR_URL = '/generator';
+export const RESULT_URL = '/result';
+export const FINISH_URL = '/finish';
 
 // ボタン
 export const TO_GENERATOR_BUTTON = '惑星をつくる';
 export const TO_GALLERY_BUTTON = 'ギャラリーを見る';
-export const GENERATE_START_BUTTON = '画像を生成する';
-export const LOADING_BUTTON = '生成中...';
+export const GENERATE_BUTTON = '惑星画像を生成する';
+export const DECISION_BUTTON = 'これに決めた！';
+export const REMAKE_BUTTON = 'もう一度作る';
+export const ADD_GALLERY_BUTTON = 'ギャラリーに追加';
+export const TO_HOME = 'TOPに戻る';
 
 // ラベル
 export const HOME_SUB_LABEL = '自分だけの惑星メーカー';
@@ -14,8 +19,11 @@ export const HOME_LABEL_SPACE = 'SPACE';
 export const HOME_LABEL_AI = 'AI';
 export const HOME_LABEL_MAKER = 'MAKER';
 export const PARAMETER_DETAIL_LABEL = '地球のおよそ何倍？';
-export const PARAMETER_INPUT_LABEL = 'ー入力情報ー';
+export const PARAMETER_INPUT_LABEL = '入力情報';
 export const PLANET_NAME_SUFFIX = '星';
+export const RATING_LABEL = 'レア度：';
+export const FINISH_FIRST_LABEL = '作成してくれて';
+export const FINISH_SECOND_LABEL = 'ありがとう';
 export const CHART_LABEL1 = '結果1';
 export const CHART_LABEL2 = '結果2';
 export const CHART_LABEL3 = '結果3';
@@ -31,11 +39,11 @@ export const URANUS = '天王星';
 export const NEPTUNE = '海王星';
 
 // 文言
-export const NO_IMAGE = 'No Image...';
+export const NO_IMAGE = 'NO IMAGE';
 export const COMING_SOON = 'Coming Soon...';
 
 // パラメータ
-export const PLANET_NAME = '惑星の名前：';
+export const PLANET_NAME = '惑星の名前';
 export const DIAMETER = '直径：';
 export const GRAVITY = '重力：';
 export const DISTANCE = '太陽との距離：';
@@ -64,4 +72,4 @@ export const PLANET_NAME_VALIDATE_WARN_MESSAGE =
     '惑星の名前は1〜6文字で入力してください';
 
 // コピーライト
-export const COPY_RIGHT = '2025 SPACE AI MAKER';
+export const COPY_RIGHT = 'COPYRIGHT 2025 SPACE AI MAKER';

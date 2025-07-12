@@ -1,6 +1,6 @@
 .parameter {
-    margin-top: 40px;
-    width: 90%;
+    margin-top: 20px;
+    max-height: 52px;
 }
 
 .label__container {
@@ -9,6 +9,7 @@
 }
 
 .name {
+    margin-right: 8px;
 }
 
 .value {
@@ -35,12 +36,10 @@
 
 .slidebar__container {
     display: flex;
-    margin-top: 8px;
     align-items: center;
 }
 
 .slidebar {
-    padding-right: 4px;
     width: 80%;
 }
 

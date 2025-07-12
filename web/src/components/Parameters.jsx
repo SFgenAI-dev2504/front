@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Parameters.css';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
-import { Parameter, ParameterText, PlanetTypeSelection } from './index';
+import { Parameter, ParameterText, PlanetTypeSelection, Spacer } from './index';
 import {
     calcTemperature,
     calcDiameter,
@@ -15,10 +15,12 @@ const Parameters = (props) => {
     return (
         <section className={'parameters'}>
             <div className={'container'}>
+                <Spacer height={24} />
                 <div className={'first_row'}>
                     <p className={'title'}>{Strings.PARAMETER_INPUT_LABEL}</p>
                     <PlanetTypeSelection disabled={props.disabled} />
                 </div>
+                <Spacer height={4} />
                 <Parameter
                     type={PromptType.DIAMETER}
                     name={Strings.DIAMETER}
@@ -131,6 +133,7 @@ const Parameters = (props) => {
                     name={Strings.PLANET_NAME}
                     disabled={props.disabled}
                 />
+                <Spacer height={45} />
             </div>
         </section>
     );

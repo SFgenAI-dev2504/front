@@ -2,14 +2,25 @@ import React from 'react';
 import '../styles/ParameterText.css';
 import { usePlanetNameStore } from '../stores/store';
 import * as Strings from '../constant/strings';
-import { validateMinAndMax } from '../core/validator/lengthValidator';
 
 const ParameterText = (props) => {
     const planetName = usePlanetNameStore((state) => state.planetName);
     const setPlanetName = usePlanetNameStore((state) => state.setPlanetName);
 
-    const validator = (value) => {
-        return validateMinAndMax(value, 1, 6);
+    const replacePlanetName = (name) => {
+        return (
+            name
+                // Unicode正規化
+                .normalize('NFKD')
+                // 禁止・危険文字を全て「_」に変換
+                .replace(/[\\/:*?"<>|'\s#%&;=~^$@`]/g, '_')
+                // 先頭のドットを削除
+                .replace(/^\.+/, '')
+                // 末尾のドットを削除
+                .replace(/\.+$/, '')
+                // 連続した_を1つに
+                .replace(/_+/g, '_')
+        );
     };
 
     return (
@@ -23,7 +34,7 @@ const ParameterText = (props) => {
                 value={planetName}
                 disabled={props.disabled}
                 onChange={(e) => {
-                    setPlanetName(e.target.value);
+                    setPlanetName(replacePlanetName(e.target.value));
                 }}
             />
             <p className={'suffix'}>{Strings.PLANET_NAME_SUFFIX}</p>

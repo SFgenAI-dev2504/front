@@ -1,0 +1,20 @@
+.explanation {
+    width: 712px;
+    max-height: 315px;
+    border: 1px solid black;
+    padding: 0 40px;
+}
+
+.planet-name {
+    font-size: 64px;
+}
+
+.detail {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+}
+
+.rating {
+    font-size: 24px;
+}
