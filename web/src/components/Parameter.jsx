@@ -26,7 +26,24 @@ const Parameter = (props) => {
                         onChange={(e, newValue) =>
                             setSliderValueByPromptType(props.type, newValue)
                         }
-                        color={'primary'}
+                        sx={{
+                            color: '#00FFFF',
+                            '& .MuiSlider-thumb': {
+                                backgroundColor: '#00FFFF',
+                                boxShadow: '0 0 4px 0px rgba(0, 244, 220, 1)',
+                                width: 10,
+                                height: 10,
+                            },
+                            '& .MuiSlider-track': {
+                                backgroundColor: '#00FFFF',
+                                boxShadow: '0 0 4px 0px rgba(0, 244, 220, 1)',
+                                height: 2,
+                            },
+                            '& .MuiSlider-rail': {
+                                backgroundColor: '#00000050',
+                                height: 2,
+                            },
+                        }}
                         valueLabelDisplay={'off'}
                         shiftStep={props.step}
                         step={props.step}
