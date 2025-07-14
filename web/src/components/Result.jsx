@@ -40,7 +40,9 @@ const Result = () => {
                     headers: Config.COMMON_HEADER,
                 })
                 .then((response) => {
-                    setResults(response.data);
+                    const body = response.data;
+                    console.log(body);
+                    setResults(body);
                     setIsLoading(false);
                     success(Strings.SUCCESS_GENERATOR_MESSAGE);
                     return response.data;
