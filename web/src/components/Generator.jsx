@@ -4,7 +4,6 @@ import '../styles/Generator.css';
 import * as Strings from '../constant/strings';
 import { useNavigate } from 'react-router-dom';
 import { usePlanetNameStore } from '../stores/store';
-import { ToastContainer } from 'react-toastify';
 import { warn } from '../core/notify/notify';
 import { validateMinAndMax } from '../core/validator/lengthValidator';
 
@@ -38,7 +37,6 @@ const Generator = () => {
                     onClick={() => handleClick()}
                 />
             </div>
-            <ToastContainer />
         </section>
     );
 };

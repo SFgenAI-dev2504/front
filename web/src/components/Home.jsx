@@ -5,7 +5,6 @@ import '../styles/Home.css';
 import * as Strings from '../constant/strings';
 // import HomeBKImage from '../assets/images/home_background.png';
 import HomeLogoImage from '../assets/images/home_logo.svg';
-import { ToastContainer } from 'react-toastify';
 import { warn } from '../core/notify/notify';
 
 const Home = () => {
@@ -48,7 +47,6 @@ const Home = () => {
                 />
             </div>
             <img className={'home__logo'} src={HomeLogoImage} alt={''} />
-            <ToastContainer />
         </section>
     );
 };

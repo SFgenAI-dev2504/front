@@ -10,5 +10,5 @@ export const warn = (message) => {
 };
 
 export const error = (message) => {
-    toast.error(message, Dimens.TOAST_OPTION);
+    toast.error(message, Dimens.TOAST_ERROR_OPTION);
 };

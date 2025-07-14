@@ -9,7 +9,7 @@ jest.mock("react-toastify", () => ({
 
 import { toast } from "react-toastify";
 import { success, warn, error } from "../../../src/core/notify/notify";
-import { TOAST_OPTION } from "../../../src/constant/dimens";
+import { TOAST_OPTION, TOAST_ERROR_OPTION } from "../../../src/constant/dimens";
 
 describe("notify.js tests", () => {
   const message = "テストメッセージ";
@@ -26,6 +26,6 @@ describe("notify.js tests", () => {
 
   it("test_error", () => {
     error(message);
-    expect(toast.error).toHaveBeenCalledWith(message, TOAST_OPTION);
+    expect(toast.error).toHaveBeenCalledWith(message, TOAST_ERROR_OPTION);
   });
 });
