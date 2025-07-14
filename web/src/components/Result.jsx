@@ -7,7 +7,6 @@ import * as Dimens from '../constant/dimens';
 import { MoonLoader } from 'react-spinners';
 import axios from 'axios';
 import * as Strings from '../constant/strings';
-import { ToastContainer } from 'react-toastify';
 import { error, success, warn } from '../core/notify/notify';
 import Explanation from './Explanation';
 import {
@@ -60,7 +59,32 @@ const Result = () => {
     }, []);
 
     const decide = () => {
-        navigate(Strings.FINISH_URL);
+        const payload = {
+            imageId: results.imageId,
+        };
+        axios
+            .post(`${Config.DECIDE_API_URL}`, payload, {
+                headers: Config.COMMON_HEADER,
+            })
+            .then((response) => {
+                const body = response.data;
+                console.log(body);
+                console.log(results);
+                if (body.isOK && results.imageId) {
+                    success(
+                        `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${results.imageId}`
+                    );
+                    navigate(Strings.FINISH_URL);
+                } else {
+                    error(
+                        `${body.code}: ${body.message}(画像ID: ${results.imageId})`
+                    );
+                }
+            })
+            .catch((e) => {
+                console.log(e);
+                error(Strings.FAILED_DECIDE_MESSAGE);
+            });
     };
 
     const remake = () => {
@@ -132,7 +156,6 @@ const Result = () => {
                     </div>
                     <p className={'result__container'}></p>
                     <Footer />
-                    <ToastContainer />
                 </div>
             )}
         </section>
