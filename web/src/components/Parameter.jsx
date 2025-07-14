@@ -27,15 +27,15 @@ const Parameter = (props) => {
                             setSliderValueByPromptType(props.type, newValue)
                         }
                         sx={{
-                            color: '#00FFFF',
+                            color: '#00aac9',
                             '& .MuiSlider-thumb': {
-                                backgroundColor: '#00FFFF',
+                                backgroundColor: '#00aac9',
                                 boxShadow: '0 0 4px 0px rgba(0, 244, 220, 1)',
                                 width: 10,
                                 height: 10,
                             },
                             '& .MuiSlider-track': {
-                                backgroundColor: '#00FFFF',
+                                backgroundColor: '#00aac9',
                                 boxShadow: '0 0 4px 0px rgba(0, 244, 220, 1)',
                                 height: 2,
                             },

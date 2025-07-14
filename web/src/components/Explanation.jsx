@@ -13,7 +13,7 @@ const Explanation = (props) => {
             <Spacer height={40} />
             <p
                 className={'planet-name'}
-            >{`${props.planetName}${Strings.PLANET_NAME_SUFFIX}`}</p>
+            >{`${props.planetName}${Strings.PLANET_NAME_KANA_SUFFIX}`}</p>
             <Spacer height={24} />
             <p className={'detail'}>{props.detail}</p>
             <Spacer height={24} />

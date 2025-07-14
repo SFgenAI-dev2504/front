@@ -10,8 +10,6 @@ const ParameterText = (props) => {
     const replacePlanetName = (name) => {
         return (
             name
-                // Unicode正規化
-                .normalize('NFKD')
                 // 禁止・危険文字を全て「_」に変換
                 .replace(/[\\/:*?"<>|'\s#%&;=~^$@`]/g, '_')
                 // 先頭のドットを削除

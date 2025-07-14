@@ -21,6 +21,7 @@ export const HOME_LABEL_MAKER = 'MAKER';
 export const PARAMETER_DETAIL_LABEL = '地球のおよそ何倍？';
 export const PARAMETER_INPUT_LABEL = '入力情報';
 export const PLANET_NAME_SUFFIX = '星';
+export const PLANET_NAME_KANA_SUFFIX = 'セイ';
 export const RATING_LABEL = 'レア度：';
 export const FINISH_FIRST_LABEL = '作成してくれて';
 export const FINISH_SECOND_LABEL = 'ありがとう';

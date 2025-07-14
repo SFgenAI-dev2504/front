@@ -32,7 +32,7 @@ const Result = () => {
         const generate = async () => {
             const payload = {
                 ...sliderValue,
-                planetName: `${planetName}${Strings.PLANET_NAME_SUFFIX}`,
+                planetName: `${planetName}${Strings.PLANET_NAME_KANA_SUFFIX}`,
             };
             axios
                 .post(`${Config.GENERATE_API_URL}`, payload, {
