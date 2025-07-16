@@ -1,7 +1,8 @@
 import random
+import json
 
 from time import sleep
-from flask import Blueprint, jsonify
+from flask import Blueprint, Response
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -31,8 +32,39 @@ def generate():
 
     sleep(1)
 
-    result = {
-        "imageUrl": "http://localhost:5000/static/output/" + image_urls[0],
-        "imageId": image_id
-    }
-    return jsonify(result)
+    code = None
+    message = None
+    # code = "E01_001"
+    # message = "ChatGPTの画像生成に失敗しました。"
+    # code = "E01_002",
+    # message = "ファイル、もしくはディレクトリが存在しません。"
+    # code = "E01_003"
+    # message = "ファイルが既に存在します。
+    # code = "E01_004"
+    # message = "ファイルへのアクセス権限がありません。"
+    # code = "E01_005"
+    # message = "ファイルのファイル操作でエラーが発生しました。"
+    # code = "E01_006"
+    # message = "画像生成で予期せぬエラーが発生しました。"
+
+    if code is None:
+        status = 200
+        image_file_name = image_urls[0]
+        image_url = "http://localhost:5000/static/output/" + image_file_name
+    else:
+        status = 500
+        image_file_name = None
+        image_url = None
+        image_id = None
+    return Response(
+        response=json.dumps(
+            {
+                "imageFileName": image_file_name,
+                "imageUrl": image_url,
+                "imageId": image_id,
+                "code": code,
+                "message": message,
+            }
+        ),
+        status=status,
+    )

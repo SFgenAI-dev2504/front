@@ -5,7 +5,7 @@ export const validateMin = (input, min) => {
         return false;
     }
 
-    return input.length >= min;
+    return length(input) >= min;
 };
 
 export const validateMax = (input, max) => {
@@ -13,7 +13,7 @@ export const validateMax = (input, max) => {
         return false;
     }
 
-    return input.length <= max;
+    return length(input) <= max;
 };
 
 export const validateMinAndMax = (input, min, max) => {
@@ -22,4 +22,10 @@ export const validateMinAndMax = (input, min, max) => {
     }
 
     return validateMin(input, min) && validateMax(input, max);
+};
+
+const length = (input) => {
+    const segmenter = new Intl.Segmenter('ja', { granularity: 'grapheme' });
+    const segments = [...segmenter.segment(input)];
+    return segments.length;
 };

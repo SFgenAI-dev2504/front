@@ -6,14 +6,22 @@ import { useNavigate } from 'react-router-dom';
 import { usePlanetNameStore } from '../stores/store';
 import { warn } from '../core/notify/notify';
 import { validateMinAndMax } from '../core/validator/lengthValidator';
+import { validate } from '../core/validator/characterTypeValidator';
 
 const Generator = () => {
     const navigate = useNavigate();
     const planetName = usePlanetNameStore((state) => state.planetName);
 
     const handleClick = () => {
+        // 長さチェック
         if (!validateMinAndMax(planetName, 1, 6)) {
-            warn(Strings.PLANET_NAME_VALIDATE_WARN_MESSAGE);
+            warn(Strings.PLANET_NAME_LENGTH_VALIDATE_WARN_MESSAGE);
+            return;
+        }
+
+        // 文字種チェック
+        if (!validate(planetName)) {
+            warn(Strings.PLANET_NAME_TARGET_CHARS_VALIDATE_WARN_MESSAGE);
             return;
         }
 
