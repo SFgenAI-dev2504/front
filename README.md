@@ -10,21 +10,22 @@
 | 2025/04/29 | 今村  | 環境構築手順を修正した。              |
 | 2025/05/03 | 今村  | 開発環境と環境構築手順とNodeの内容を追記した。 |
 | 2025/05/20 | 今村  | タイトルの更新と開発手順の誤記を修正した。     |
+| 2025/07/16 | 今村  | 「7. バックエンドとの接続」を追記した。     |
 
 ## 開発環境
 
 主な開発環境の種類とバージョンは以下のとおりである。
 
 * Mac
-  * Sonoma 4.6.1 (M1)
+    * Sonoma 4.6.1 (M1)
 * Node
     * v22.15.0
 * Python
-  * 3.11.12
+    * 3.11.12
 * Docker
-  * Docker version 20.10.17, build 100c701
+    * Docker version 20.10.17, build 100c701
 * Google Chrome (Webブラウザ)
-  * 135.0.7049.115（Official Build） （arm64）
+    * 135.0.7049.115（Official Build） （arm64）
 
 ## ブランチ戦略
 
@@ -45,7 +46,7 @@ Docker Desktopをインストールする。
 
 Windowsの場合：https://docs.docker.jp/desktop/install/windows-install.html
 
-Macの場合：https://docs.docker.jp/desktop/install/mac-install.html  
+Macの場合：https://docs.docker.jp/desktop/install/mac-install.html
 
 インストール後、以下のコマンドを実行して正常にインストールされたかを確認する。
 
@@ -114,6 +115,24 @@ http://127.0.0.1:3000 にWebブラウザでアクセスするとWebアプリの�
 
 ```docker
 $ docker-compose restart web
+```
+
+### 7. バックエンドとの接続
+
+バックエンドとの接続(ローカル)について、記載する。
+
+本リポジトリ内にあるバックエンドのモックと接続する場合は、本リポジトリ内の`config.js`のBASE_URLを`http://localhost:5000`
+にする。
+
+```js
+export const BASE_URL = 'http://localhost:5000';
+```
+
+バックエンドリポジトリ内にあるバックエンドと接続する場合は、本リポジトリ内の`config.js`のBASE_URLを
+`http://localhost:5001`にする。
+
+```js
+export const BASE_URL = 'http://localhost:5001';
 ```
 
 ### その他
