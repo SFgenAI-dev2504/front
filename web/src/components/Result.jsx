@@ -43,14 +43,21 @@ const Result = () => {
                     console.log(body);
                     setResults(body);
                     setIsLoading(false);
+
                     success(Strings.SUCCESS_GENERATOR_MESSAGE);
                     return response.data;
                 })
                 .catch((e) => {
-                    console.log(e);
+                    const body = e.response.data;
+                    console.log(body);
+                    if (body && body.code && body.message) {
+                        error(`${body.code}: ${body.message}`);
+                    } else {
+                        error(Strings.FAILED_GENERATOR_MESSAGE);
+                    }
+
                     setResults(null);
                     setIsLoading(false);
-                    error(Strings.FAILED_GENERATOR_MESSAGE);
                     return null;
                 });
         };
@@ -59,6 +66,11 @@ const Result = () => {
     }, []);
 
     const decide = () => {
+        if (!results.imageId) {
+            error(Strings.NO_CREATE_IMAGE_MESSAGE);
+            return;
+        }
+
         const payload = {
             imageId: results.imageId,
         };
@@ -69,21 +81,22 @@ const Result = () => {
             .then((response) => {
                 const body = response.data;
                 console.log(body);
-                console.log(results);
-                if (body.isOK && results.imageId) {
-                    success(
-                        `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${results.imageId}`
-                    );
-                    navigate(Strings.FINISH_URL);
-                } else {
-                    error(
-                        `${body.code}: ${body.message}(画像ID: ${results.imageId})`
-                    );
-                }
+                success(
+                    `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${results.imageId}`
+                );
+                navigate(Strings.FINISH_URL);
             })
             .catch((e) => {
-                console.log(e);
-                error(Strings.FAILED_DECIDE_MESSAGE);
+                const body = e.response.data;
+                console.log(body);
+                if (body && body.code && body.message) {
+                    const message = results.imageId
+                        ? `(画像ID: ${results.imageId})`
+                        : '';
+                    error(`${body.code}: ${body.message}${message}`);
+                } else {
+                    error(Strings.FAILED_DECIDE_MESSAGE);
+                }
             });
     };
 
@@ -96,6 +109,11 @@ const Result = () => {
     };
 
     const toAddGallery = () => {
+        if (!results.imageId) {
+            error(Strings.NO_CREATE_IMAGE_MESSAGE);
+            return;
+        }
+
         warn(Strings.COMING_SOON);
     };
 
@@ -130,7 +148,9 @@ const Result = () => {
                                 className={'button--primary'}
                                 name={Strings.DECISION_BUTTON}
                                 width={288}
-                                disabled={false}
+                                disabled={
+                                    results === null || results.imageId === null
+                                }
                                 disabledName={Strings.DECISION_BUTTON}
                                 onClick={() => decide()}
                             />
@@ -148,7 +168,9 @@ const Result = () => {
                                 className={'button--primary'}
                                 name={Strings.ADD_GALLERY_BUTTON}
                                 width={288}
-                                disabled={false}
+                                disabled={
+                                    results === null || results.imageId === null
+                                }
                                 disabledName={Strings.ADD_GALLERY_BUTTON}
                                 onClick={() => toAddGallery()}
                             />
