@@ -69,8 +69,10 @@ export const AURORA_UNIT = '(％)';
 // メッセージ
 export const SUCCESS_GENERATOR_MESSAGE = '画像の生成に成功しました。';
 export const FAILED_GENERATOR_MESSAGE = '画像の生成に失敗しました。';
-export const PLANET_NAME_VALIDATE_WARN_MESSAGE =
+export const PLANET_NAME_LENGTH_VALIDATE_WARN_MESSAGE =
     '惑星の名前は1〜6文字で入力してください';
+export const PLANET_NAME_TARGET_CHARS_VALIDATE_WARN_MESSAGE =
+    '惑星の名前はカナとアルファベット(大文字)で入力してください';
 export const SUCCESS_DECIDE_MESSAGE = '担当者に画像の印刷を依頼してください。';
 export const FAILED_DECIDE_MESSAGE =
     '予期せぬエラーが発生しました。担当者にお問い合わせ下さい。';
