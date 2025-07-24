@@ -4,8 +4,15 @@ import * as Strings from '../constant/strings';
 import { Spacer } from './index';
 
 const Explanation = (props) => {
+    const MAX_RATING = 5;
     const convertRarity = (rating) => {
-        return '★'.repeat(rating);
+        if (rating === -1) {
+            return 'ー';
+        }
+
+        const frame_rating = MAX_RATING - rating;
+        '☆'.repeat(frame_rating);
+        return `${'☆'.repeat(frame_rating)}${'★'.repeat(rating)}`;
     };
 
     return (
