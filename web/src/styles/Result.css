@@ -37,7 +37,6 @@
 }
 
 .image {
-    height: 760px;
-    width: 100%;
-    min-width: 480px;
+    height: auto;
+    width: 477px;
 }
