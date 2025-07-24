@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Footer, Spacer } from '../components/index';
+import { Button, Footer, NoImage, Spacer } from '../components/index';
 import '../styles/Result.css';
 import * as Config from '../constant/config';
 import * as Dimens from '../constant/dimens';
@@ -127,12 +127,14 @@ const Result = () => {
             {!isLoading && (
                 <div className={'result__container'}>
                     <div className={'left'}>
-                        {results && (
+                        {results ? (
                             <img
                                 className={'image'}
                                 src={results.imageUrl}
                                 alt={''}
                             />
+                        ) : (
+                            <NoImage />
                         )}
                     </div>
                     <div className={'right'}>
@@ -141,7 +143,7 @@ const Result = () => {
                             detail={
                                 'Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon...'
                             }
-                            rating={5}
+                            rating={results ? 1 : -1}
                         />
                         <div className={'buttons-container'}>
                             <Button
