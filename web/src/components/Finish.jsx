@@ -9,8 +9,6 @@ import {
     useSliderStore,
 } from '../stores/store';
 import PlanetType from '../models/PlanetType';
-import finishBKImage from '../assets/images/finish_background.png';
-import HomeBKImage from '../assets/images/home_background.png';
 
 const Finish = () => {
     const navigate = useNavigate();
@@ -30,7 +28,6 @@ const Finish = () => {
 
     return (
         <section className={'finish'}>
-            <img className={'finish__bk'} src={finishBKImage} alt={''} />
             <p className={'finish_label'}>{Strings.FINISH_FIRST_LABEL}</p>
             <p className={'finish_label'}>{Strings.FINISH_SECOND_LABEL}</p>
             <Spacer height={45} />
