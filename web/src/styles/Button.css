@@ -23,7 +23,9 @@
     font-family: 'Quantum', '851Gkktt', sans-serif;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.25);
-    box-shadow: 0 0 9px #00C4FF, 0 0 8px rgba(0, 255, 229, 0.5);
+    box-shadow:
+        0 0 9px #00c4ff,
+        0 0 8px rgba(0, 255, 229, 0.5);
     backdrop-filter: blur(7px);
     font-size: 24px;
     line-height: 23px;
@@ -33,7 +35,7 @@
     color: #ffffff;
 
     &:hover {
-        background: rgba(255, 255, 255, 0.20);
+        background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(6px);
     }
 }

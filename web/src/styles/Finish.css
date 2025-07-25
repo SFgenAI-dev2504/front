@@ -3,9 +3,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     height: 100vh;
 }
 
+.finish__bk {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    z-index: -1;
+}
+
 .finish_label {
-    font-size: 36px;
+    font-size: 48px;
+    line-height: 47px;
+    text-shadow:
+        0 0 9px #00c4ff,
+        0 0 8px rgba(0, 255, 229, 0.5);
+    backdrop-filter: blur(6px);
 }
