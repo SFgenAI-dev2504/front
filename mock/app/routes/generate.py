@@ -51,17 +51,23 @@ def generate():
         status = 200
         image_file_name = image_urls[0]
         image_url = "http://localhost:5000/static/output/" + image_file_name
+        explanation = "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト"
+        rate = 1
     else:
         status = 500
         image_file_name = None
         image_url = None
         image_id = None
+        explanation = None
+        rate = None
     return Response(
         response=json.dumps(
             {
                 "imageFileName": image_file_name,
                 "imageUrl": image_url,
                 "imageId": image_id,
+                "explanation": explanation,
+                "rate": rate,
                 "code": code,
                 "message": message,
             }

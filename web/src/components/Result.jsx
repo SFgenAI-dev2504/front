@@ -17,7 +17,7 @@ import {
 import PlanetType from '../models/PlanetType';
 
 const Result = () => {
-    const [results, setResults] = useState(null);
+    const [response, setResponse] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const sliderValue = useSliderStore((state) => state.sliders);
@@ -41,7 +41,7 @@ const Result = () => {
                 .then((response) => {
                     const body = response.data;
                     console.log(body);
-                    setResults(body);
+                    setResponse(body);
                     setIsLoading(false);
 
                     success(Strings.SUCCESS_GENERATOR_MESSAGE);
@@ -56,7 +56,7 @@ const Result = () => {
                         error(Strings.FAILED_GENERATOR_MESSAGE);
                     }
 
-                    setResults(null);
+                    setResponse(null);
                     setIsLoading(false);
                     return null;
                 });
@@ -66,13 +66,13 @@ const Result = () => {
     }, []);
 
     const decide = () => {
-        if (!results.imageId) {
+        if (!response.imageId) {
             error(Strings.NO_CREATE_IMAGE_MESSAGE);
             return;
         }
 
         const payload = {
-            imageId: results.imageId,
+            imageId: response.imageId,
         };
         axios
             .post(`${Config.DECIDE_API_URL}`, payload, {
@@ -82,7 +82,7 @@ const Result = () => {
                 const body = response.data;
                 console.log(body);
                 success(
-                    `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${results.imageId}`
+                    `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${response.imageId}`
                 );
                 navigate(Strings.FINISH_URL);
             })
@@ -90,8 +90,8 @@ const Result = () => {
                 const body = e.response.data;
                 console.log(body);
                 if (body && body.code && body.message) {
-                    const message = results.imageId
-                        ? `(画像ID: ${results.imageId})`
+                    const message = response.imageId
+                        ? `(画像ID: ${response.imageId})`
                         : '';
                     error(`${body.code}: ${body.message}${message}`);
                 } else {
@@ -109,7 +109,7 @@ const Result = () => {
     };
 
     const toAddGallery = () => {
-        if (!results.imageId) {
+        if (!response.imageId) {
             error(Strings.NO_CREATE_IMAGE_MESSAGE);
             return;
         }
@@ -127,10 +127,10 @@ const Result = () => {
             {!isLoading && (
                 <div className={'result__container'}>
                     <div className={'left'}>
-                        {results ? (
+                        {response ? (
                             <img
                                 className={'image'}
-                                src={results.imageUrl}
+                                src={response.imageUrl}
                                 alt={''}
                             />
                         ) : (
@@ -138,20 +138,27 @@ const Result = () => {
                         )}
                     </div>
                     <div className={'right'}>
-                        <Explanation
-                            planetName={planetName}
-                            detail={
-                                'Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon...'
-                            }
-                            rating={results ? 1 : -1}
-                        />
+                        {response ? (
+                            <Explanation
+                                planetName={planetName}
+                                detail={response.explanation}
+                                rating={response.rate}
+                            />
+                        ) : (
+                            <Explanation
+                                planetName={planetName}
+                                detail={null}
+                                rating={-1}
+                            />
+                        )}
                         <div className={'buttons-container'}>
                             <Button
                                 className={'button--primary'}
                                 name={Strings.DECISION_BUTTON}
                                 width={288}
                                 disabled={
-                                    results === null || results.imageId === null
+                                    response === null ||
+                                    response.imageId === null
                                 }
                                 disabledName={Strings.DECISION_BUTTON}
                                 onClick={() => decide()}
@@ -171,7 +178,8 @@ const Result = () => {
                                 name={Strings.ADD_GALLERY_BUTTON}
                                 width={288}
                                 disabled={
-                                    results === null || results.imageId === null
+                                    response === null ||
+                                    response.imageId === null
                                 }
                                 disabledName={Strings.ADD_GALLERY_BUTTON}
                                 onClick={() => toAddGallery()}

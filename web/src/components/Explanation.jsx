@@ -6,7 +6,7 @@ import { Spacer } from './index';
 const Explanation = (props) => {
     const MAX_RATING = 5;
     const convertRarity = (rating) => {
-        if (rating === -1) {
+        if (rating < 1) {
             return 'ー';
         }
 
@@ -22,7 +22,7 @@ const Explanation = (props) => {
                 className={'planet-name'}
             >{`${props.planetName}${Strings.PLANET_NAME_KANA_SUFFIX}`}</p>
             <Spacer height={24} />
-            <p className={'detail'}>{props.detail}</p>
+            <p className={'detail'}>{props.detail ? props.detail : ''}</p>
             <Spacer height={24} />
             <p
                 className={'rating'}
