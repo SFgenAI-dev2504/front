@@ -1,15 +1,7 @@
 html,
 body {
     font-size: 1rem;
-    font-family: 'Quantum', sans-serif;
 }
-
-/*@font-face {*/
-/*    font-family: 'Quantum';*/
-/*    src: url('/fonts/Quantum.otf') format('opentype');*/
-/*    font-weight: normal;*/
-/*    font-style: normal;*/
-/*}*/
 
 .App {
     display: flex;
