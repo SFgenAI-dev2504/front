@@ -145,7 +145,11 @@ const Result = () => {
                                 rating={response.rate}
                             />
                         ) : (
-                            <div />
+                            <Explanation
+                                planetName={planetName}
+                                detail={null}
+                                rating={-1}
+                            />
                         )}
                         <div className={'buttons-container'}>
                             <Button
