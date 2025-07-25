@@ -1,6 +1,13 @@
+@font-face {
+    font-family: '851Gkktt';
+    src: url('../assets/fonts/851Gkktt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0;
-    font-family: 'Quantum', sans-serif;
+    font-family: 'Quantum', '851Gkktt', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

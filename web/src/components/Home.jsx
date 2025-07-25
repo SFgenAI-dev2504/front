@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Spacer } from '../components/index';
 import '../styles/Home.css';
 import * as Strings from '../constant/strings';
-// import HomeBKImage from '../assets/images/home_background.png';
+import HomeBKImage from '../assets/images/home_background.png';
 import HomeLogoImage from '../assets/images/home_logo.svg';
 import { warn } from '../core/notify/notify';
 
@@ -20,7 +20,7 @@ const Home = () => {
 
     return (
         <section className={'home'}>
-            {/*<img className={'home__bk'} src={HomeBKImage} alt={''} />*/}
+            <img className={'home__bk'} src={HomeBKImage} alt={''} />
             <div className={'home__container'}>
                 <p className={'sub_label'}>{Strings.HOME_SUB_LABEL}</p>
                 <Spacer height={24} />

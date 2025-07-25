@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Footer, NoImage, Spacer } from '../components/index';
+import {
+    Button,
+    Footer,
+    NoImage,
+    Spacer,
+    Explanation,
+} from '../components/index';
 import '../styles/Result.css';
 import * as Config from '../constant/config';
 import * as Dimens from '../constant/dimens';
@@ -8,7 +14,6 @@ import { MoonLoader } from 'react-spinners';
 import axios from 'axios';
 import * as Strings from '../constant/strings';
 import { error, success, warn } from '../core/notify/notify';
-import Explanation from './Explanation';
 import {
     usePlanetNameStore,
     usePlanetTypeStore,
