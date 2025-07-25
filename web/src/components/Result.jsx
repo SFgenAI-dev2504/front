@@ -138,13 +138,15 @@ const Result = () => {
                         )}
                     </div>
                     <div className={'right'}>
-                        <Explanation
-                            planetName={planetName}
-                            detail={
-                                'Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon... Coming soon...'
-                            }
-                            rating={response ? 1 : -1}
-                        />
+                        {response ? (
+                            <Explanation
+                                planetName={planetName}
+                                detail={response.explanation}
+                                rating={response.rate}
+                            />
+                        ) : (
+                            <div />
+                        )}
                         <div className={'buttons-container'}>
                             <Button
                                 className={'button--primary'}
