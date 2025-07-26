@@ -1,7 +1,7 @@
-// Loader
 import { Bounce } from 'react-toastify';
 
-export const LOADER_COLOR = '#00aac9';
+// Loader
+export const LOADER_COLOR = '#00FFFF';
 
 // Toast
 export const TOAST_OPTION = {
