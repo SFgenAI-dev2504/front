@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Explanation.css';
 import * as Strings from '../constant/strings';
 import { Spacer } from './index';
+import ResultBackgroundImage from '../assets/images/result_background.png';
 
 const Explanation = (props) => {
     const MAX_RATING = 5;
@@ -17,17 +18,19 @@ const Explanation = (props) => {
 
     return (
         <section className={'explanation'}>
-            <Spacer height={40} />
-            <p
-                className={'planet-name'}
-            >{`${props.planetName}${Strings.PLANET_NAME_KANA_SUFFIX}`}</p>
-            <Spacer height={24} />
-            <p className={'detail'}>{props.detail ? props.detail : ''}</p>
-            <Spacer height={24} />
-            <p
-                className={'rating'}
-            >{`${Strings.RATING_LABEL}${convertRarity(props.rating)}`}</p>
-            <Spacer height={40} />
+            <img src={ResultBackgroundImage} alt={''} />
+            <div className={'explanation__container'}>
+                <p
+                    className={'planet-name'}
+                >{`${props.planetName}${Strings.PLANET_NAME_KANA_SUFFIX}`}</p>
+                <Spacer height={24} />
+                <p className={'detail'}>{props.detail ? props.detail : ''}</p>
+                <Spacer height={24} />
+                <p
+                    className={'rating'}
+                >{`${Strings.RATING_LABEL}${convertRarity(props.rating)}`}</p>
+                <Spacer height={40} />
+            </div>
         </section>
     );
 };

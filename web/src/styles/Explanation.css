@@ -1,20 +1,39 @@
 .explanation {
-    width: 712px;
-    max-height: 315px;
-    border: 1px solid black;
-    padding: 0 40px;
+    position: relative;
+}
+
+.explanation__container {
+    position: absolute;
+    top: 45px;
+    left: 55px;
 }
 
 .planet-name {
-    font-size: 64px;
+    font-family: '851Gkktt', sans-serif;
+    font-size: 72px;
+    line-height: 70px;
+    max-width: 604px;
+    text-shadow:
+        0 0 9px #00c4ff,
+        0 0 8px rgba(0, 255, 229, 0.5);
+    backdrop-filter: blur(6px);
 }
 
 .detail {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
     font-size: 16px;
-    font-weight: bold;
-    line-height: 22px;
+    line-height: 150%;
+    max-width: 604px;
 }
 
 .rating {
+    font-family: '851Gkktt', sans-serif;
     font-size: 24px;
+    line-height: 23px;
+    color: #00f4dc;
+    text-shadow:
+        0 0 9px #00c4ff,
+        0 0 8px rgba(0, 255, 229, 0.5);
+    max-width: 604px;
 }

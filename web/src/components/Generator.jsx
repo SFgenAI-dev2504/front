@@ -37,11 +37,7 @@ const Generator = () => {
                 <NoImage />
             </div>
             <div className={'right'}>
-                <img
-                    className={'param_bk'}
-                    src={ParamBackgroundImage}
-                    alt={''}
-                />
+                <img src={ParamBackgroundImage} alt={''} />
                 <Parameters disabled={false} />
                 <Spacer height={24} />
                 <Button

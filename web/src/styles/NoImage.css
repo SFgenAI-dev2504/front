@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     width: 480px;
     height: 760px;
     background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(16px);
     border-radius: 16px;
     font-size: 16px;
     line-height: 16px;

@@ -27,28 +27,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 57px;
 }
 
 .left {
     display: flex;
+    filter: drop-shadow(0px 0px 10px #ffffff)
+        drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
 }
 
 .right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
+    margin-left: 51px;
 }
 
-.buttons-container {
+.first__button {
     position: absolute;
-    bottom: -42px;
+    bottom: -90px;
     left: 50%;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 0);
+}
+
+.second__button {
+    position: absolute;
+    bottom: -161px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.third__button {
+    position: absolute;
+    bottom: -224px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .image {
     height: auto;
     width: 477px;
+    border-radius: 20px;
 }

@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-    Button,
-    Footer,
-    NoImage,
-    Spacer,
-    Explanation,
-} from '../components/index';
+import { Button, Footer, NoImage, Explanation } from '../components/index';
 import '../styles/Result.css';
 import * as Config from '../constant/config';
 import * as Dimens from '../constant/dimens';
@@ -88,7 +82,7 @@ const Result = () => {
                 const body = response.data;
                 console.log(body);
                 success(
-                    `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${response.imageId}`
+                    `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${response.imageId})`
                 );
                 navigate(Strings.FINISH_URL);
             })
@@ -158,7 +152,7 @@ const Result = () => {
                                 rating={-1}
                             />
                         )}
-                        <div className={'buttons-container'}>
+                        <div className={'first__button'}>
                             <Button
                                 className={'primary__pop__l'}
                                 name={Strings.DECISION_BUTTON}
@@ -171,7 +165,8 @@ const Result = () => {
                                 disabledName={Strings.DECISION_BUTTON}
                                 onClick={() => decide()}
                             />
-                            <Spacer height={32} />
+                        </div>
+                        <div className={'second__button'}>
                             <Button
                                 className={'transparent__pop__s'}
                                 name={Strings.REMAKE_BUTTON}
@@ -181,7 +176,8 @@ const Result = () => {
                                 disabledName={Strings.REMAKE_BUTTON}
                                 onClick={() => remake()}
                             />
-                            <Spacer height={24} />
+                        </div>
+                        <div className={'third__button'}>
                             <Button
                                 className={'transparent__pop__m'}
                                 name={Strings.ADD_GALLERY_BUTTON}
