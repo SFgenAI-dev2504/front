@@ -19,7 +19,7 @@ const Parameter = (props) => {
                 <p className={'unit'}>{props.unit}</p>
             </div>
             <div className={'slidebar__container'}>
-                <div className={'slidebar'}>
+                <div className={'input'}>
                     <Slider
                         aria-label={props.name}
                         value={value}
@@ -52,16 +52,16 @@ const Parameter = (props) => {
                         disabled={props.disabled}
                     />
                 </div>
-                <div className={'subtitle'}>
-                    {props.subtileLabelVisible && (
-                        <p className={'subtitle__label'}>
-                            {Strings.PARAMETER_DETAIL_LABEL}
-                        </p>
-                    )}
+                <div className={'times__container'}>
                     {props.onChange !== null && (
-                        <p className={'subtitle__value'}>
-                            {props.onChange(value) + ' 倍'}
-                        </p>
+                        <div>
+                            <span className={'times-value'}>
+                                {props.onChange(value)}
+                            </span>
+                            <span className={'times-value__unit'}>
+                                {Strings.PARAMETER_TIMES_UNIT_LABEL}
+                            </span>
+                        </div>
                     )}
                 </div>
             </div>

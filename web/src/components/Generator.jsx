@@ -7,6 +7,7 @@ import { usePlanetNameStore } from '../stores/store';
 import { warn } from '../core/notify/notify';
 import { validateMinAndMax } from '../core/validator/lengthValidator';
 import { validate } from '../core/validator/characterTypeValidator';
+import BackgroundImage from '../assets/images/param_background.png';
 
 const Generator = () => {
     const navigate = useNavigate();
@@ -34,6 +35,7 @@ const Generator = () => {
                 <NoImage />
             </div>
             <div className={'right'}>
+                <img className={'param_bk'} src={BackgroundImage} alt={''} />
                 <Parameters disabled={false} />
                 <Spacer height={24} />
                 <Button

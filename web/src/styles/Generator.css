@@ -4,13 +4,10 @@
     margin-top: 40px;
 }
 
-.left {
-    display: flex;
-}
-
 .right {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     margin-left: 48px;
 }

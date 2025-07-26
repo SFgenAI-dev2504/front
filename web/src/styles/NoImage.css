@@ -2,9 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 480px;
     height: 760px;
-    width: 100%;
-    min-width: 480px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
     border-radius: 16px;
-    border: 1px solid black;
+    font-size: 16px;
+    line-height: 16px;
+    color: #f7ff00;
+    text-shadow:
+        0 0 17px #ffa200,
+        0 0 25px #ffa200;
 }
