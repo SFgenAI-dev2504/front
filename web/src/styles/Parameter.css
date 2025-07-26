@@ -61,6 +61,7 @@
 .input {
     max-width: 481px;
     width: 100%;
+    margin-top: -2px;
 }
 
 .times__container {

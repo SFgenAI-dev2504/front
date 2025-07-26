@@ -20,6 +20,7 @@ import {
     useSliderStore,
 } from '../stores/store';
 import PlanetType from '../models/PlanetType';
+import BackgroundImage from '../assets/images/background_dark.png';
 
 const Result = () => {
     const [response, setResponse] = useState(null);
@@ -124,6 +125,7 @@ const Result = () => {
 
     return (
         <section className={'result'}>
+            <img className={'result_bk'} src={BackgroundImage} alt={''} />
             {isLoading && (
                 <div className={'loading'}>
                     <MoonLoader color={Dimens.LOADER_COLOR} />
@@ -158,9 +160,10 @@ const Result = () => {
                         )}
                         <div className={'buttons-container'}>
                             <Button
-                                className={'button--primary'}
+                                className={'primary__pop__l'}
                                 name={Strings.DECISION_BUTTON}
                                 width={288}
+                                widthHover={288}
                                 disabled={
                                     response === null ||
                                     response.imageId === null
@@ -170,18 +173,20 @@ const Result = () => {
                             />
                             <Spacer height={32} />
                             <Button
-                                className={'button--primary'}
+                                className={'transparent__pop__s'}
                                 name={Strings.REMAKE_BUTTON}
                                 width={288}
+                                widthHover={288}
                                 disabled={false}
                                 disabledName={Strings.REMAKE_BUTTON}
                                 onClick={() => remake()}
                             />
                             <Spacer height={24} />
                             <Button
-                                className={'button--primary'}
+                                className={'transparent__pop__m'}
                                 name={Strings.ADD_GALLERY_BUTTON}
                                 width={288}
+                                widthHover={288}
                                 disabled={
                                     response === null ||
                                     response.imageId === null

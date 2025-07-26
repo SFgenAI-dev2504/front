@@ -1,4 +1,4 @@
-.button--primary {
+.primary__m {
     font-family: '851Gkktt', sans-serif;
     box-sizing: border-box;
     background: linear-gradient(91.4deg, #29abe2 0.27%, #00ffff 99.73%);
@@ -11,7 +11,9 @@
     font-size: 32px;
     line-height: 31px;
     color: #ffffff;
+    width: 288px;
     height: 47px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
         background: rgba(255, 255, 255, 0.2);
@@ -19,7 +21,40 @@
     }
 }
 
-.button--transparent {
+.primary__pop__l {
+}
+
+.secondary__pop__ll {
+    font-family: '851Gkktt', sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(91.4deg, #ffa200 0.27%, #ffea00 99.73%);
+    box-shadow:
+        0 0 17px #ffa200,
+        0 0 25px #ffa200;
+    border: 1px #ffea00 solid;
+    backdrop-filter: blur(6px);
+    border-radius: 112px;
+    font-size: 32px;
+    line-height: 31px;
+    color: #ffffff;
+    width: 384px;
+    height: 47px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow:
+            0 0 17px #ffa200,
+            0 0 25px #ffa200;
+        border-radius: 112px;
+        width: 438px;
+        height: 53px;
+        font-size: 38px;
+        line-height: 37px;
+    }
+}
+
+.transparent__m {
     font-family: 'Quantum', '851Gkktt', sans-serif;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.25);
@@ -31,11 +66,19 @@
     line-height: 23px;
     border-radius: 112px;
     border: 1px #00ffff solid;
+    width: 288px;
     height: 39px;
     color: #ffffff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(6px);
     }
+}
+
+.transparent__pop__m {
+}
+
+.transparent__pop__s {
 }

@@ -5,6 +5,7 @@ import '../styles/Home.css';
 import * as Strings from '../constant/strings';
 import HomeLogoImage from '../assets/images/home_logo.svg';
 import { warn } from '../core/notify/notify';
+import BackgroundImage from '../assets/images/background_light.png';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Home = () => {
 
     return (
         <section className={'home'}>
+            <img className={'home__bk'} src={BackgroundImage} alt={''} />
             <div className={'home__container'}>
                 <p className={'sub_label'}>{Strings.HOME_SUB_LABEL}</p>
                 <Spacer height={24} />
@@ -27,18 +29,16 @@ const Home = () => {
                 <p className={'maker_label'}>{Strings.HOME_LABEL_MAKER}</p>
                 <Spacer height={24} />
                 <Button
-                    className={'button--primary'}
+                    className={'primary__m'}
                     name={Strings.TO_GENERATOR_BUTTON}
-                    width={288}
                     disabled={false}
                     disabledName={Strings.TO_GENERATOR_BUTTON}
                     onClick={() => toGenerate()}
                 />
                 <Spacer height={24} />
                 <Button
-                    className={'button--transparent'}
+                    className={'transparent__m'}
                     name={Strings.TO_GALLERY_BUTTON}
-                    width={288}
                     disabled={false}
                     disabledName={Strings.TO_GALLERY_BUTTON}
                     onClick={() => toGallery()}

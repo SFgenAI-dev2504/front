@@ -27,21 +27,27 @@ const Parameter = (props) => {
                             setSliderValueByPromptType(props.type, newValue)
                         }
                         sx={{
-                            color: '#00aac9',
+                            // スライダーのピック
                             '& .MuiSlider-thumb': {
-                                backgroundColor: '#00aac9',
-                                boxShadow: '0 0 4px 0px rgba(0, 244, 220, 1)',
-                                width: 10,
-                                height: 10,
+                                backgroundColor: '#00FFFF',
+                                filter: `drop-shadow(0 0 9px #00C4FF) drop-shadow(0 0 8px rgba(0, 255, 229, 0.5))`,
+                                backdropFilter: 'blur(6px)',
+                                border: 'none',
+                                width: 8,
+                                height: 8,
                             },
+                            // スライダーのバー
                             '& .MuiSlider-track': {
-                                backgroundColor: '#00aac9',
-                                boxShadow: '0 0 4px 0px rgba(0, 244, 220, 1)',
-                                height: 2,
+                                backgroundColor: '#00FFFF',
+                                filter: `drop-shadow(0 0 9px #00C4FF) drop-shadow(0 0 8px rgba(0, 255, 229, 0.5))`,
+                                backdropFilter: 'blur(6px)',
+                                border: 'none',
+                                height: 4,
                             },
+                            // スライダーのレール(背景)
                             '& .MuiSlider-rail': {
-                                backgroundColor: '#00000050',
-                                height: 2,
+                                backgroundColor: '#FFFFFF',
+                                height: 4,
                             },
                         }}
                         valueLabelDisplay={'off'}

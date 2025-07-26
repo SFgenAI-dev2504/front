@@ -33,9 +33,9 @@ const Parameters = (props) => {
                         step={Config.DIAMETER_STEP}
                         onChange={calcDiameter}
                         index={0}
-                        subtileLabelVisible={true}
                         disabled={props.disabled}
                     />
+                    <Spacer height={6} />
                     <Parameter
                         type={PromptType.GRAVITY}
                         name={Strings.GRAVITY}
@@ -45,9 +45,9 @@ const Parameters = (props) => {
                         step={Config.GRAVITY_STEP}
                         onChange={calcGravity}
                         index={1}
-                        subtileLabelVisible={false}
                         disabled={props.disabled}
                     />
+                    <Spacer height={6} />
                     <Parameter
                         type={PromptType.DISTANCE}
                         name={Strings.DISTANCE}
@@ -57,9 +57,9 @@ const Parameters = (props) => {
                         step={Config.DISTANCE_STEP}
                         onChange={calcDistance}
                         index={2}
-                        subtileLabelVisible={false}
                         disabled={props.disabled}
                     />
+                    <Spacer height={6} />
                     <Parameter
                         type={PromptType.TEMPERATURE}
                         name={Strings.TEMPERATURE}
@@ -69,9 +69,9 @@ const Parameters = (props) => {
                         step={Config.TEMPERATURE_STEP}
                         onChange={calcTemperature}
                         index={3}
-                        subtileLabelVisible={false}
                         disabled={props.disabled}
                     />
+                    <Spacer height={6} />
                     <Parameter
                         type={PromptType.ATMOSPHERE}
                         name={Strings.ATMOSPHERE}
@@ -81,9 +81,9 @@ const Parameters = (props) => {
                         step={Config.ATMOSPHERE_STEP}
                         onChange={null}
                         index={4}
-                        subtileLabelVisible={false}
                         disabled={props.disabled}
                     />
+                    <Spacer height={6} />
                     <Parameter
                         type={PromptType.WATER}
                         name={Strings.WATER}
@@ -93,9 +93,9 @@ const Parameters = (props) => {
                         step={Config.WATER_STEP}
                         onChange={null}
                         index={5}
-                        subtileLabelVisible={false}
                         disabled={props.disabled}
                     />
+                    <Spacer height={6} />
                     <Parameter
                         type={PromptType.TERRAIN}
                         name={Strings.TERRAIN}
@@ -105,9 +105,9 @@ const Parameters = (props) => {
                         step={Config.TERRAIN_STEP}
                         onChange={null}
                         index={6}
-                        subtileLabelVisible={false}
                         disabled={props.disabled}
                     />
+                    <Spacer height={6} />
                     <Parameter
                         type={PromptType.VOLCANO}
                         name={Strings.VOLCANO}
@@ -117,9 +117,9 @@ const Parameters = (props) => {
                         step={Config.VOLCANO_STEP}
                         onChange={null}
                         index={7}
-                        subtileLabelVisible={false}
                         disabled={props.disabled}
                     />
+                    <Spacer height={6} />
                     <Parameter
                         type={PromptType.AURORA}
                         name={Strings.AURORA}
@@ -129,15 +129,14 @@ const Parameters = (props) => {
                         step={Config.AURORA_STEP}
                         onChange={null}
                         index={8}
-                        subtileLabelVisible={false}
                         disabled={props.disabled}
                     />
+                    <Spacer height={8} />
                     <ParameterText
                         name={Strings.PLANET_NAME}
                         disabled={props.disabled}
                     />
                 </div>
-                <Spacer height={45} />
             </div>
         </section>
     );
