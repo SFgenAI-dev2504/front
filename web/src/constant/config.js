@@ -129,6 +129,9 @@ export const NEPTUNE_TERRAIN_VALUE = 40;
 export const NEPTUNE_VOLCANO_VALUE = 0;
 export const NEPTUNE_AURORA_VALUE = 100;
 
+// Transition
+export const DURATION = 1000;
+
 // Chart
 export const CHART_MIN = 0;
 export const CHART_MAX = 100;

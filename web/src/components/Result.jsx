@@ -9,12 +9,14 @@ import axios from 'axios';
 import * as Strings from '../constant/strings';
 import { error, success, warn } from '../core/notify/notify';
 import {
+    useGenerateFadeStore,
     usePlanetNameStore,
     usePlanetTypeStore,
     useSliderStore,
 } from '../stores/store';
 import PlanetType from '../models/PlanetType';
 import BackgroundImage from '../assets/images/background_dark.png';
+import FadeState from '../models/FadeState';
 
 const Result = () => {
     const [response, setResponse] = useState(null);
@@ -27,6 +29,8 @@ const Result = () => {
     );
     const setPlanetType = usePlanetTypeStore((state) => state.setPlanetType);
     const setPlanetName = usePlanetNameStore((state) => state.setPlanetName);
+    const fadeState = useGenerateFadeStore((state) => state.value);
+    const setFadeState = useGenerateFadeStore((state) => state.setValue);
 
     useEffect(() => {
         const generate = async () => {
@@ -44,7 +48,6 @@ const Result = () => {
                     setResponse(body);
                     setIsLoading(false);
 
-                    success(Strings.SUCCESS_GENERATOR_MESSAGE);
                     return response.data;
                 })
                 .catch((e) => {
@@ -71,6 +74,7 @@ const Result = () => {
             return;
         }
 
+        setFadeState(FadeState.NO_FADE);
         const payload = {
             imageId: response.imageId,
         };
@@ -104,8 +108,12 @@ const Result = () => {
         // 初期化をして、画面遷移する
         setSliderValueByPlanetType(PlanetType.EARTH);
         setPlanetType(PlanetType.EARTH);
-        setPlanetName('');
-        navigate(Strings.GENERATOR_URL);
+        setFadeState(FadeState.FADE_IN);
+
+        setTimeout(() => {
+            navigate(Strings.GENERATOR_URL);
+            setPlanetName('');
+        }, Config.DURATION);
     };
 
     const toAddGallery = () => {
@@ -115,6 +123,26 @@ const Result = () => {
         }
 
         warn(Strings.COMING_SOON);
+    };
+
+    const createClassName = (base, fadeIn, fadeOut) => {
+        if (base === null) {
+            if (fadeState === FadeState.NO_FADE) {
+                return ``;
+            } else if (fadeState === FadeState.FADE_IN) {
+                return fadeOut;
+            } else if (fadeState === FadeState.FADE_OUT) {
+                return fadeIn;
+            }
+        } else {
+            if (fadeState === FadeState.NO_FADE) {
+                return `${base}`;
+            } else if (fadeState === FadeState.FADE_IN) {
+                return `${base} ${fadeOut}`;
+            } else if (fadeState === FadeState.FADE_OUT) {
+                return `${base} ${fadeIn}`;
+            }
+        }
     };
 
     return (
@@ -127,7 +155,13 @@ const Result = () => {
             )}
             {!isLoading && (
                 <div className={'result__container'}>
-                    <div className={'left'}>
+                    <div
+                        className={createClassName(
+                            'left',
+                            'fade-in',
+                            'fade-out'
+                        )}
+                    >
                         {response ? (
                             <img
                                 className={'image'}
@@ -139,20 +173,35 @@ const Result = () => {
                         )}
                     </div>
                     <div className={'right'}>
-                        {response ? (
-                            <Explanation
-                                planetName={planetName}
-                                detail={response.explanation}
-                                rating={response.rate}
-                            />
-                        ) : (
-                            <Explanation
-                                planetName={planetName}
-                                detail={null}
-                                rating={-1}
-                            />
-                        )}
-                        <div className={'first__button'}>
+                        <div
+                            className={createClassName(
+                                null,
+                                'fade-in-down',
+                                'fade-out-up'
+                            )}
+                        >
+                            {response ? (
+                                <Explanation
+                                    planetName={planetName}
+                                    detail={response.explanation}
+                                    rating={response.rate}
+                                />
+                            ) : (
+                                <Explanation
+                                    planetName={planetName}
+                                    detail={null}
+                                    rating={-1}
+                                />
+                            )}
+                        </div>
+
+                        <div
+                            className={createClassName(
+                                'first__button',
+                                'fade-in',
+                                'fade-out'
+                            )}
+                        >
                             <Button
                                 className={'primary__pop__l'}
                                 name={Strings.DECISION_BUTTON}
@@ -166,7 +215,13 @@ const Result = () => {
                                 onClick={() => decide()}
                             />
                         </div>
-                        <div className={'second__button'}>
+                        <div
+                            className={createClassName(
+                                'second__button',
+                                'fade-in',
+                                'fade-out'
+                            )}
+                        >
                             <Button
                                 className={'transparent__pop__s'}
                                 name={Strings.REMAKE_BUTTON}
@@ -177,7 +232,13 @@ const Result = () => {
                                 onClick={() => remake()}
                             />
                         </div>
-                        <div className={'third__button'}>
+                        <div
+                            className={createClassName(
+                                'third__button',
+                                'fade-in',
+                                'fade-out'
+                            )}
+                        >
                             <Button
                                 className={'transparent__pop__m'}
                                 name={Strings.ADD_GALLERY_BUTTON}
