@@ -4,8 +4,11 @@
 
 .explanation__container {
     position: absolute;
-    top: 45px;
-    left: 55px;
+    top: 18px;
+    left: 18px;
+    padding: 27px 34px 20px 37px;
+    border-radius: 28px;
+    backdrop-filter: blur(15px);
 }
 
 .planet-name {
@@ -16,7 +19,6 @@
     text-shadow:
         0 0 9px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
-    backdrop-filter: blur(6px);
 }
 
 .detail {

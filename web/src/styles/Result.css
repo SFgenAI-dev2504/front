@@ -15,6 +15,15 @@
     z-index: -1;
 }
 
+.bk_blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+}
+
 .loading {
     position: absolute;
     top: 50%;

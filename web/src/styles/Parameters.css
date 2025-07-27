@@ -2,13 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 41px;
-    left: 56px;
+    position: relative;
 }
 
 .container {
-    width: 628px;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    padding: 24px 4px 32px 36px;
+    width: 632px;
+    border-radius: 26px;
+    backdrop-filter: blur(15px);
 }
 
 .first_row {

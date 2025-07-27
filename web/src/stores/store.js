@@ -183,7 +183,7 @@ export const usePlanetNameStore = create((set) => ({
         }),
 }));
 
-export const useGenerateFadeStore = create((set) => ({
+export const useFadeStateStore = create((set) => ({
     value: FadeState.NO_FADE,
     setValue: (value) =>
         set(() => {

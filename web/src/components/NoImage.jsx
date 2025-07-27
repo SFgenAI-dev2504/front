@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/NoImage.css';
 import * as Strings from '../constant/strings';
+import '../styles/NoImage.css';
 
 const NoImage = () => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/ParameterText.css';
 import { usePlanetNameStore } from '../stores/store';
 import * as Strings from '../constant/strings';
+import '../styles/ParameterText.css';
 
 const ParameterText = (props) => {
     const planetName = usePlanetNameStore((state) => state.planetName);
@@ -9,7 +9,7 @@ const ParameterText = (props) => {
 
     return (
         <section className={'parameter__text'}>
-            <p className={'name'}>{props.name}</p>
+            <p className={'name__label'}>{props.name}</p>
             <input
                 className={'planet__name'}
                 name={'input'}
