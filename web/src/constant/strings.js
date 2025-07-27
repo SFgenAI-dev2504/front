@@ -74,6 +74,7 @@ export const FAILED_DECIDE_MESSAGE =
     '予期せぬエラーが発生しました。担当者にお問い合わせ下さい。';
 export const NO_CREATE_IMAGE_MESSAGE =
     '画像が生成されていません。画像の生成をやり直してください。';
+export const TIMEOUT_MESSAGE = 'タイムアウトのため、再試行して下さい。';
 
 // コピーライト
 export const COPY_RIGHT = 'COPYRIGHT 2025 SPACE AI MAKER';

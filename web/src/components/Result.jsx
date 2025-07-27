@@ -57,12 +57,17 @@ const Result = () => {
                     return response.data;
                 })
                 .catch((e) => {
-                    const body = e.response.data;
-                    console.log(body);
-                    if (body && body.code && body.message) {
-                        error(`${body.code}: ${body.message}`);
+                    // タイムアウトの場合
+                    if (e.code === 'ECONNABORTED') {
+                        error(Strings.TIMEOUT_MESSAGE);
                     } else {
-                        error(Strings.FAILED_GENERATOR_MESSAGE);
+                        const body = e.response.data;
+                        console.log(body);
+                        if (body && body.code && body.message) {
+                            error(`${body.code}: ${body.message}`);
+                        } else {
+                            error(Strings.FAILED_GENERATOR_MESSAGE);
+                        }
                     }
 
                     setResponse(null);
@@ -75,13 +80,14 @@ const Result = () => {
     }, []);
 
     const decide = () => {
-        if (!response.imageId) {
+        const imageId = response.imageId;
+        if (!imageId) {
             error(Strings.NO_CREATE_IMAGE_MESSAGE);
             return;
         }
 
         const payload = {
-            imageId: response.imageId,
+            imageId: imageId,
         };
         axios
             .post(`${Config.DECIDE_API_URL}`, payload, {
@@ -91,7 +97,7 @@ const Result = () => {
                 const body = response.data;
                 console.log(body);
                 success(
-                    `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${response.imageId})`
+                    `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${imageId})`
                 );
 
                 setFadeState(FadeState.NO_FADE);
@@ -99,15 +105,18 @@ const Result = () => {
                 navigate(Strings.FINISH_URL);
             })
             .catch((e) => {
-                const body = e.response.data;
-                console.log(body);
-                if (body && body.code && body.message) {
-                    const message = response.imageId
-                        ? `(画像ID: ${response.imageId})`
-                        : '';
-                    error(`${body.code}: ${body.message}${message}`);
+                // タイムアウトの場合
+                if (e.code === 'ECONNABORTED') {
+                    error(Strings.TIMEOUT_MESSAGE);
                 } else {
-                    error(Strings.FAILED_DECIDE_MESSAGE);
+                    const body = e.response.data;
+                    console.log(body);
+                    if (body && body.code && body.message) {
+                        const message = imageId ? `(画像ID: ${imageId})` : '';
+                        error(`${body.code}: ${body.message}${message}`);
+                    } else {
+                        error(Strings.FAILED_DECIDE_MESSAGE);
+                    }
                 }
             });
     };
