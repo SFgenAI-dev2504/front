@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Spacer } from '../components/index';
-import '../styles/Home.css';
+import { warn } from '../core/notify/notify';
 import * as Strings from '../constant/strings';
 import HomeLogoImage from '../assets/images/home_logo.svg';
-import { warn } from '../core/notify/notify';
 import BackgroundImage from '../assets/images/background_light.png';
+import '../styles/Home.css';
 
 const Home = () => {
     const navigate = useNavigate();

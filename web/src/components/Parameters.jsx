@@ -1,23 +1,25 @@
 import React from 'react';
-import '../styles/Parameters.css';
-import * as Strings from '../constant/strings';
-import * as Config from '../constant/config';
 import { Parameter, ParameterText, PlanetTypeSelection, Spacer } from './index';
+import PromptType from '../models/PromptType';
 import {
     calcTemperature,
     calcDiameter,
     calcDistance,
     calcGravity,
 } from '../core/util/earthRelativeCalculator';
-import PromptType from '../models/PromptType';
+import * as Strings from '../constant/strings';
+import * as Config from '../constant/config';
+import ParamBackgroundImage from '../assets/images/param_background.png';
+import '../styles/Parameters.css';
 
-const Parameters = (props) => {
+const Parameters = () => {
     return (
         <section className={'parameters'}>
+            <img src={ParamBackgroundImage} alt={''} />
             <div className={'container'}>
                 <div className={'first_row'}>
                     <p className={'title'}>{Strings.PARAMETER_INPUT_LABEL}</p>
-                    <PlanetTypeSelection disabled={props.disabled} />
+                    <PlanetTypeSelection />
                 </div>
                 <Spacer height={24} />
                 <div className={'rest_row'}>
@@ -33,7 +35,6 @@ const Parameters = (props) => {
                         step={Config.DIAMETER_STEP}
                         onChange={calcDiameter}
                         index={0}
-                        disabled={props.disabled}
                     />
                     <Spacer height={6} />
                     <Parameter
@@ -45,7 +46,6 @@ const Parameters = (props) => {
                         step={Config.GRAVITY_STEP}
                         onChange={calcGravity}
                         index={1}
-                        disabled={props.disabled}
                     />
                     <Spacer height={6} />
                     <Parameter
@@ -57,7 +57,6 @@ const Parameters = (props) => {
                         step={Config.DISTANCE_STEP}
                         onChange={calcDistance}
                         index={2}
-                        disabled={props.disabled}
                     />
                     <Spacer height={6} />
                     <Parameter
@@ -69,7 +68,6 @@ const Parameters = (props) => {
                         step={Config.TEMPERATURE_STEP}
                         onChange={calcTemperature}
                         index={3}
-                        disabled={props.disabled}
                     />
                     <Spacer height={6} />
                     <Parameter
@@ -81,7 +79,6 @@ const Parameters = (props) => {
                         step={Config.ATMOSPHERE_STEP}
                         onChange={null}
                         index={4}
-                        disabled={props.disabled}
                     />
                     <Spacer height={6} />
                     <Parameter
@@ -93,7 +90,6 @@ const Parameters = (props) => {
                         step={Config.WATER_STEP}
                         onChange={null}
                         index={5}
-                        disabled={props.disabled}
                     />
                     <Spacer height={6} />
                     <Parameter
@@ -105,7 +101,6 @@ const Parameters = (props) => {
                         step={Config.TERRAIN_STEP}
                         onChange={null}
                         index={6}
-                        disabled={props.disabled}
                     />
                     <Spacer height={6} />
                     <Parameter
@@ -117,7 +112,6 @@ const Parameters = (props) => {
                         step={Config.VOLCANO_STEP}
                         onChange={null}
                         index={7}
-                        disabled={props.disabled}
                     />
                     <Spacer height={6} />
                     <Parameter
@@ -129,13 +123,9 @@ const Parameters = (props) => {
                         step={Config.AURORA_STEP}
                         onChange={null}
                         index={8}
-                        disabled={props.disabled}
                     />
                     <Spacer height={8} />
-                    <ParameterText
-                        name={Strings.PLANET_NAME}
-                        disabled={props.disabled}
-                    />
+                    <ParameterText name={Strings.PLANET_NAME} />
                 </div>
             </div>
         </section>

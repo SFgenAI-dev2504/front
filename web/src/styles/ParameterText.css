@@ -8,11 +8,10 @@
     line-height: 29px;
 }
 
-.name {
+.name__label {
     text-shadow:
         0 0 9px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
-    backdrop-filter: blur(6px);
 }
 
 .planet__name {
@@ -29,5 +28,4 @@
     text-shadow:
         0 0 9px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
-    backdrop-filter: blur(6px);
 }

@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Footer, NoImage, Explanation } from '../components/index';
-import '../styles/Result.css';
-import * as Config from '../constant/config';
-import * as Dimens from '../constant/dimens';
 import { MoonLoader } from 'react-spinners';
 import axios from 'axios';
-import * as Strings from '../constant/strings';
-import { error, success, warn } from '../core/notify/notify';
 import {
-    useGenerateFadeStore,
+    Button,
+    Footer,
+    NoImage,
+    Explanation,
+    FadeMotion,
+    FadeSlideMotion,
+} from '../components/index';
+import FadeState from '../models/FadeState';
+import PlanetType from '../models/PlanetType';
+import {
+    useFadeStateStore,
     usePlanetNameStore,
     usePlanetTypeStore,
     useSliderStore,
 } from '../stores/store';
-import PlanetType from '../models/PlanetType';
+import { error, success, warn } from '../core/notify/notify';
+import * as Strings from '../constant/strings';
+import * as Config from '../constant/config';
+import * as Dimens from '../constant/dimens';
 import BackgroundImage from '../assets/images/background_dark.png';
-import FadeState from '../models/FadeState';
+import '../styles/Result.css';
 
 const Result = () => {
     const [response, setResponse] = useState(null);
@@ -29,8 +36,7 @@ const Result = () => {
     );
     const setPlanetType = usePlanetTypeStore((state) => state.setPlanetType);
     const setPlanetName = usePlanetNameStore((state) => state.setPlanetName);
-    const fadeState = useGenerateFadeStore((state) => state.value);
-    const setFadeState = useGenerateFadeStore((state) => state.setValue);
+    const setFadeState = useFadeStateStore((state) => state.setValue);
 
     useEffect(() => {
         const generate = async () => {
@@ -74,7 +80,6 @@ const Result = () => {
             return;
         }
 
-        setFadeState(FadeState.NO_FADE);
         const payload = {
             imageId: response.imageId,
         };
@@ -88,6 +93,9 @@ const Result = () => {
                 success(
                     `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${response.imageId})`
                 );
+
+                setFadeState(FadeState.NO_FADE);
+                setIsLoading(true);
                 navigate(Strings.FINISH_URL);
             })
             .catch((e) => {
@@ -113,7 +121,7 @@ const Result = () => {
         setTimeout(() => {
             navigate(Strings.GENERATOR_URL);
             setPlanetName('');
-        }, Config.DURATION);
+        }, Config.DURATION_MS);
     };
 
     const toAddGallery = () => {
@@ -125,29 +133,10 @@ const Result = () => {
         warn(Strings.COMING_SOON);
     };
 
-    const createClassName = (base, fadeIn, fadeOut) => {
-        if (base === null) {
-            if (fadeState === FadeState.NO_FADE) {
-                return ``;
-            } else if (fadeState === FadeState.FADE_IN) {
-                return fadeOut;
-            } else if (fadeState === FadeState.FADE_OUT) {
-                return fadeIn;
-            }
-        } else {
-            if (fadeState === FadeState.NO_FADE) {
-                return `${base}`;
-            } else if (fadeState === FadeState.FADE_IN) {
-                return `${base} ${fadeOut}`;
-            } else if (fadeState === FadeState.FADE_OUT) {
-                return `${base} ${fadeIn}`;
-            }
-        }
-    };
-
     return (
         <section className={'result'}>
             <img className={'result_bk'} src={BackgroundImage} alt={''} />
+            <div className={'bk_blur'} hidden={isLoading} />
             {isLoading && (
                 <div className={'loading'}>
                     <MoonLoader color={Dimens.LOADER_COLOR} />
@@ -155,30 +144,24 @@ const Result = () => {
             )}
             {!isLoading && (
                 <div className={'result__container'}>
-                    <div
-                        className={createClassName(
-                            'left',
-                            'fade-in',
-                            'fade-out'
-                        )}
-                    >
-                        {response ? (
-                            <img
-                                className={'image'}
-                                src={response.imageUrl}
-                                alt={''}
-                            />
-                        ) : (
-                            <NoImage />
-                        )}
+                    <div className={'left'}>
+                        <FadeMotion isNormalOrder={false}>
+                            {response ? (
+                                <img
+                                    className={'image'}
+                                    src={response.imageUrl}
+                                    alt={''}
+                                />
+                            ) : (
+                                <NoImage />
+                            )}
+                        </FadeMotion>
                     </div>
                     <div className={'right'}>
-                        <div
-                            className={createClassName(
-                                null,
-                                'fade-in-down',
-                                'fade-out-up'
-                            )}
+                        <FadeSlideMotion
+                            isNormalOrder={false}
+                            fadeInY={Config.TRANSFORM_EXPLANATION_FADE_IN_Y}
+                            fadeOutY={Config.TRANSFORM_EXPLANATION_FADE_OUT_Y}
                         >
                             {response ? (
                                 <Explanation
@@ -193,67 +176,49 @@ const Result = () => {
                                     rating={-1}
                                 />
                             )}
-                        </div>
-
-                        <div
-                            className={createClassName(
-                                'first__button',
-                                'fade-in',
-                                'fade-out'
-                            )}
-                        >
-                            <Button
-                                className={'primary__pop__l'}
-                                name={Strings.DECISION_BUTTON}
-                                width={288}
-                                widthHover={288}
-                                disabled={
-                                    response === null ||
-                                    response.imageId === null
-                                }
-                                disabledName={Strings.DECISION_BUTTON}
-                                onClick={() => decide()}
-                            />
-                        </div>
-                        <div
-                            className={createClassName(
-                                'second__button',
-                                'fade-in',
-                                'fade-out'
-                            )}
-                        >
-                            <Button
-                                className={'transparent__pop__s'}
-                                name={Strings.REMAKE_BUTTON}
-                                width={288}
-                                widthHover={288}
-                                disabled={false}
-                                disabledName={Strings.REMAKE_BUTTON}
-                                onClick={() => remake()}
-                            />
-                        </div>
-                        <div
-                            className={createClassName(
-                                'third__button',
-                                'fade-in',
-                                'fade-out'
-                            )}
-                        >
-                            <Button
-                                className={'transparent__pop__m'}
-                                name={Strings.ADD_GALLERY_BUTTON}
-                                width={288}
-                                widthHover={288}
-                                disabled={
-                                    response === null ||
-                                    response.imageId === null
-                                }
-                                disabledName={Strings.ADD_GALLERY_BUTTON}
-                                onClick={() => toAddGallery()}
-                            />
-                        </div>
+                        </FadeSlideMotion>
+                        <FadeMotion isNormalOrder={false}>
+                            <div className={'first__button'}>
+                                <Button
+                                    className={'primary__pop__l'}
+                                    name={Strings.DECISION_BUTTON}
+                                    width={288}
+                                    widthHover={288}
+                                    disabled={
+                                        response === null ||
+                                        response.imageId === null
+                                    }
+                                    disabledName={Strings.DECISION_BUTTON}
+                                    onClick={() => decide()}
+                                />
+                            </div>
+                            <div className={'second__button'}>
+                                <Button
+                                    className={'transparent__pop__s'}
+                                    name={Strings.REMAKE_BUTTON}
+                                    width={288}
+                                    widthHover={288}
+                                    disabled={false}
+                                    disabledName={Strings.REMAKE_BUTTON}
+                                    onClick={() => remake()}
+                                />
+                            </div>
+                            <div className={'third__button'}>
+                                <Button
+                                    className={'transparent__pop__m'}
+                                    name={Strings.ADD_GALLERY_BUTTON}
+                                    width={288}
+                                    widthHover={288}
+                                    disabled={
+                                        response === null ||
+                                        response.imageId === null
+                                    }
+                                    disabledName={Strings.ADD_GALLERY_BUTTON}
+                                    onClick={() => toAddGallery()}
+                                />
+                            </div>
+                        </FadeMotion>
                     </div>
-                    <p className={'result__container'}></p>
                     <Footer />
                 </div>
             )}

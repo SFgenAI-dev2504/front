@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/Explanation.css';
-import * as Strings from '../constant/strings';
 import { Spacer } from './index';
+import * as Strings from '../constant/strings';
 import ResultBackgroundImage from '../assets/images/result_background.png';
+import '../styles/Explanation.css';
 
 const Explanation = (props) => {
     const MAX_RATING = 5;

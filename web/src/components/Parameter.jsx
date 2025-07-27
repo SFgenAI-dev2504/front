@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/Parameter.css';
 import Slider from '@mui/material/Slider';
 import { useSliderStore } from '../stores/store';
-import * as Strings from '../constant/strings';
 import { toLocaleString } from '../core/util/stringFormat';
+import * as Strings from '../constant/strings';
+import '../styles/Parameter.css';
 
 const Parameter = (props) => {
     const value = useSliderStore((state) => state.sliders[props.type]);

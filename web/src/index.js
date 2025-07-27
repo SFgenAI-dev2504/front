@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/destyle.css';
 import './styles/index.css';
-import './styles/Animation.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

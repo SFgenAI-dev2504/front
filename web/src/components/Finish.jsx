@@ -1,15 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Footer, Spacer } from '../components/index';
-import '../styles/Finish.css';
-import * as Strings from '../constant/strings';
+import PlanetType from '../models/PlanetType';
 import {
     usePlanetNameStore,
     usePlanetTypeStore,
     useSliderStore,
 } from '../stores/store';
-import PlanetType from '../models/PlanetType';
+import * as Strings from '../constant/strings';
 import BackgroundImage from '../assets/images/background_light.png';
+import '../styles/Finish.css';
 
 const Finish = () => {
     const navigate = useNavigate();

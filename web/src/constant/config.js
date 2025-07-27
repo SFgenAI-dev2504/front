@@ -129,13 +129,12 @@ export const NEPTUNE_TERRAIN_VALUE = 40;
 export const NEPTUNE_VOLCANO_VALUE = 0;
 export const NEPTUNE_AURORA_VALUE = 100;
 
-// Transition
-export const DURATION = 1000;
+// Duration
+export const DURATION_MS = 750;
+export const DURATION_S = DURATION_MS / 1000;
 
-// Chart
-export const CHART_MIN = 0;
-export const CHART_MAX = 100;
-export const CHART_STEP_SIZE = 20;
-export const CHART_BACKDROP_COLOR = 'transparent';
-export const BASE_COLOR = '#000000';
-export const POINT_LABELS_FONT_SIZE = 12;
+// Transform
+export const TRANSFORM_SLIDER_FADE_IN_Y = [120, 0];
+export const TRANSFORM_SLIDER_FADE_OUT_Y = [0, 120];
+export const TRANSFORM_EXPLANATION_FADE_IN_Y = [-180, 0];
+export const TRANSFORM_EXPLANATION_FADE_OUT_Y = [0, -180];
