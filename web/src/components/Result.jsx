@@ -158,8 +158,6 @@ const Result = () => {
                                 <Button
                                     className={'primary__pop__l'}
                                     name={Strings.DECISION_BUTTON}
-                                    width={288}
-                                    widthHover={288}
                                     disabled={
                                         response === null ||
                                         response.imageId === null
@@ -172,8 +170,6 @@ const Result = () => {
                                 <Button
                                     className={'transparent__pop__s'}
                                     name={Strings.REMAKE_BUTTON}
-                                    width={288}
-                                    widthHover={288}
                                     disabled={false}
                                     disabledName={Strings.REMAKE_BUTTON}
                                     onClick={() => remake()}
@@ -183,8 +179,6 @@ const Result = () => {
                                 <Button
                                     className={'transparent__pop__m'}
                                     name={Strings.ADD_GALLERY_BUTTON}
-                                    width={288}
-                                    widthHover={288}
                                     disabled={
                                         response === null ||
                                         response.imageId === null

@@ -19,6 +19,12 @@
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(7px);
     }
+
+    &:disabled {
+        background: gray;
+        border: 1px gray solid;
+        box-shadow: none;
+    }
 }
 
 .primary__pop__l {
@@ -48,6 +54,12 @@
         font-size: 38px;
         line-height: 37px;
     }
+
+    &:disabled {
+        background: gray;
+        border: 1px gray solid;
+        box-shadow: none;
+    }
 }
 
 .secondary__pop__ll {
@@ -74,6 +86,12 @@
         font-size: 38px;
         line-height: 37px;
     }
+
+    &:disabled {
+        background: gray;
+        border: 1px gray solid;
+        box-shadow: none;
+    }
 }
 
 .transparent__m {
@@ -96,6 +114,12 @@
     &:hover {
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(6px);
+    }
+
+    &:disabled {
+        background: gray;
+        border: 1px gray solid;
+        box-shadow: none;
     }
 }
 
@@ -122,6 +146,12 @@
         font-size: 32px;
         line-height: 31px;
     }
+
+    &:disabled {
+        background: gray;
+        border: 1px gray solid;
+        box-shadow: none;
+    }
 }
 
 .transparent__pop__s {
@@ -146,5 +176,11 @@
         height: 47px;
         font-size: 32px;
         line-height: 31px;
+    }
+
+    &:disabled {
+        background: gray;
+        border: 1px gray solid;
+        box-shadow: none;
     }
 }
