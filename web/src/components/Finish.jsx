@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Footer, Spacer } from '../components/index';
 import PlanetType from '../models/PlanetType';
@@ -19,6 +19,15 @@ const Finish = () => {
     const setPlanetType = usePlanetTypeStore((state) => state.setPlanetType);
     const setPlanetName = usePlanetNameStore((state) => state.setPlanetName);
 
+    const [bgLoaded, setBgLoaded] = useState(false);
+
+    useEffect(() => {
+        // 画面遷移時の背景画像のチラつきを防ぐ
+        const img = new Image();
+        img.src = BackgroundImage;
+        img.onload = () => setBgLoaded(true);
+    }, []);
+
     const toHome = () => {
         // 初期化をして、画面遷移する
         setSliderValueByPlanetType(PlanetType.EARTH);
@@ -30,17 +39,25 @@ const Finish = () => {
     return (
         <section className={'finish'}>
             <img className={'finish__bk'} src={BackgroundImage} alt={''} />
-            <p className={'finish_label'}>{Strings.FINISH_FIRST_LABEL}</p>
-            <p className={'finish_label'}>{Strings.FINISH_SECOND_LABEL}</p>
-            <Spacer height={45} />
-            <Button
-                className={'primary__m'}
-                name={Strings.TO_HOME}
-                disabled={false}
-                disabledName={Strings.TO_HOME}
-                onClick={() => toHome()}
-            />
-            <Footer />
+            {bgLoaded && (
+                <>
+                    <p className={'finish_label'}>
+                        {Strings.FINISH_FIRST_LABEL}
+                    </p>
+                    <p className={'finish_label'}>
+                        {Strings.FINISH_SECOND_LABEL}
+                    </p>
+                    <Spacer height={45} />
+                    <Button
+                        className={'primary__m'}
+                        name={Strings.TO_HOME}
+                        disabled={false}
+                        disabledName={Strings.TO_HOME}
+                        onClick={() => toHome()}
+                    />
+                    <Footer />
+                </>
+            )}
         </section>
     );
 };
