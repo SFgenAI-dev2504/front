@@ -37,6 +37,7 @@ export const NEPTUNE = '海王星';
 
 // 文言
 export const NO_IMAGE = 'NO IMAGE';
+export const ERROR_OCCURRED = 'ERROR OCCURRED';
 export const COMING_SOON = 'Coming Soon...';
 
 // パラメータ

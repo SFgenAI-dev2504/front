@@ -49,7 +49,7 @@ const Generator = () => {
             <img className={'generator_bk'} src={BackgroundImage} alt={''} />
             <div className={'left'}>
                 <FadeMotion isNormalOrder={true}>
-                    <NoImage />
+                    <NoImage message={Strings.NO_IMAGE} />
                 </FadeMotion>
             </div>
             <div className={'right'}>
