@@ -1,5 +1,6 @@
 import { renderHook } from "@testing-library/react";
 import {
+  useFadeStateStore,
   usePlanetNameStore,
   usePlanetTypeStore,
   useSliderStore,
@@ -8,6 +9,7 @@ import * as Config from "../../src/constant/config";
 import { act } from "react";
 import PromptType from "../../src/models/PromptType";
 import PlanetType from "../../src/models/PlanetType";
+import FadeState from "../../src/models/FadeState";
 
 describe("store.js tests", () => {
   describe("useSliderStore hook", () => {
@@ -389,6 +391,23 @@ describe("store.js tests", () => {
       });
 
       expect(result.current.planetName).toBe("test_name");
+    });
+  });
+
+  describe("useFadeStateStore hook", () => {
+    it("test_value_initialize", () => {
+      const { result } = renderHook(() => useFadeStateStore());
+      expect(result.current.value).toBe(FadeState.NO_FADE);
+    });
+
+    it("test_setValue", () => {
+      const { result } = renderHook(() => useFadeStateStore());
+
+      act(() => {
+        result.current.setValue(FadeState.FADE_IN);
+      });
+
+      expect(result.current.value).toBe(FadeState.FADE_IN);
     });
   });
 });

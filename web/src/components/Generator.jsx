@@ -25,7 +25,9 @@ const Generator = () => {
 
     const generate = () => {
         // 長さチェック
-        if (!validateMinAndMax(planetName, 1, 6)) {
+        if (
+            !validateMinAndMax(planetName, Config.MIN_LENGTH, Config.MAX_LENGTH)
+        ) {
             warn(Strings.PLANET_NAME_LENGTH_VALIDATE_WARN_MESSAGE);
             return;
         }

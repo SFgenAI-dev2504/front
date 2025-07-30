@@ -1,21 +1,11 @@
 import React from 'react';
 import { Spacer } from './index';
+import { evaluate } from '../core/util/ratingConverter';
 import * as Strings from '../constant/strings';
 import ResultBackgroundImage from '../assets/images/result_background.png';
 import '../styles/Explanation.css';
 
 const Explanation = (props) => {
-    const MAX_RATING = 5;
-    const convertRarity = (rating) => {
-        if (rating < 1) {
-            return 'ー';
-        }
-
-        const frame_rating = MAX_RATING - rating;
-        '☆'.repeat(frame_rating);
-        return `${'☆'.repeat(frame_rating)}${'★'.repeat(rating)}`;
-    };
-
     return (
         <section className={'explanation'}>
             <img src={ResultBackgroundImage} alt={''} />
@@ -28,7 +18,7 @@ const Explanation = (props) => {
                 <Spacer height={24} />
                 <p
                     className={'rating'}
-                >{`${Strings.RATING_LABEL}${convertRarity(props.rating)}`}</p>
+                >{`${Strings.RATING_LABEL}${evaluate(props.rating)}`}</p>
                 <Spacer height={40} />
             </div>
         </section>

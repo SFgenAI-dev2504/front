@@ -24,30 +24,29 @@
 }
 
 .sub_label {
-    font-style: normal;
+    backdrop-filter: blur(6px);
     font-size: 32px;
     line-height: 31px;
     text-shadow:
         0 0 9px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
-    backdrop-filter: blur(6px);
 }
 
 .space_label,
 .maker_label {
+    color: #00ffff;
+    backdrop-filter: blur(6px);
     font-size: 96px;
     line-height: 94px;
-    color: #00ffff;
     text-shadow:
         0 0 9px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
-    backdrop-filter: blur(6px);
 }
 
 .ai_label {
+    color: #f7ff00;
     font-size: 96px;
     line-height: 94px;
-    color: #f7ff00;
     text-shadow:
         0 0 17px #ffa200,
         0 0 25px #ffa200;

@@ -24,9 +24,9 @@
 }
 
 .title {
+    color: #f7ff00;
     font-size: 32px;
     line-height: 31px;
-    color: #f7ff00;
     text-shadow:
         0 0 17px #ffa200,
         0 0 25px #ffa200;

@@ -129,6 +129,10 @@ export const NEPTUNE_TERRAIN_VALUE = 40;
 export const NEPTUNE_VOLCANO_VALUE = 0;
 export const NEPTUNE_AURORA_VALUE = 100;
 
+// Length Validation
+export const MIN_LENGTH = 1;
+export const MAX_LENGTH = 6;
+
 // Duration
 export const DURATION_MS = 750;
 export const DURATION_S = DURATION_MS / 1000;
