@@ -3,7 +3,16 @@ import Slider from '@mui/material/Slider';
 import { useSliderStore } from '../stores/store';
 import { toLocaleString } from '../core/util/stringFormat';
 import * as Strings from '../constant/strings';
+import * as Dimens from '../constant/dimens';
 import '../styles/Parameter.css';
+import {
+    SLIDER_BG_FILTER,
+    SLIDER_BORDER,
+    SLIDER_FILTER,
+    SLIDER_LINE_HEIGHT,
+    SLIDER_PICK_WIDTH,
+    SLIDER_RAIL_COLOR,
+} from '../constant/dimens';
 
 const Parameter = (props) => {
     const value = useSliderStore((state) => state.sliders[props.type]);
@@ -29,25 +38,26 @@ const Parameter = (props) => {
                         sx={{
                             // スライダーのピック
                             '& .MuiSlider-thumb': {
-                                backgroundColor: '#00FFFF',
-                                filter: `drop-shadow(0 0 9px #00C4FF) drop-shadow(0 0 8px rgba(0, 255, 229, 0.5))`,
-                                backdropFilter: 'blur(6px)',
-                                border: 'none',
-                                width: 8,
-                                height: 8,
+                                backgroundColor: Dimens.SLIDER_COLOR,
+                                filter: Dimens.SLIDER_FILTER,
+                                backdropFilter: Dimens.SLIDER_BG_FILTER,
+                                width: Dimens.SLIDER_PICK_WIDTH,
+                                height: Dimens.SLIDER_PICK_HEIGHT,
+                                border: Dimens.SLIDER_BORDER,
                             },
                             // スライダーのバー
                             '& .MuiSlider-track': {
-                                backgroundColor: '#00FFFF',
-                                filter: `drop-shadow(0 0 9px #00C4FF) drop-shadow(0 0 8px rgba(0, 255, 229, 0.5))`,
-                                backdropFilter: 'blur(6px)',
-                                border: 'none',
-                                height: 4,
+                                backgroundColor: Dimens.SLIDER_COLOR,
+                                filter: Dimens.SLIDER_FILTER,
+                                backdropFilter: Dimens.SLIDER_BG_FILTER,
+                                height: Dimens.SLIDER_LINE_HEIGHT,
+                                border: Dimens.SLIDER_BORDER,
                             },
                             // スライダーのレール(背景)
                             '& .MuiSlider-rail': {
-                                backgroundColor: '#FFFFFF',
-                                height: 4,
+                                backgroundColor: Dimens.SLIDER_RAIL_COLOR,
+                                height: Dimens.SLIDER_LINE_HEIGHT,
+                                border: Dimens.SLIDER_BORDER,
                             },
                         }}
                         valueLabelDisplay={'off'}

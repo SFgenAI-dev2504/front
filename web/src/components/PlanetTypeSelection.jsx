@@ -12,6 +12,7 @@ const PlanetTypeSelection = () => {
     const setSliderValueByPlanetType = useSliderStore(
         (state) => state.setSliderValueByPlanetType
     );
+
     return (
         <select
             className={'planet_type_selection'}

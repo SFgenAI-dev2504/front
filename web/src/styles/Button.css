@@ -1,18 +1,18 @@
 .primary__m {
-    font-family: '851Gkktt', sans-serif;
     box-sizing: border-box;
+    width: 288px;
+    height: 47px;
+    border: 1px #00ffff solid;
+    border-radius: 112px;
+    color: #ffffff;
     background: linear-gradient(91.4deg, #29abe2 0.27%, #00ffff 99.73%);
     box-shadow:
         0 0 9px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
-    border: 1px #00ffff solid;
     backdrop-filter: blur(6px);
-    border-radius: 112px;
+    font-family: '851Gkktt', sans-serif;
     font-size: 32px;
     line-height: 31px;
-    color: #ffffff;
-    width: 288px;
-    height: 47px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
@@ -22,79 +22,75 @@
 }
 
 .primary__pop__l {
-    font-family: '851Gkktt', sans-serif;
     box-sizing: border-box;
+    width: 301px;
+    height: 47px;
+    border: 1px #00ffff solid;
+    border-radius: 112px;
+    color: #ffffff;
     background: linear-gradient(91.4deg, #29abe2 0.27%, #00ffff 99.73%);
     box-shadow:
         0 0 9px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
-    border: 1px #00ffff solid;
     backdrop-filter: blur(6px);
-    border-radius: 112px;
+    font-family: '851Gkktt', sans-serif;
     font-size: 32px;
     line-height: 31px;
-    color: #ffffff;
-    width: 301px;
-    height: 47px;
     text-shadow: 0 0 8px rgba(127, 78, 0, 0.4);
 
     &:hover {
+        width: 340px;
+        height: 53px;
         background: rgba(255, 255, 255, 0.2);
         box-shadow:
             0 0 9px #00c4ff,
             0 0 8px rgba(0, 255, 229, 0.5);
-        width: 340px;
-        height: 53px;
         font-size: 38px;
         line-height: 37px;
     }
 }
 
 .secondary__pop__ll {
-    font-family: '851Gkktt', sans-serif;
     box-sizing: border-box;
+    width: 384px;
+    height: 47px;
+    border: 1px #ffea00 solid;
+    border-radius: 112px;
+    color: #ffffff;
     background: linear-gradient(91.4deg, #ffa200 0.27%, #ffea00 99.73%);
     box-shadow:
         0 0 17px #ffa200,
         0 0 25px #ffa200;
-    border: 1px #ffea00 solid;
     backdrop-filter: blur(6px);
-    border-radius: 112px;
+    font-family: '851Gkktt', sans-serif;
     font-size: 32px;
     line-height: 31px;
-    color: #ffffff;
-    width: 384px;
-    height: 47px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow:
-            0 0 17px #ffa200,
-            0 0 25px #ffa200;
-        border-radius: 112px;
         width: 438px;
         height: 53px;
+        background: rgba(255, 255, 255, 0.2);
         font-size: 38px;
         line-height: 37px;
     }
 }
 
 .transparent__m {
-    font-family: 'Quantum', '851Gkktt', sans-serif;
     box-sizing: border-box;
+    width: 288px;
+    height: 39px;
+    border: 1px #00ffff solid;
+    border-radius: 112px;
+    color: #ffffff;
     background: rgba(0, 0, 0, 0.25);
     box-shadow:
         0 0 9px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
     backdrop-filter: blur(7px);
+    font-family: '851Gkktt', sans-serif;
     font-size: 24px;
     line-height: 23px;
-    border-radius: 112px;
-    border: 1px #00ffff solid;
-    width: 288px;
-    height: 39px;
-    color: #ffffff;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
@@ -104,28 +100,23 @@
 }
 
 .transparent__pop__m {
-    font-family: '851Gkktt', sans-serif;
     box-sizing: border-box;
+    width: 288px;
+    height: 39px;
+    border: none;
+    border-radius: 112px;
+    color: #ffffff;
     background: rgba(0, 0, 0, 0.2);
     box-shadow:
         0 0 17px #ffa200,
         0 0 25px #ffa200;
     backdrop-filter: blur(6px);
-    border: none;
-    border-radius: 112px;
+    font-family: '851Gkktt', sans-serif;
     font-size: 24px;
     line-height: 23px;
-    color: #ffffff;
-    width: 288px;
-    height: 39px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow:
-            0 0 17px #ffa200,
-            0 0 25px #ffa200;
-        border: none;
         width: 352px;
         height: 47px;
         font-size: 32px;
@@ -134,28 +125,23 @@
 }
 
 .transparent__pop__s {
-    font-family: '851Gkktt', sans-serif;
     box-sizing: border-box;
+    width: 264px;
+    height: 39px;
+    border: none;
+    border-radius: 112px;
+    color: #ffffff;
     background: rgba(0, 0, 0, 0.2);
     box-shadow:
         0 0 17px #ffa200,
         0 0 25px #ffa200;
     backdrop-filter: blur(6px);
-    border-radius: 112px;
-    border: none;
+    font-family: '851Gkktt', sans-serif;
     font-size: 24px;
     line-height: 23px;
-    color: #ffffff;
-    width: 264px;
-    height: 39px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow:
-            0 0 17px #ffa200,
-            0 0 25px #ffa200;
-        border: none;
         width: 320px;
         height: 47px;
         font-size: 32px;

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MoonLoader } from 'react-spinners';
-import axios from 'axios';
 import {
     Button,
     Footer,
@@ -12,6 +11,7 @@ import {
 } from '../components/index';
 import FadeState from '../models/FadeState';
 import PlanetType from '../models/PlanetType';
+import { decide, generate } from '../infrastructure/index';
 import {
     useFadeStateStore,
     usePlanetNameStore,
@@ -39,86 +39,52 @@ const Result = () => {
     const setFadeState = useFadeStateStore((state) => state.setValue);
 
     useEffect(() => {
-        const generate = async () => {
-            const payload = {
-                ...sliderValue,
-                planetName: `${planetName}${Strings.PLANET_NAME_KANA_SUFFIX}`,
-            };
-            axios
-                .post(`${Config.GENERATE_API_URL}`, payload, {
-                    headers: Config.COMMON_HEADER,
-                })
-                .then((response) => {
-                    const body = response.data;
-                    console.log(body);
-                    setResponse(body);
-                    setIsLoading(false);
+        const generateAIImage = async () => {
+            const result = await generate(sliderValue, planetName);
 
-                    return response.data;
-                })
-                .catch((e) => {
-                    // タイムアウトの場合
-                    if (e.code === 'ECONNABORTED') {
-                        error(Strings.TIMEOUT_MESSAGE);
-                    } else {
-                        const body = e.response.data;
-                        console.log(body);
-                        if (body && body.code && body.message) {
-                            error(`${body.code}: ${body.message}`);
-                        } else {
-                            error(Strings.FAILED_GENERATOR_MESSAGE);
-                        }
-                    }
+            if (result.status >= 200 && result.status < 300) {
+                setResponse(result);
+            } else if (result.status === 504) {
+                error(Strings.TIMEOUT_MESSAGE);
+                setResponse(null);
+            } else {
+                if (result && result.code && result.message) {
+                    error(`${result.code}: ${result.message}`);
+                } else {
+                    error(Strings.FAILED_GENERATOR_MESSAGE);
+                }
+                setResponse(null);
+            }
 
-                    setResponse(null);
-                    setIsLoading(false);
-                    return null;
-                });
+            setIsLoading(false);
         };
 
-        generate();
+        generateAIImage();
     }, []);
 
-    const decide = () => {
+    const onDecide = async () => {
         const imageId = response.imageId;
         if (!imageId) {
             error(Strings.NO_CREATE_IMAGE_MESSAGE);
             return;
         }
 
-        const payload = {
-            imageId: imageId,
-        };
-        axios
-            .post(`${Config.DECIDE_API_URL}`, payload, {
-                headers: Config.COMMON_HEADER,
-            })
-            .then((response) => {
-                const body = response.data;
-                console.log(body);
-                success(
-                    `${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${imageId})`
-                );
-
-                setFadeState(FadeState.NO_FADE);
-                setIsLoading(true);
-                navigate(Strings.FINISH_URL);
-            })
-            .catch((e) => {
-                // タイムアウトの場合
-                if (e.code === 'ECONNABORTED') {
-                    error(Strings.TIMEOUT_MESSAGE);
-                } else {
-                    const body = e.response.data;
-                    console.log(body);
-                    if (body && body.code && body.message) {
-                        const message = imageId ? `(画像ID: ${imageId})` : '';
-                        error(`${body.code}: ${body.message}${message}`);
-                    } else {
-                        error(Strings.FAILED_DECIDE_MESSAGE);
-                    }
-                }
-            });
+        const result = await decide(imageId);
+        if (result.status >= 200 && result.status < 300) {
+            success(`${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${imageId})`);
+            setFadeState(FadeState.NO_FADE);
+            setIsLoading(true);
+            navigate(Strings.FINISH_URL);
+        } else if (result.status === 504) {
+            error(Strings.TIMEOUT_MESSAGE);
+        } else {
+            if (result && result.code && result.message) {
+                const message = imageId ? `(画像ID: ${imageId})` : '';
+                error(`${result.code}: ${result.message}${message}`);
+            } else {
+                error(Strings.FAILED_DECIDE_MESSAGE);
+            }
+        }
     };
 
     const remake = () => {
@@ -198,7 +164,7 @@ const Result = () => {
                                         response.imageId === null
                                     }
                                     disabledName={Strings.DECISION_BUTTON}
-                                    onClick={() => decide()}
+                                    onClick={() => onDecide()}
                                 />
                             </div>
                             <div className={'second__button'}>
