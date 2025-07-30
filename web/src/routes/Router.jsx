@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Home, Generator, Result, Finish } from '../components';
+import { Home, Generator, Result, Finish } from '../views/index';
 import * as Strings from '../constant/strings';
 
 const Router = () => {
