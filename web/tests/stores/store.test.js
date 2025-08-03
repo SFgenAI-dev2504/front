@@ -1,5 +1,6 @@
 import { renderHook } from "@testing-library/react";
 import {
+  useAIResponseStore,
   useFadeStateStore,
   usePlanetNameStore,
   usePlanetTypeStore,
@@ -391,6 +392,42 @@ describe("store.js tests", () => {
       });
 
       expect(result.current.planetName).toBe("test_name");
+    });
+  });
+
+  describe("useAIResponseStore hook", () => {
+    it("test_response_initialize", () => {
+      const { result } = renderHook(() => useAIResponseStore());
+      expect(result.current.response).toBe(null);
+    });
+
+    it("test_setResponse", () => {
+      const { result } = renderHook(() => useAIResponseStore());
+
+      act(() => {
+        result.current.setResponse({
+          code: null,
+          explanation:
+            "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+          imageFileName: "Mercury.png",
+          imageId: "20250803154034_2524",
+          imageUrl: "http://localhost:5000/static/output/Mercury.png",
+          message: null,
+          rate: 1,
+        });
+      });
+
+      expect(result.current.response.code).toBe(null);
+      expect(result.current.response.explanation).toBe(
+        "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+      );
+      expect(result.current.response.imageFileName).toBe("Mercury.png");
+      expect(result.current.response.imageId).toBe("20250803154034_2524");
+      expect(result.current.response.imageUrl).toBe(
+        "http://localhost:5000/static/output/Mercury.png",
+      );
+      expect(result.current.response.message).toBe(null);
+      expect(result.current.response.rate).toBe(1);
     });
   });
 
