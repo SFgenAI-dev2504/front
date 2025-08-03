@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -10,7 +10,11 @@ import {
     Spacer,
 } from '../components/index';
 import FadeState from '../models/FadeState';
-import { useFadeStateStore, usePlanetNameStore } from '../stores/store';
+import {
+    useAIResponseStore,
+    useFadeStateStore,
+    usePlanetNameStore,
+} from '../stores/store';
 import { warn } from '../core/notify/notify';
 import { validateMinAndMax } from '../core/validator/lengthValidator';
 import { validate } from '../core/validator/characterTypeValidator';
@@ -22,7 +26,17 @@ import '../styles/Generator.css';
 const Generator = () => {
     const navigate = useNavigate();
     const planetName = usePlanetNameStore((state) => state.planetName);
+    const fadeState = useFadeStateStore((state) => state.value);
+    const setResponse = useAIResponseStore((state) => state.setResponse);
     const setFadeState = useFadeStateStore((state) => state.setValue);
+
+    useEffect(() => {
+        if (fadeState === FadeState.FADE_OUT) {
+            setFadeState(FadeState.FADE_IN);
+        }
+
+        setResponse(null);
+    }, []);
 
     const generate = () => {
         // 長さチェック

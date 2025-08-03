@@ -14,6 +14,7 @@ import FadeState from '../models/FadeState';
 import PlanetType from '../models/PlanetType';
 import { decide, generate } from '../infrastructure/index';
 import {
+    useAIResponseStore,
     useFadeStateStore,
     usePlanetNameStore,
     usePlanetTypeStore,
@@ -27,7 +28,6 @@ import BackgroundImage from '../assets/images/background_dark.png';
 import '../styles/Result.css';
 
 const Result = () => {
-    const [response, setResponse] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const sliderValue = useSliderStore((state) => state.sliders);
@@ -35,8 +35,10 @@ const Result = () => {
     const setSliderValueByPlanetType = useSliderStore(
         (state) => state.setSliderValueByPlanetType
     );
+    const response = useAIResponseStore((state) => state.response);
     const setPlanetType = usePlanetTypeStore((state) => state.setPlanetType);
     const setPlanetName = usePlanetNameStore((state) => state.setPlanetName);
+    const setResponse = useAIResponseStore((state) => state.setResponse);
     const setFadeState = useFadeStateStore((state) => state.setValue);
 
     useEffect(() => {
@@ -60,7 +62,11 @@ const Result = () => {
             setIsLoading(false);
         };
 
-        generateAIImage();
+        if (response) {
+            setIsLoading(false);
+        } else {
+            generateAIImage();
+        }
     }, []);
 
     const onDecide = async () => {
