@@ -124,7 +124,7 @@ const Parameters = () => {
                         onChange={null}
                         index={8}
                     />
-                    <Spacer height={8} />
+                    <Spacer height={12} />
                     <ParameterText name={Strings.PLANET_NAME} />
                 </div>
             </div>

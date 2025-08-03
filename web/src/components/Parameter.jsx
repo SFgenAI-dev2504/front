@@ -5,14 +5,6 @@ import { toLocaleString } from '../core/util/stringFormat';
 import * as Strings from '../constant/strings';
 import * as Dimens from '../constant/dimens';
 import '../styles/Parameter.css';
-import {
-    SLIDER_BG_FILTER,
-    SLIDER_BORDER,
-    SLIDER_FILTER,
-    SLIDER_LINE_HEIGHT,
-    SLIDER_PICK_WIDTH,
-    SLIDER_RAIL_COLOR,
-} from '../constant/dimens';
 
 const Parameter = (props) => {
     const value = useSliderStore((state) => state.sliders[props.type]);

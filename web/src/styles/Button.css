@@ -1,18 +1,17 @@
 .primary__m {
     box-sizing: border-box;
     width: 288px;
-    height: 47px;
+    height: 48px;
     border: 1px #00ffff solid;
     border-radius: 112px;
     color: #ffffff;
     background: linear-gradient(91.4deg, #29abe2 0.27%, #00ffff 99.73%);
     box-shadow:
-        0 0 9px #00c4ff,
+        0 0 8px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
     backdrop-filter: blur(6px);
     font-family: '851Gkktt', sans-serif;
     font-size: 32px;
-    line-height: 31px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
@@ -29,30 +28,28 @@
 
 .primary__pop__l {
     box-sizing: border-box;
-    width: 301px;
-    height: 47px;
+    width: 302px;
+    height: 48px;
     border: 1px #00ffff solid;
     border-radius: 112px;
     color: #ffffff;
     background: linear-gradient(91.4deg, #29abe2 0.27%, #00ffff 99.73%);
     box-shadow:
-        0 0 9px #00c4ff,
+        0 0 8px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
     backdrop-filter: blur(6px);
     font-family: '851Gkktt', sans-serif;
     font-size: 32px;
-    line-height: 31px;
     text-shadow: 0 0 8px rgba(127, 78, 0, 0.4);
 
     &:hover {
         width: 340px;
-        height: 53px;
+        height: 52px;
         background: rgba(255, 255, 255, 0.2);
         box-shadow:
-            0 0 9px #00c4ff,
+            0 0 8px #00c4ff,
             0 0 8px rgba(0, 255, 229, 0.5);
         font-size: 38px;
-        line-height: 37px;
     }
 
     &:disabled {
@@ -65,26 +62,24 @@
 .secondary__pop__ll {
     box-sizing: border-box;
     width: 384px;
-    height: 47px;
+    height: 48px;
     border: 1px #ffea00 solid;
     border-radius: 112px;
     color: #ffffff;
     background: linear-gradient(91.4deg, #ffa200 0.27%, #ffea00 99.73%);
     box-shadow:
-        0 0 17px #ffa200,
-        0 0 25px #ffa200;
+        0 0 16px #ffa200,
+        0 0 24px #ffa200;
     backdrop-filter: blur(6px);
     font-family: '851Gkktt', sans-serif;
     font-size: 32px;
-    line-height: 31px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
-        width: 438px;
-        height: 53px;
+        width: 440px;
+        height: 52px;
         background: rgba(255, 255, 255, 0.2);
         font-size: 38px;
-        line-height: 37px;
     }
 
     &:disabled {
@@ -97,18 +92,17 @@
 .transparent__m {
     box-sizing: border-box;
     width: 288px;
-    height: 39px;
+    height: 40px;
     border: 1px #00ffff solid;
     border-radius: 112px;
     color: #ffffff;
     background: rgba(0, 0, 0, 0.25);
     box-shadow:
-        0 0 9px #00c4ff,
+        0 0 8px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
     backdrop-filter: blur(7px);
     font-family: '851Gkktt', sans-serif;
     font-size: 24px;
-    line-height: 23px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
@@ -126,25 +120,23 @@
 .transparent__pop__m {
     box-sizing: border-box;
     width: 288px;
-    height: 39px;
+    height: 40px;
     border: none;
     border-radius: 112px;
     color: #ffffff;
     background: rgba(0, 0, 0, 0.2);
     box-shadow:
-        0 0 17px #ffa200,
-        0 0 25px #ffa200;
+        0 0 16px #ffa200,
+        0 0 24px #ffa200;
     backdrop-filter: blur(6px);
     font-family: '851Gkktt', sans-serif;
     font-size: 24px;
-    line-height: 23px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
         width: 352px;
-        height: 47px;
+        height: 48px;
         font-size: 32px;
-        line-height: 31px;
     }
 
     &:disabled {
@@ -157,25 +149,23 @@
 .transparent__pop__s {
     box-sizing: border-box;
     width: 264px;
-    height: 39px;
+    height: 40px;
     border: none;
     border-radius: 112px;
     color: #ffffff;
     background: rgba(0, 0, 0, 0.2);
     box-shadow:
-        0 0 17px #ffa200,
-        0 0 25px #ffa200;
+        0 0 16px #ffa200,
+        0 0 24px #ffa200;
     backdrop-filter: blur(6px);
     font-family: '851Gkktt', sans-serif;
     font-size: 24px;
-    line-height: 23px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 
     &:hover {
         width: 320px;
-        height: 47px;
+        height: 48px;
         font-size: 32px;
-        line-height: 31px;
     }
 
     &:disabled {

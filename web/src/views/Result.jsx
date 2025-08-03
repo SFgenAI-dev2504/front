@@ -24,7 +24,6 @@ import * as Config from '../constant/config';
 import * as Dimens from '../constant/dimens';
 import BackgroundImage from '../assets/images/background_dark.png';
 import '../styles/Result.css';
-import { FAILED_GENERATOR_MESSAGE } from '../constant/strings';
 
 const Result = () => {
     const [response, setResponse] = useState(null);

@@ -32,7 +32,7 @@ const Finish = () => {
             <img className={'finish__bk'} src={BackgroundImage} alt={''} />
             <p className={'finish_label'}>{Strings.FINISH_FIRST_LABEL}</p>
             <p className={'finish_label'}>{Strings.FINISH_SECOND_LABEL}</p>
-            <Spacer height={45} />
+            <Spacer height={44} />
             <Button
                 className={'primary__m'}
                 name={Strings.TO_HOME}

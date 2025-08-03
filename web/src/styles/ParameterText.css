@@ -5,12 +5,11 @@
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 700;
     font-size: 24px;
-    line-height: 29px;
 }
 
 .name__label {
     text-shadow:
-        0 0 9px #00c4ff,
+        0 0 8px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
 }
 
@@ -18,14 +17,15 @@
     margin-left: 8px;
     padding: 0 8px;
     width: 360px;
-    height: 35px;
+    height: 36px;
     border: none;
     border-radius: 4px;
+    font-size: 20px;
 }
 
 .suffix {
     margin-left: 8px;
     text-shadow:
-        0 0 9px #00c4ff,
+        0 0 8px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
 }

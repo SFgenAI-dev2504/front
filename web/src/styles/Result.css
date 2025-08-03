@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 57px;
+    margin-top: 56px;
 }
 
 .left {
@@ -45,7 +45,7 @@
 
 .right {
     position: relative;
-    margin-left: 51px;
+    margin-left: 52px;
 }
 
 .first__button {
@@ -57,22 +57,22 @@
 
 .second__button {
     position: absolute;
-    bottom: -161px;
+    bottom: -162px;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
 .third__button {
     position: absolute;
-    bottom: -224px;
+    bottom: -226px;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
 .image {
     height: auto;
-    width: 477px;
+    width: 480px;
     border-radius: 20px;
-    filter: drop-shadow(0px 0px 10px #ffffff)
+    filter: drop-shadow(0px 0px 12px #ffffff)
         drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
 }
