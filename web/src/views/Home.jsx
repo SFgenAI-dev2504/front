@@ -4,7 +4,6 @@ import { Button, Spacer } from '../components/index';
 import { warn } from '../core/notify/notify';
 import * as Strings from '../constant/strings';
 import HomeLogoImage from '../assets/images/home_logo.svg';
-import BackgroundImage from '../assets/images/background_light.png';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -20,7 +19,6 @@ const Home = () => {
 
     return (
         <section className={'home'}>
-            <img className={'home__bk'} src={BackgroundImage} alt={''} />
             <div className={'home__container'}>
                 <p className={'sub_label'}>{Strings.HOME_SUB_LABEL}</p>
                 <Spacer height={24} />

@@ -8,7 +8,6 @@ import {
     useSliderStore,
 } from '../stores/store';
 import * as Strings from '../constant/strings';
-import BackgroundImage from '../assets/images/background_light.png';
 import '../styles/Finish.css';
 
 const Finish = () => {
@@ -29,7 +28,6 @@ const Finish = () => {
 
     return (
         <section className={'finish'}>
-            <img className={'finish__bk'} src={BackgroundImage} alt={''} />
             <p className={'finish_label'}>{Strings.FINISH_FIRST_LABEL}</p>
             <p className={'finish_label'}>{Strings.FINISH_SECOND_LABEL}</p>
             <Spacer height={44} />
