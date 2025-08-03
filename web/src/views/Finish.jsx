@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Footer, Spacer } from '../components/index';
 import PlanetType from '../models/PlanetType';
@@ -8,6 +9,7 @@ import {
     useSliderStore,
 } from '../stores/store';
 import * as Strings from '../constant/strings';
+import * as Config from '../constant/config';
 import '../styles/Finish.css';
 
 const Finish = () => {
@@ -27,7 +29,13 @@ const Finish = () => {
     };
 
     return (
-        <section className={'finish'}>
+        <motion.div
+            className={'finish'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: Config.SCREEN_TRANSITION_DURATION_S }}
+        >
             <p className={'finish_label'}>{Strings.FINISH_FIRST_LABEL}</p>
             <p className={'finish_label'}>{Strings.FINISH_SECOND_LABEL}</p>
             <Spacer height={44} />
@@ -39,7 +47,7 @@ const Finish = () => {
                 onClick={() => toHome()}
             />
             <Footer />
-        </section>
+        </motion.div>
     );
 };
 

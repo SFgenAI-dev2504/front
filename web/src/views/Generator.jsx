@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import {
     Button,
@@ -45,7 +46,13 @@ const Generator = () => {
     };
 
     return (
-        <section className={'generator'}>
+        <motion.div
+            className={'generator'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: Config.SCREEN_TRANSITION_DURATION_S }}
+        >
             <img className={'generator_bk'} src={BackgroundImage} alt={''} />
             <div className={'left'}>
                 <FadeMotion isNormalOrder={true}>
@@ -71,7 +78,7 @@ const Generator = () => {
                     />
                 </FadeMotion>
             </div>
-        </section>
+        </motion.div>
     );
 };
 

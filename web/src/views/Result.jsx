@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { MoonLoader } from 'react-spinners';
 import {
@@ -73,7 +74,6 @@ const Result = () => {
         if (result.status >= 200 && result.status < 300) {
             success(`${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${imageId})`);
             setFadeState(FadeState.NO_FADE);
-            setIsLoading(true);
             navigate(Strings.FINISH_URL);
         } else if (result.status === 504) {
             error(Strings.TIMEOUT_MESSAGE);
@@ -109,7 +109,13 @@ const Result = () => {
     };
 
     return (
-        <section className={'result'}>
+        <motion.div
+            className={'result'}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: Config.SCREEN_TRANSITION_DURATION_S }}
+        >
             <img className={'result_bk'} src={BackgroundImage} alt={''} />
             <div className={'bk_blur'} hidden={isLoading} />
             {isLoading && (
@@ -191,7 +197,7 @@ const Result = () => {
                     <Footer />
                 </div>
             )}
-        </section>
+        </motion.div>
     );
 };
 

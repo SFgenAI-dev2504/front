@@ -1,8 +1,10 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Spacer } from '../components/index';
 import { warn } from '../core/notify/notify';
 import * as Strings from '../constant/strings';
+import * as Config from '../constant/config';
 import HomeLogoImage from '../assets/images/home_logo.svg';
 import '../styles/Home.css';
 
@@ -18,7 +20,13 @@ const Home = () => {
     };
 
     return (
-        <section className={'home'}>
+        <motion.div
+            className={'home'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: Config.SCREEN_TRANSITION_DURATION_S }}
+        >
             <div className={'home__container'}>
                 <p className={'sub_label'}>{Strings.HOME_SUB_LABEL}</p>
                 <Spacer height={24} />
@@ -43,7 +51,7 @@ const Home = () => {
                 />
             </div>
             <img className={'home__logo'} src={HomeLogoImage} alt={''} />
-        </section>
+        </motion.div>
     );
 };
 

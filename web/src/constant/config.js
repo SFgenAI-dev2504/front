@@ -136,6 +136,7 @@ export const MAX_LENGTH = 6;
 // Duration
 export const DURATION_MS = 750;
 export const DURATION_S = DURATION_MS / 1000;
+export const SCREEN_TRANSITION_DURATION_S = 0.5;
 
 // Transform
 export const TRANSFORM_SLIDER_FADE_IN_Y = [120, 0];
