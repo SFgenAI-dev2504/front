@@ -20,7 +20,7 @@ import {
     usePlanetTypeStore,
     useSliderStore,
 } from '../stores/store';
-import { error, success, warn } from '../core/notify/notify';
+import { error, info, warn } from '../core/notify/notify';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
 import * as Dimens from '../constant/dimens';
@@ -78,7 +78,7 @@ const Result = () => {
 
         const result = await decide(imageId);
         if (result.status >= 200 && result.status < 300) {
-            success(`${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${imageId})`);
+            info(`${Strings.SUCCESS_DECIDE_MESSAGE}(画像ID: ${imageId})`);
             setFadeState(FadeState.NO_FADE);
             navigate(Strings.FINISH_URL);
         } else if (result.status === 504) {

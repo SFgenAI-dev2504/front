@@ -1,7 +1,6 @@
 import React from 'react';
 import { Spacer } from './index';
 import { evaluate } from '../core/util/ratingConverter';
-import { info } from '../core/notify/notify';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
 import ResultBackgroundImage from '../assets/images/result_background.png';
@@ -37,7 +36,7 @@ const Explanation = (props) => {
                         {shortenDetail()}
                         <button
                             className={'read-more'}
-                            onClick={() => info(props.detail)}
+                            onClick={() => alert(props.detail)}
                         >
                             {Strings.READ_MORE_LABEL}
                         </button>

@@ -1,7 +1,6 @@
 // react-toastifyをモック化。
 jest.mock("react-toastify", () => ({
   toast: {
-    success: jest.fn(),
     info: jest.fn(),
     warn: jest.fn(),
     error: jest.fn(),
@@ -9,24 +8,15 @@ jest.mock("react-toastify", () => ({
 }));
 
 import { toast } from "react-toastify";
-import { success, info, warn, error } from "../../../src/core/notify/notify";
-import {
-  TOAST_OPTION,
-  TOAST_INFO_OPTION,
-  TOAST_ERROR_OPTION,
-} from "../../../src/constant/dimens";
+import { info, warn, error } from "../../../src/core/notify/notify";
+import { TOAST_OPTION, TOAST_ERROR_OPTION } from "../../../src/constant/dimens";
 
 describe("notify.js tests", () => {
   const message = "テストメッセージ";
 
   it("test_success", () => {
-    success(message);
-    expect(toast.success).toHaveBeenCalledWith(message, TOAST_OPTION);
-  });
-
-  it("test_info", () => {
     info(message);
-    expect(toast.info).toHaveBeenCalledWith(message, TOAST_INFO_OPTION);
+    expect(toast.info).toHaveBeenCalledWith(message, TOAST_OPTION);
   });
 
   it("test_warn", () => {
