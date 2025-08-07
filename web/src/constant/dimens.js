@@ -19,7 +19,18 @@ export const TOAST_OPTION = {
     position: 'top-right',
     autoClose: 3000,
     hideProgressBar: false,
-    closeOnClick: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: 'colored',
+    transition: Bounce,
+};
+
+export const TOAST_INFO_OPTION = {
+    position: 'top-center',
+    autoClose: 8000,
+    hideProgressBar: false,
+    closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     theme: 'colored',
@@ -28,7 +39,7 @@ export const TOAST_OPTION = {
 
 export const TOAST_ERROR_OPTION = {
     position: 'top-right',
-    autoClose: 10000,
+    autoClose: 8000,
     hideProgressBar: false,
     closeOnClick: false,
     pauseOnHover: true,

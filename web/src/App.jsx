@@ -10,7 +10,7 @@ function App() {
         <div className={'App'}>
             <img className={'bg'} src={BackgroundImage} alt={''} />
             <BrowserRouter>
-                <ToastContainer />
+                <ToastContainer stacked />
                 <Router />
             </BrowserRouter>
         </div>

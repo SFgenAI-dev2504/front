@@ -26,6 +26,29 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
+    overflow-wrap: break-word;
+}
+
+.read-more {
+    margin-left: 8px;
+    border: none;
+    color: #00f4dc;
+    background-color: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-shadow:
+        0 0 4px #00f4dc,
+        0 0 4px rgba(0, 255, 229, 0.5);
+    cursor: pointer;
+
+    &:hover {
+        color: #ffa200;
+        text-shadow:
+            0 0 4px #ffa200,
+            0 0 4px #ffa10080;
+        transition: 0.5s ease;
+    }
 }
 
 .rating {
@@ -35,6 +58,6 @@
     font-size: 24px;
     line-height: 23px;
     text-shadow:
-        0 0 9px #00c4ff,
+        0 0 12px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
 }

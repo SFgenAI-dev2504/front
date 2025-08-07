@@ -133,6 +133,9 @@ export const NEPTUNE_AURORA_VALUE = 100;
 export const MIN_LENGTH = 1;
 export const MAX_LENGTH = 6;
 
+// Explanation Length
+export const EXPLANATION_MAX_LENGTH = 100;
+
 // Duration
 export const DURATION_MS = 750;
 export const DURATION_S = DURATION_MS / 1000;
