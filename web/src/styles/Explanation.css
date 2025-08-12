@@ -62,3 +62,22 @@
         0 0 12px #00c4ff,
         0 0 8px rgba(0, 255, 229, 0.5);
 }
+
+.note {
+    position: absolute;
+    bottom: -16px;
+    left: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*.note {*/
+/*    position: fixed;*/
+/*    bottom: 40px;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*    font-family: 'Noto Sans JP', sans-serif;*/
+/*    font-size: 12px;*/
+/*    font-weight: bold;*/
+/*}*/

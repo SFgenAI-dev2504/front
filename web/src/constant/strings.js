@@ -41,6 +41,8 @@ export const NEPTUNE = '海王星';
 export const NO_IMAGE = 'NO IMAGE';
 export const ERROR_OCCURRED = 'ERROR OCCURRED';
 export const COMING_SOON = 'Coming Soon...';
+export const GENERATE_NOTE =
+    '※記載されている内容は創作に基づくものであり、実在の天体に関する科学的根拠は伴いません。';
 
 // パラメータ
 export const PLANET_NAME = '惑星の名前';

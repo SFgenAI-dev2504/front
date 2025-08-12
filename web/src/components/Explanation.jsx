@@ -31,7 +31,7 @@ const Explanation = (props) => {
                     className={'planet-name'}
                 >{`${props.planetName ? props.planetName : '-'}${Strings.PLANET_NAME_KANA_SUFFIX}`}</p>
                 <Spacer height={24} />
-                {isOverMaxLength && (
+                {isOverMaxLength() && (
                     <p className={'detail'}>
                         {shortenDetail()}
                         <button
@@ -42,12 +42,15 @@ const Explanation = (props) => {
                         </button>
                     </p>
                 )}
-                {!isOverMaxLength && <p className={'detail'}>{props.detail}</p>}
+                {!isOverMaxLength() && (
+                    <p className={'detail'}>{props.detail}</p>
+                )}
                 <Spacer height={24} />
                 <p
                     className={'rating'}
                 >{`${Strings.RATING_LABEL}${evaluate(props.rating)}`}</p>
                 <Spacer height={40} />
+                <p className={'note'}>{Strings.GENERATE_NOTE}</p>
             </div>
         </section>
     );
