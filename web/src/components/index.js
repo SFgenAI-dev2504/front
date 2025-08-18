@@ -3,6 +3,7 @@ export { default as Explanation } from './Explanation';
 export { default as FadeMotion } from './FadeMotion';
 export { default as FadeSlideMotion } from './FadeSlideMotion';
 export { default as Footer } from './Footer';
+export { default as Modal } from './Modal';
 export { default as NoImage } from './NoImage';
 export { default as Parameter } from './Parameter';
 export { default as ParameterText } from './ParameterText';

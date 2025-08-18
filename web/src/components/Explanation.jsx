@@ -1,5 +1,5 @@
-import React from 'react';
-import { Spacer } from './index';
+import React, { useState } from 'react';
+import { Modal, Spacer } from './index';
 import { evaluate } from '../core/util/ratingConverter';
 import * as Strings from '../constant/strings';
 import * as Config from '../constant/config';
@@ -7,6 +7,7 @@ import ResultBackgroundImage from '../assets/images/result_background.png';
 import '../styles/Explanation.css';
 
 const Explanation = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
     const segmenter = new Intl.Segmenter('ja', { granularity: 'grapheme' });
     const segments = [...segmenter.segment(props.detail)];
 
@@ -26,6 +27,11 @@ const Explanation = (props) => {
     return (
         <section className={'explanation'}>
             <img src={ResultBackgroundImage} alt={''} />
+            <Modal
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+                content={props.detail}
+            />
             <div className={'explanation__container'}>
                 <p
                     className={'planet-name'}
@@ -36,7 +42,7 @@ const Explanation = (props) => {
                         {shortenDetail()}
                         <button
                             className={'read-more'}
-                            onClick={() => alert(props.detail)}
+                            onClick={() => setIsOpen(true)}
                         >
                             {Strings.READ_MORE_LABEL}
                         </button>

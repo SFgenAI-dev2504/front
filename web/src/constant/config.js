@@ -140,6 +140,7 @@ export const EXPLANATION_MAX_LENGTH = 100;
 export const DURATION_MS = 750;
 export const DURATION_S = DURATION_MS / 1000;
 export const SCREEN_TRANSITION_DURATION_S = 0.5;
+export const MODAL_CLOSE_DURATION_MS = 300;
 
 // Transform
 export const TRANSFORM_SLIDER_FADE_IN_Y = [120, 0];

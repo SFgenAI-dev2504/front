@@ -41,9 +41,9 @@ const Finish = () => {
             <Spacer height={44} />
             <Button
                 className={'primary__m'}
-                name={Strings.TO_HOME}
+                name={Strings.TO_HOME_BUTTON}
                 disabled={false}
-                disabledName={Strings.TO_HOME}
+                disabledName={Strings.TO_HOME_BUTTON}
                 onClick={() => toHome()}
             />
             <Footer />

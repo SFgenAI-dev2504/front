@@ -11,7 +11,8 @@ export const GENERATE_BUTTON = '惑星画像を生成する';
 export const DECISION_BUTTON = 'これに決めた！';
 export const REMAKE_BUTTON = 'もう一度作る';
 export const ADD_GALLERY_BUTTON = 'ギャラリーに追加';
-export const TO_HOME = 'TOPに戻る';
+export const TO_HOME_BUTTON = 'TOPに戻る';
+export const CLOSE_BUTTON = '閉じる';
 
 // ラベル
 export const HOME_SUB_LABEL = '自分だけの惑星メーカー';
