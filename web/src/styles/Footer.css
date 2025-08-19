@@ -1,11 +1,10 @@
 .footer {
-    margin-top: auto;
-    text-align: center;
-    background-color: lightgray;
+    position: fixed;
+    bottom: 40px;
+    right: 96px;
 }
 
 .footer__copy {
-    color: black;
-    font-size: 0.75rem;
-    padding: 8px 0;
+    color: #ffffff;
+    font-size: 10px;
 }

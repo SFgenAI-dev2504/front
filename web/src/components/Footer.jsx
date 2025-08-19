@@ -1,13 +1,11 @@
 import React from 'react';
+import * as Strings from '../constant/strings';
 import '../styles/Footer.css';
-import { COPY_RIGHT } from '../constant/strings';
 
 const Footer = () => {
     return (
         <footer className={'footer'}>
-            <p className={'footer__copy'}>
-                <small>&copy; {COPY_RIGHT}</small>
-            </p>
+            <p className={'footer__copy'}>{Strings.COPY_RIGHT}</p>
         </footer>
     );
 };

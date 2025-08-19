@@ -1,11 +1,10 @@
 import React from 'react';
 import '../styles/NoImage.css';
-import * as Strings from '../constant/strings';
 
-const NoImage = () => {
+const NoImage = (props) => {
     return (
         <section className={'no-image'}>
-            <p>{Strings.NO_IMAGE}</p>
+            <p>{props.message}</p>
         </section>
     );
 };

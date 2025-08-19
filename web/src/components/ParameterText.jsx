@@ -1,6 +1,7 @@
 import React from 'react';
-import '../styles/ParameterText.css';
 import { usePlanetNameStore } from '../stores/store';
+import * as Strings from '../constant/strings';
+import '../styles/ParameterText.css';
 
 const ParameterText = (props) => {
     const planetName = usePlanetNameStore((state) => state.planetName);
@@ -8,16 +9,19 @@ const ParameterText = (props) => {
 
     return (
         <section className={'parameter__text'}>
-            <p className={'name'}>{props.name}</p>
+            <p className={'name__label'}>{props.name}</p>
             <input
                 className={'planet__name'}
                 name={'input'}
                 type={'text'}
                 autoComplete={'off'}
                 value={planetName}
-                onChange={(e) => setPlanetName(e.target.value)}
                 disabled={props.disabled}
+                onChange={(e) => {
+                    setPlanetName(e.target.value);
+                }}
             />
+            <p className={'suffix'}>{Strings.PLANET_NAME_SUFFIX}</p>
         </section>
     );
 };

@@ -1,0 +1,78 @@
+.result {
+    position: relative;
+    min-height: 100vh;
+}
+
+.result_bk {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.bk_blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.result__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.left {
+    display: flex;
+}
+
+.right {
+    position: relative;
+    margin-left: 52px;
+}
+
+.first__button {
+    position: absolute;
+    bottom: -90px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.second__button {
+    position: absolute;
+    bottom: -162px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.third__button {
+    position: absolute;
+    bottom: -226px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.image {
+    height: auto;
+    width: 480px;
+    border-radius: 20px;
+    filter: drop-shadow(0px 0px 12px #ffffff)
+        drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
+}

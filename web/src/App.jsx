@@ -1,17 +1,17 @@
-import { Footer, Header } from './components/index';
 import './styles/App.css';
 import Router from './routes/Router';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import BackgroundImage from './assets/images/background_light.png';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     return (
         <div className={'App'}>
+            <img className={'bg'} src={BackgroundImage} alt={''} />
             <BrowserRouter>
-                <Header />
-                <main className={'wrapper'}>
-                    <Router />
-                </main>
-                <Footer />
+                <ToastContainer stacked />
+                <Router />
             </BrowserRouter>
         </div>
     );

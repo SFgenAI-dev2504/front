@@ -1,0 +1,35 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 32px 40px;
+    width: 640px;
+    background-color: #202224;
+    border-radius: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #000000bb;
+    transition: opacity 300ms ease-in-out;
+    opacity: 0;
+}
+
+.overlay-after {
+    opacity: 1;
+}
+
+.overlay-before {
+    opacity: 0;
+}
