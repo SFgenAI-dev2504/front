@@ -1,5 +1,5 @@
 // API Endpoint
-export const BASE_URL = 'http://localhost:5000';
+export const BASE_URL = 'http://localhost:5001';
 export const GENERATE_API_URL = `${BASE_URL}/generate`;
 export const DECIDE_API_URL = `${BASE_URL}/decide`;
 
