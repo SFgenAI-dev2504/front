@@ -1,11 +1,12 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Spacer } from '../components/index';
-import '../styles/Home.css';
-import * as Strings from '../constant/strings';
-// import HomeBKImage from '../assets/images/home_background.png';
-import HomeLogoImage from '../assets/images/home_logo.svg';
 import { warn } from '../core/notify/notify';
+import * as Strings from '../constant/strings';
+import * as Config from '../constant/config';
+import HomeLogoImage from '../assets/images/home_logo.svg';
+import '../styles/Home.css';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -19,8 +20,13 @@ const Home = () => {
     };
 
     return (
-        <section className={'home'}>
-            {/*<img className={'home__bk'} src={HomeBKImage} alt={''} />*/}
+        <motion.div
+            className={'home'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: Config.SCREEN_TRANSITION_DURATION_S }}
+        >
             <div className={'home__container'}>
                 <p className={'sub_label'}>{Strings.HOME_SUB_LABEL}</p>
                 <Spacer height={24} />
@@ -29,25 +35,23 @@ const Home = () => {
                 <p className={'maker_label'}>{Strings.HOME_LABEL_MAKER}</p>
                 <Spacer height={24} />
                 <Button
-                    className={'button--primary'}
+                    className={'primary__m'}
                     name={Strings.TO_GENERATOR_BUTTON}
-                    width={288}
                     disabled={false}
                     disabledName={Strings.TO_GENERATOR_BUTTON}
                     onClick={() => toGenerate()}
                 />
                 <Spacer height={24} />
                 <Button
-                    className={'button--transparent'}
+                    className={'transparent__m'}
                     name={Strings.TO_GALLERY_BUTTON}
-                    width={288}
                     disabled={false}
                     disabledName={Strings.TO_GALLERY_BUTTON}
                     onClick={() => toGallery()}
                 />
             </div>
             <img className={'home__logo'} src={HomeLogoImage} alt={''} />
-        </section>
+        </motion.div>
     );
 };
 

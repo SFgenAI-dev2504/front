@@ -1,0 +1,9 @@
+.planet_type_selection {
+    width: 64px;
+    height: 24px;
+    border-radius: 2px;
+    color: #3d3a39;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}

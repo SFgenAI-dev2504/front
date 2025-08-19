@@ -129,10 +129,21 @@ export const NEPTUNE_TERRAIN_VALUE = 40;
 export const NEPTUNE_VOLCANO_VALUE = 0;
 export const NEPTUNE_AURORA_VALUE = 100;
 
-// Chart
-export const CHART_MIN = 0;
-export const CHART_MAX = 100;
-export const CHART_STEP_SIZE = 20;
-export const CHART_BACKDROP_COLOR = 'transparent';
-export const BASE_COLOR = '#000000';
-export const POINT_LABELS_FONT_SIZE = 12;
+// Length Validation
+export const MIN_LENGTH = 1;
+export const MAX_LENGTH = 6;
+
+// Explanation Length
+export const EXPLANATION_MAX_LENGTH = 100;
+
+// Duration
+export const DURATION_MS = 750;
+export const DURATION_S = DURATION_MS / 1000;
+export const SCREEN_TRANSITION_DURATION_S = 0.5;
+export const MODAL_CLOSE_DURATION_MS = 300;
+
+// Transform
+export const TRANSFORM_SLIDER_FADE_IN_Y = [120, 0];
+export const TRANSFORM_SLIDER_FADE_OUT_Y = [0, 120];
+export const TRANSFORM_EXPLANATION_FADE_IN_Y = [-180, 0];
+export const TRANSFORM_EXPLANATION_FADE_OUT_Y = [0, -180];

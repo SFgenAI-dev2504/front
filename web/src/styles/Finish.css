@@ -7,5 +7,9 @@
 }
 
 .finish_label {
-    font-size: 36px;
+    backdrop-filter: blur(6px);
+    font-size: 48px;
+    text-shadow:
+        0 0 9px #00c4ff,
+        0 0 8px rgba(0, 255, 229, 0.5);
 }

@@ -1,9 +1,10 @@
 import React from 'react';
-import '../styles/Parameter.css';
 import Slider from '@mui/material/Slider';
 import { useSliderStore } from '../stores/store';
-import * as Strings from '../constant/strings';
 import { toLocaleString } from '../core/util/stringFormat';
+import * as Strings from '../constant/strings';
+import * as Dimens from '../constant/dimens';
+import '../styles/Parameter.css';
 
 const Parameter = (props) => {
     const value = useSliderStore((state) => state.sliders[props.type]);
@@ -19,7 +20,7 @@ const Parameter = (props) => {
                 <p className={'unit'}>{props.unit}</p>
             </div>
             <div className={'slidebar__container'}>
-                <div className={'slidebar'}>
+                <div className={'input'}>
                     <Slider
                         aria-label={props.name}
                         value={value}
@@ -27,21 +28,28 @@ const Parameter = (props) => {
                             setSliderValueByPromptType(props.type, newValue)
                         }
                         sx={{
-                            color: '#00aac9',
+                            // スライダーのピック
                             '& .MuiSlider-thumb': {
-                                backgroundColor: '#00aac9',
-                                boxShadow: '0 0 4px 0px rgba(0, 244, 220, 1)',
-                                width: 10,
-                                height: 10,
+                                backgroundColor: Dimens.SLIDER_COLOR,
+                                filter: Dimens.SLIDER_FILTER,
+                                backdropFilter: Dimens.SLIDER_BG_FILTER,
+                                width: Dimens.SLIDER_PICK_WIDTH,
+                                height: Dimens.SLIDER_PICK_HEIGHT,
+                                border: Dimens.SLIDER_BORDER,
                             },
+                            // スライダーのバー
                             '& .MuiSlider-track': {
-                                backgroundColor: '#00aac9',
-                                boxShadow: '0 0 4px 0px rgba(0, 244, 220, 1)',
-                                height: 2,
+                                backgroundColor: Dimens.SLIDER_COLOR,
+                                filter: Dimens.SLIDER_FILTER,
+                                backdropFilter: Dimens.SLIDER_BG_FILTER,
+                                height: Dimens.SLIDER_LINE_HEIGHT,
+                                border: Dimens.SLIDER_BORDER,
                             },
+                            // スライダーのレール(背景)
                             '& .MuiSlider-rail': {
-                                backgroundColor: '#00000050',
-                                height: 2,
+                                backgroundColor: Dimens.SLIDER_RAIL_COLOR,
+                                height: Dimens.SLIDER_LINE_HEIGHT,
+                                border: Dimens.SLIDER_BORDER,
                             },
                         }}
                         valueLabelDisplay={'off'}
@@ -52,16 +60,16 @@ const Parameter = (props) => {
                         disabled={props.disabled}
                     />
                 </div>
-                <div className={'subtitle'}>
-                    {props.subtileLabelVisible && (
-                        <p className={'subtitle__label'}>
-                            {Strings.PARAMETER_DETAIL_LABEL}
-                        </p>
-                    )}
+                <div className={'times__container'}>
                     {props.onChange !== null && (
-                        <p className={'subtitle__value'}>
-                            {props.onChange(value) + ' 倍'}
-                        </p>
+                        <div>
+                            <span className={'times-value'}>
+                                {props.onChange(value)}
+                            </span>
+                            <span className={'times-value__unit'}>
+                                {Strings.PARAMETER_TIMES_UNIT_LABEL}
+                            </span>
+                        </div>
                     )}
                 </div>
             </div>

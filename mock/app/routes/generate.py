@@ -51,7 +51,7 @@ def generate():
         status = 200
         image_file_name = image_urls[0]
         image_url = "http://localhost:5000/static/output/" + image_file_name
-        explanation = "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト"
+        explanation = "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストaiueoテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト1234６７８９０AWSテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト末尾です"
         rate = 1
     else:
         status = 500

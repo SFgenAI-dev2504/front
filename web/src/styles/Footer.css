@@ -1,10 +1,10 @@
 .footer {
     position: fixed;
     bottom: 40px;
-    right: 100px;
+    right: 96px;
 }
 
 .footer__copy {
-    color: #000000;
+    color: #ffffff;
     font-size: 10px;
 }

@@ -1,7 +1,7 @@
 import * as Dimens from '../../constant/dimens';
 import { toast } from 'react-toastify';
 
-export const success = (message) => {
+export const info = (message) => {
     toast.info(message, Dimens.TOAST_OPTION);
 };
 

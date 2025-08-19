@@ -1,18 +1,23 @@
 html,
 body {
     font-size: 1rem;
-    font-family: 'Quantum', sans-serif;
+    color: #ffffff;
 }
-
-/*@font-face {*/
-/*    font-family: 'Quantum';*/
-/*    src: url('/fonts/Quantum.otf') format('opentype');*/
-/*    font-weight: normal;*/
-/*    font-style: normal;*/
-/*}*/
 
 .App {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    position: relative;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    z-index: -1;
 }

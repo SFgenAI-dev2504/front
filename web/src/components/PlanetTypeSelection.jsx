@@ -1,17 +1,18 @@
 import React from 'react';
-import '../styles/PlanetTypeSelection.css';
-import { usePlanetTypeStore, useSliderStore } from '../stores/store';
 import {
     planetTypeListItem,
     planetTypeNameListItem,
 } from '../models/PlanetTypeListItem';
+import { usePlanetTypeStore, useSliderStore } from '../stores/store';
+import '../styles/PlanetTypeSelection.css';
 
-const PlanetTypeSelection = (props) => {
+const PlanetTypeSelection = () => {
     const planetType = usePlanetTypeStore((state) => state.planetType);
     const setPlanetType = usePlanetTypeStore((state) => state.setPlanetType);
     const setSliderValueByPlanetType = useSliderStore(
         (state) => state.setSliderValueByPlanetType
     );
+
     return (
         <select
             className={'planet_type_selection'}
@@ -21,7 +22,6 @@ const PlanetTypeSelection = (props) => {
                 setPlanetType(input);
                 setSliderValueByPlanetType(input);
             }}
-            disabled={props.disabled}
         >
             {planetTypeListItem.map((type, index) => (
                 <option key={index} value={type}>

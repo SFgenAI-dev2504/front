@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import * as Config from '../constant/config';
 import PlanetType from '../models/PlanetType';
 import PromptType from '../models/PromptType';
+import FadeState from '../models/FadeState';
 
 export const useSliderStore = create((set) => ({
     sliders: {
@@ -179,5 +180,21 @@ export const usePlanetNameStore = create((set) => ({
     setPlanetName: (value) =>
         set(() => {
             return { planetName: value };
+        }),
+}));
+
+export const useAIResponseStore = create((set) => ({
+    response: null,
+    setResponse: (res) =>
+        set(() => {
+            return { response: res };
+        }),
+}));
+
+export const useFadeStateStore = create((set) => ({
+    value: FadeState.NO_FADE,
+    setValue: (value) =>
+        set(() => {
+            return { value: value };
         }),
 }));
